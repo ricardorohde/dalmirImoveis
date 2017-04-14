@@ -1566,7 +1566,7 @@ button{
 .image img, .property_item .price{ width:100%;}
 .image a, .toggle_share ul li, .toggle_share ul li a{display:block;}
 .property_item .price .tag{
-  background:#173471;
+  background:#b39656;
   height: inherit;
   padding: 15px;
   font-size:15px;
@@ -1962,7 +1962,7 @@ i.icon-safety-shower{font-size:16px !important;}
 	color:#1b1b1b;
 }
 #nav_slider .item .nav_tag{
-	color:#191919;
+	color:white;
 	font-size:10px;
 	padding:5px 15px;
 	position:absolute;
@@ -2306,7 +2306,7 @@ i.icon-safety-shower{font-size:16px !important;}
 	background-position:center center;
 }
 #parallax_four{
-	background:url(../images/parallax-four.jpg) no-repeat;
+	background:url(../images/back-home.jpg) no-repeat;
 }
 #testinomial{
 	background:url(../images/testinomial.jpg) no-repeat;
@@ -3867,7 +3867,7 @@ footer .footer_panel .media-body span > i{
 	background:#1F1F1F;
 }
 .footer_third{
-	background:#6D6B6C;
+	background:#1f1a17;
 }
 .footer_fourth{
 	background:#fff;
@@ -3918,7 +3918,7 @@ footer .footer_panel .media-body span > i{
 .footer_fourth .copyright_simple {
   border-top: 1px solid #eaeaea;
 }
-.contacts{ background:#173471;}
+.contacts{ background:#c1a163;}
 .footer_fourth .contacts{ background:#f2f2f2;} 
 .contacts .info-box .icons, .contacts .info-box ul{
   display: block;
@@ -3940,7 +3940,7 @@ footer .footer_panel .media-body span > i{
 	bottom:0; top:0;
 	z-index:1100;
 	overflow:hidden;
-	background:#173471;
+	background:#1f1a17;
 }
 .loader .span {
   display: table;
