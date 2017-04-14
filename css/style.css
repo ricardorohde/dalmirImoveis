@@ -410,12 +410,19 @@ ul.area_search li a:hover, ul.area_search li a:focus{
 	color:#da251c;
 }
 
+
+
 #navegador a{
 	color: white;
 }
 
+
 #navegador .menu-col a{
 	color:gray;
+}
+
+#navegador .title-imovel{
+	color: black;
 }
 
 #map iframe{
@@ -1271,7 +1278,7 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content.bg .col-menu{
 .tp_overlay .search-propertie-filters .container-2{ padding-left:5px;}
 .tp_overlay .btn-yellow:hover, .tp_overlay .btn-yellow:focus{
 	background:#fff;
-	color:#000;
+	color:#da251c;
 }
 .tp_overlay .breadcrumb_top li a{
 	padding:10px 5px 6px;
@@ -1413,6 +1420,7 @@ button{
 .tp_overlay .more-filter .fa, .tp_overlay .nstSlider .bar,
 .blue_navi .checkedBox, .tp_overlay .checkedBox{ 
   background:#da251c; 
+  color: white;
 }
 .blue_navi .more-filter .text-1,.blue_navi  .more-filter .text-2, .blue_navi .price, .blue_navi .callus label,
 .blue_navi .leftLabel, .blue_navi .rightLabel,
@@ -3152,10 +3160,7 @@ i.icon-safety-shower{font-size:16px !important;}
 
 
 /* ------------ Listings ------ */
-.tag_t, #agent-2-slider .feature .tag-2{
-  background:#da251c;
-  right:10px;
-}
+
 .tag_l{
   background:#1d1d1d;
   left:10px;
@@ -3172,6 +3177,13 @@ i.icon-safety-shower{font-size:16px !important;}
 .tag_t, #agent-2-slider .feature .tag-2{
 	color: #333;
 }
+
+.tag_t, #agent-2-slider .feature .tag-2{
+  background:#da251c;
+  right:10px;
+  color: white;
+}
+
 .property_meta.transparent{
 	background:inherit;
 	border:none;
