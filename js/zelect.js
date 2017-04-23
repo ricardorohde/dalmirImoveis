@@ -270,6 +270,7 @@
   }
 
   function defaultNoResults(term) {
+    console.log(term);
     return "No results for '"+(term || '')+"'"
   }
 
