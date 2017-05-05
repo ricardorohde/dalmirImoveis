@@ -1,3 +1,13 @@
+<?php
+  include('data/class.php');
+  $user = new User();
+  if(!$user->logado)
+  {
+    $user->logout();
+    header("Location: login.php");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,14 +71,10 @@
           <p>Nós somos os melhores da cidade com 20 anos de experiência</p>
         </div>
         <div class="col-md-7 text-right">
-      <ul class="breadcrumb_top text-right">
-  <!--       <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-        <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>-->
-        <li><a href="index.html" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
-        <li><a href="profile.html"><i class="icon-icons230"></i></a></li> 
-        <!-- <li><a href="login.html"><i class="icon-icons179"></i>Administrador</a></li> -->
-        <!-- <li class="last-icon"><i class="icon-icons215"></i></li> -->
-      </ul>          
+        <ul class="breadcrumb_top text-right">
+          <li><a href="index.php" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
+          <li><a href="profile.php"><i class="icon-icons230"></i></a></li> 
+        </ul>          
         </div>
       </div>
     </div>
@@ -81,11 +87,11 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="f-p-links margin_bottom">
-          <li><a href="profile.html" ><i class="icon-icons230"></i>Meus Dados</a></li>
-          <li><a href="my_tipos.html" class="active"><i class="icon-icons215"></i> Dados de Imóveis</a></li>
-          <li><a href="my_properties.html" ><i class="icon-icons215"></i> Meus Imóveis</a></li>
-          <li><a href="submit_property.html"><i class="icon-icons215"></i> Postar Imóvel</a></li>
-          <li><a href="login.html"><i class="icon-lock-open3"></i>Sair</a></li>
+          <li><a href="profile.php" ><i class="icon-icons230"></i>Meus Dados</a></li>
+          <li><a href="my_tipos.php" class="active"><i class="icon-icons215"></i> Dados de Imóveis</a></li>
+          <li><a href="my_properties.php" ><i class="icon-icons215"></i> Meus Imóveis</a></li>
+          <li><a href="submit_property.php"><i class="icon-icons215"></i> Adicionar Imóvel</a></li>
+          <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>
         </ul>
       </div>
     </div>

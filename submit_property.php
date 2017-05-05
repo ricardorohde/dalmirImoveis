@@ -1,10 +1,41 @@
+<?php
+  include('data/class.php');
+  Session::startSession();
+  $user = new User();
+  if(!$user->logado)
+  {
+    $user->logout();
+    header("Location: login.php");
+  }
+
+  //Criação dos objetos
+  $imovel = new Imovel();
+  $array_imovel = array();
+
+  if(isset($_GET['c']))
+  {
+      $_SESSION['status'] = 'update';
+      $_SESSION['cod_imovel'] = $_GET['c'];
+      $cod_imovel = $_GET['c'];
+      $array_filtro = Imovel::returnFiltroEmpty();
+      $array_filtro['cod_imovel'] = $cod_imovel;
+
+      $array_imovel = Imovel::collectData($array_filtro);
+
+  }else{
+    $_SESSION['status'] = 'insert';
+    $_SESSION['cod_imovel'] = '0';
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>Castle</title>
+<title>Dalmir Imóveis</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/reality-icon.css">
@@ -39,21 +70,9 @@
           <p>Nós somos os melhores da cidade com 20 anos de experiência</p>
         </div>
         <div class="col-md-7 text-right">
-<!--           <ul class="breadcrumb_top text-right">
-             <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-      <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-      <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>
-      <li><a href="profile.html"><i class="icon-icons230"></i>Profile</a></li>
-      <li><a href="login.html"><i class="icon-icons179"></i>Login / Register</a></li>
-          </ul> -->
-
       <ul class="breadcrumb_top text-right">
-  <!--       <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-        <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>-->
-        <li><a href="index.html" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
-        <li><a href="profile.html"><i class="icon-icons230"></i></a></li> 
-        <!-- <li><a href="login.html"><i class="icon-icons179"></i>Administrador</a></li> -->
-        <!-- <li class="last-icon"><i class="icon-icons215"></i></li> -->
+        <li><a href="index.php" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
+        <li><a href="profile.php"><i class="icon-icons230"></i></a></li> 
       </ul>          
         </div>
       </div>
@@ -61,20 +80,17 @@
   </div>
 </header>
 <!-- Page Banner End -->
-
-
-
 <!-- My Properties  -->
 <section id="property" class="padding listing1">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
         <ul class="f-p-links margin_bottom">
-          <li><a href="profile.html" ><i class="icon-icons230"></i>Meus Dados</a></li>
-          <li><a href="my_tipos.html"><i class="icon-icons215"></i> Dados de Imóveis</a></li>
-          <li><a href="my_properties.html" ><i class="icon-icons215"></i> Meus Imóveis</a></li>
-          <li><a href="submit_property.html" class="active"><i class="icon-icons215" ></i> Postar Imóvel</a></li>
-          <li><a href="login.html"><i class="icon-lock-open3"></i>Sair</a></li>
+          <li><a href="profile.php" ><i class="icon-icons230"></i>Meus Dados</a></li>
+          <li><a href="my_tipos.php"><i class="icon-icons215"></i> Dados de Imóveis</a></li>
+          <li><a href="my_properties.php" ><i class="icon-icons215"></i> Meus Imóveis</a></li>
+          <li><a href="submit_property.php" class="active"><i class="icon-icons215" ></i> Adicionar Imóvel</a></li>
+          <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>
         </ul>
       </div>
     </div>
@@ -89,53 +105,59 @@
       
       <div class="single-query form-group bottom20">
       <label>Título</label>
-              <input type="text" class="keyword-input" placeholder="Título do imóvel">
+              <input id="titulo-imovel" type="text" class="keyword-input" placeholder="Título do imóvel">
             </div>
       </div>
        <div class="col-sm-6">
             <div class="single-query form-group bottom20">
               <label>Endereço</label>
-              <input type="text" class="keyword-input" placeholder="Endereço do imóvel">
+              <input id="endereco-imovel" type="text" class="keyword-input" placeholder="Endereço do imóvel">
             </div>
       </div>
       <div class="col-sm-6">
             <div class="single-query bottom20">
               <label>Tipo </label>
               <div class="intro">
-                <select id="tabela-teste">
-                  <option class="active">Apartamento</option>
-                  <option>Casa</option>
-                  <option>Chácara </option>
-                  <option>Sala Comercial</option>
-                  <!-- <option>For Rent</option> -->
+                <select id="tipo-imovel">
+                <?php
+                  if(isset($array_imovel['cod_tipo'])){
+                      $imovel->showTipos(false, $array_imovel['cod_tipo']);
+                  }else{                   
+                      $imovel->showTipos();
+                  }
+                ?>
                 </select>
               </div>
             </div>
       </div>
       <div class="col-sm-6">
             <div class="single-query bottom20">
-              <label>Cidade </label>
+              <label>Transação </label>
               <div class="intro">
-                <select>
-                  <option class="active">Navegantes</option>
-                  <option>Piçarras</option>
-                  <option>Penha</option>
-                  <option>Sala Comercial</option>
-                  <!-- <option>For Rent</option> -->
+                <select id="transacao-imovel">
+                <?php
+                  if(isset($array_imovel['cod_transacao'])){
+                      $imovel->showTransacao($array_imovel['cod_transacao']);
+                  }else{                                
+                      $imovel->showTransacao();
+                  }
+                ?>
                 </select>
               </div>
             </div>
-      </div>
+      </div>      
       <div class="col-sm-6">
             <div class="single-query bottom20">
-              <label>Bairro </label>
+              <label>Bairro / Cidade </label>
               <div class="intro">
-                <select>
-                  <option class="active">Centro</option>
-                  <option>Ressacada</option>
-                  <option>Vila Maria</option>
-                  <option>Machados</option>
-                  <!-- <option>For Rent</option> -->
+                <select id="select-bairros">
+                <?php
+                  if(isset($array_imovel['cod_bairro'])){
+                      $imovel->showBairros(false, $array_imovel['cod_bairro']);
+                  }else{                
+                    $imovel->showBairros();
+                  }
+                ?>
                 </select>
               </div>
             </div>
@@ -143,7 +165,7 @@
       <div class="col-sm-6">
       <div class="single-query form-group bottom20">
       <label>Valor</label>
-              <input type="text" class="keyword-input" placeholder="Ex. (R$ 23.000,00)">
+              <input type="text" id="valor-imovel" class="keyword-input" placeholder="Ex. (R$ 23.000,00)">
             </div>
       </div>
       </div>
@@ -151,19 +173,17 @@
       <div class="row">
       <div class="col-sm-12">
         <h3 class="margin40 bottom15">Imagens do imóvel <i class="fa fa-info-circle help" data-toggle="tooltip" title="Adicione imagens do imóvel!"></i></h3>
-       
-
-
+      
         <div class="file_uploader bottom20">
-        <form id="upload-widget" method="post" action="/upload" class="dropzone">
-        <div class="dz-default dz-message">
-<span>
-<i class="fa fa-plus-circle"></i>
-Adicione imagens do imóvel!
-</span>
-</div>
-        </form>
-      </div>
+          <div class="container" style="margin-left: 0px; margin-right: 0px; width: 100%">
+              <input type="file" name="file" id="file" multiple="multiple">
+
+              <!-- Drag and Drop container-->
+              <div class="upload-area"  id="uploadfile">
+                  <h1>Arraste as aqui<br/>Ou<br/>Clique para selecionar</h1>
+              </div>
+          </div>       
+        </div>
       </div>
       </div>
       <div class="row">
@@ -172,80 +192,75 @@ Adicione imagens do imóvel!
       </div>
       </div>
       <form class="callus clearfix border_radius submit_property">
-      <div class="row">
-      
-      <div class="col-sm-4">
-            <div class="single-query form-group bottom20">
-              <label>Quartos</label>
-              <input type="text" class="keyword-input" placeholder="Quantidade de quartos">
-            </div>
-      </div>
-      <div class="col-sm-4">
-            <div class="single-query form-group bottom20">
-              <label>Banheiros</label>
-              <input type="text" class="keyword-input" placeholder="Quantidade de banheiros">
-            </div>
-      </div>
-      <div class="col-sm-4">
-            <div class="single-query form-group bottom20">
-              <label>Garagem</label>
-              <input type="text" class="keyword-input" placeholder="Quantidade de garagens">
-            </div>
-      </div>
-      <div class="col-sm-4">
-            <div class="single-query form-group bottom20">
-              <label>Suíte</label>
-              <input type="text" class="keyword-input" placeholder="Quantidade de suítes">
-            </div>
-      </div>      
-           
-      <div class="col-sm-12">
-        <h3 class="bottom15 margin40">Descrição do imóvel </h3>
-        <textarea id="txtEditor"></textarea> 
-      </div>
-      <div class="col-sm-12">
-        <h3 class="bottom15 margin40">Características Adicionais</h3>
-        <div class="search-propertie-filters">
-      <div class="container-2">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Air Condicionado</span>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Balcão</span>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Lugar de Fogo</span>
-            </div>
-          </div>
+          <div class="row">
+              
+              <div class="col-sm-4">
+                    <div class="single-query form-group bottom20">
+                      <label>Quartos</label>
+                      <input type="text" id="quartos-imovel" class="keyword-input" placeholder="Quantidade de quartos">
+                    </div>
+              </div>
+              <div class="col-sm-4">
+                    <div class="single-query form-group bottom20">
+                      <label>Banheiros</label>
+                      <input type="text" id="banheiros-imovel" class="keyword-input" placeholder="Quantidade de banheiros">
+                    </div>
+              </div>
+              <div class="col-sm-4">
+                    <div class="single-query form-group bottom20">
+                      <label>Garagem</label>
+                      <input type="text" id="imovel-garagem" class="keyword-input" placeholder="Quantidade de garagens">
+                    </div>
+              </div>
+              <div class="col-sm-4">
+                    <div class="single-query form-group bottom20">
+                      <label>Suíte</label>
+                      <input type="text" id="suite-imovel" class="keyword-input" placeholder="Quantidade de suítes">
+                    </div>
+              </div>      
+              <div class="col-sm-4">
+                    <div class="single-query form-group bottom20">
+                      <label>Área</label>
+                      <input type="text" id="area-imovel" class="keyword-input" placeholder="Área do Imóvel">
+                    </div>
+              </div>         
+              <div class="col-sm-12">
+                <h3 class="bottom15 margin40">Descrição do imóvel </h3>
+                <textarea id="txtEditor"></textarea> 
+              </div>
+              <div class="col-sm-12">
+                <h3 class="bottom15 margin40">Características Adicionais</h3>
+                <div class="search-propertie-filters">
+                  <div class="container-2">
+                    <div id="imovel-caracter" class="row">
+                            <?php
+                              if(isset($array_imovel['cod_dif']))
+                              {
+                                $imovel->showCaracter($array_imovel['cod_dif']);
+                              }else{
+                                $imovel->showCaracter();
+                              }
+                              
+                            ?>        
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-12">
+                <h3 class="bottom15 margin40">Apresentação em Vídeo</h3>
+                <div class="single-query form-group bottom15">
+                <label>Link do Vímeo ou Youtube</label>
+                      <input id="video-imovel" type="text" class="keyword-input" placeholder="https://vimeo.com">
+                    </div>
+              </div>
+              <div class="col-md-4">
+                <button type="button" id="enviar-imovel" class="btn-blue border_radius margin40">Cadastrar Imóvel</button>
+              </div>
           
-        </div>
-        
-      </div>
-    </div>
-      </div>
-      
-      <div class="col-sm-12">
-        <h3 class="bottom15 margin40">Apresentação em Vídeo</h3>
-        <div class="single-query form-group bottom15">
-        <label>Link do Vímeo ou Youtube</label>
-              <input type="text" class="keyword-input" placeholder="https://vimeo.com">
-            </div>
-      </div>
-      <div class="col-md-4">
-        <button type="submit" class="btn-blue border_radius margin40">Enviar Imóvel</button>
-      </div>
-      
-      </div>
-          </form>
+          </div>
+      </form>
           
           
       </div>
@@ -259,9 +274,6 @@ Adicione imagens do imóvel!
   </div>
 </section>
 <!-- My Properties End -->
-
-
-
 
 <footer class="footer_third">
   <div class="container contacts">
@@ -344,10 +356,6 @@ Adicione imagens do imóvel!
         <div class="col-md-6 col-sm-7 text-right top15 bottom10">
           <ul class="social_share">
             <li><a href="https://www.facebook.com/dalmir.demarch?hc_ref=SEARCH&fref=nf" target="_blank" class="facebook"><i class="icon-facebook-1"></i></a></li>
-            <!-- <li><a href="#." class="twitter"><i class="icon-twitter-1"></i></a></li>
-            <li><a href="#." class="google"><i class="icon-google4"></i></a></li>
-            <li><a href="#." class="linkden"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#." class="vimo"><i class="icon-vimeo3"></i></a></li> -->
           </ul>
         </div>
       </div>
@@ -355,25 +363,26 @@ Adicione imagens do imóvel!
   </div>
 </footer>
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="modalResponse" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Cadastro de Imóveis</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" onclick="actionImovel()">Fechar</button>
       </div>
     </div>
 
   </div>
 </div>
+
 <script type="text/javascript" language="javascript">
 function myMap() {
   var mapCanvas = document.getElementById("single_map");
@@ -406,7 +415,7 @@ function myMap() {
 <script src="js/selectbox-0.2.min.js"></script>
 <script src="js/zelect.js"></script>
 <script src="js/jquery.fancybox.js"></script>
-<script src="js/dropzone.min.js"></script>
+<!-- <script src="js/dropzone.min.js"></script> -->
 <script src="js/jquery.themepunch.tools.min.js"></script>
 <script src="js/jquery.themepunch.revolution.min.js"></script>
 <script src="js/revolution.extension.actions.min.js"></script>
@@ -417,6 +426,8 @@ function myMap() {
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/ajax/user/requestUser.js"></script>
+<script src="js/ajax/imovel/requestImovel.js"></script>
 <script type="text/javascript">
    $("#txtEditor").Editor();
    $('[data-toggle="tooltip"]').tooltip(); 

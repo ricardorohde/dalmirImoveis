@@ -1,24 +1,29 @@
+<?php
+  require('data/class.php');
+  $imovel = new Imovel();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>Castle | Login</title>
+<title>Dalmir Imóveis</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/reality-icon.css">
 <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
 <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="css/cubeportfolio.min.css">
 <link rel="stylesheet" type="text/css" href="css/settings.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/range-Slider.min.css">
 <link rel="stylesheet" type="text/css" href="css/search.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" href="images/icon.png">
 </head>
 <body>
-
 
 
 <!--Loader-->
@@ -28,8 +33,8 @@
   </div>
 </div>
  <!--Loader--> 
- 
- 
+
+
 <header class="layout_double">
   <div class="topbar dark">
     <div class="container">
@@ -38,21 +43,9 @@
           <p>Nós somos os melhores da cidade com 20 anos de experiência</p>
         </div>
         <div class="col-md-7 text-right">
-<!--           <ul class="breadcrumb_top text-right">
-             <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-      <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-      <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>
-      <li><a href="profile.html"><i class="icon-icons230"></i>Profile</a></li>
-      <li><a href="login.html"><i class="icon-icons179"></i>Login / Register</a></li>
-          </ul> -->
-
       <ul class="breadcrumb_top text-right">
-  <!--       <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-        <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>-->
-        <li><a href="index.html" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
-        <li><a href="profile.html"><i class="icon-icons230"></i></a></li> 
-        <!-- <li><a href="login.html"><i class="icon-icons179"></i>Administrador</a></li> -->
-        <!-- <li class="last-icon"><i class="icon-icons215"></i></li> -->
+        <li><a href="index.php" target="_blank"><i class="fa fa-arrow-left" aria-hidden="true"></i>Ir para home</a></li>   
+        <li><a href="profile.php"><i class="icon-icons230"></i></a></li> 
       </ul>          
         </div>
       </div>
@@ -60,63 +53,41 @@
   </div>
 </header>
 
-
-
-<!-- Login -->
-<section id="login" class="padding">
+<!-- My - Property Start -->
+<section id="agent-2-peperty" class="my-pro padding">
   <div class="container">
-    <h3 class="hidden">hidden</h3>
     <div class="row">
+      <div class="col-md-12">
+        <ul class="f-p-links margin_bottom">
+          <li><a href="profile.php" ><i class="icon-icons230"></i>Meus Dados</a></li>
+          <li><a href="my_tipos.php" ><i class="icon-icons215"></i> Dados de Imóveis</a></li>
+          <li><a href="my_properties.php" class="active"><i class="icon-icons215"></i> Meus Imóveis</a></li>
+          <li><a href="submit_property.php"><i class="icon-icons215"></i> Adicionar Imóvel</a></li>
+          <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row bottom30">
       <div class="col-md-12 text-center">
-        <div class="profile-login">
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist">
-            <!-- <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Login</a></li> -->
-            
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content padding_half">
-          <h3 align="center" style="color:white; margin-bottom: 10px">Login</h3>
-            <div role="tabpanel" class="tab-pane fade in active" id="home">
-              <div class="agent-p-form">
-                <form action="#" class="callus clearfix">
-                  <div class="single-query form-group col-sm-12">
-                    <input type="text" class="keyword-input" placeholder="Login">
-                  </div>
-                  <div class="single-query form-group  col-sm-12">
-                    <input type="text" class="keyword-input" placeholder="Senha">
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="col-sm-6">
-                        <div class="search-form-group white form-group text-left">
-                          <!-- <div class="check-box-2"><i><input type="checkbox" name="check-box"></i></div> -->
-                          <!-- <span>Remember Me</span> -->
-                        </div>
-                      </div>
-                      <div class="col-sm-6 text-right">
-                        <!-- <a href="#" class="lost-pass">Lost your password?</a> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class=" col-sm-12">
-                    <input type="button" value="Entrar" class="btn-slide border_radius"> 
-                  </div>
-                </form>
-              </div>
-            </div>
-           
-          </div>
-        </div>
+        <h2 class="text-uppercase">Imóveis Cadastrados</h2>
+      </div>
+    </div>
+  </div>
+  <div class="list-admin container  list-t-border">
+  </div>
+  <div class="container">
+    <div class="row padding_top">
+      <div class="col-md-12">
+        <ul class="pager">
+          <li><a href="#">1</a></li>
+          <li class="active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
-<!-- Login end -->
-
-
- 
-<!--Footer-->
+<!-- My - Property end -->
 <footer class="footer_third">
   <div class="container contacts">
     <div class="row">
@@ -154,7 +125,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="footer_panel bottom30">
           <a href="#." class="logo bottom30"><img src="images/logo-white.png" alt="logo"></a>
-          <p class="bottom15">A mais de 20 anos no comércio imobiliário, agora com sede na Av. Prefeito José Juvenal Mafra, 6783, Balneário de Gravatá em Navegantes/SC. Atendendo ao público em geral com clareza, honestidade e a certeza de realizar um bom negócio com transparência e confiança.</p>
+          <p class="bottom15">Há mais de 20 anos no comércio imobiliário, agora com sede na Av. Prefeito José Juvenal Mafra, 6783, Balneário de Gravatá em Navegantes/SC. Atendendo ao público em geral com clareza, honestidade e a certeza de realizar um bom negócio com transparência e confiança.</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -198,10 +169,6 @@
         <div class="col-md-6 col-sm-7 text-right top15 bottom10">
           <ul class="social_share">
             <li><a href="https://www.facebook.com/dalmir.demarch?hc_ref=SEARCH&fref=nf" target="_blank" class="facebook"><i class="icon-facebook-1"></i></a></li>
-            <!-- <li><a href="#." class="twitter"><i class="icon-twitter-1"></i></a></li>
-            <li><a href="#." class="google"><i class="icon-google4"></i></a></li>
-            <li><a href="#." class="linkden"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#." class="vimo"><i class="icon-vimeo3"></i></a></li> -->
           </ul>
         </div>
       </div>
@@ -209,16 +176,18 @@
   </div>
 </footer>
 
-<script src="js/jquery-2.1.4.js"></script>
+
+
+<script src="js/jquery-2.1.4.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
-<script src="js/bootsnav.js"></script>
-<script src="js/jquery.parallax-1.1.3.js"></script>
 <script src="js/jquery.appear.js"></script>
 <script src="js/jquery-countTo.js"></script>
+<script src="js/bootsnav.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<script src="js/jquery.cubeportfolio.min.js"></script>
 <script src="js/range-Slider.min.js"></script>
 <script src="js/owl.carousel.min.js"></script> 
-<script src="js/jquery.cubeportfolio.min.js"></script>
 <script src="js/selectbox-0.2.min.js"></script>
 <script src="js/zelect.js"></script>
 <script src="js/jquery.fancybox.js"></script>
@@ -230,7 +199,10 @@
 <script src="js/revolution.extension.slideanims.min.js"></script>
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/ajax/search/search.js"></script>
+<script src="js/ajax/search/searchAdmin.js"></script>
 <script src="js/functions.js"></script>
+
+
 </body>
 </html>
-

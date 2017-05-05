@@ -40,11 +40,11 @@
         </div>
         <div class="col-md-7 text-right">
           <ul class="breadcrumb_top text-right">
-            <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-      <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-      <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>
-      <li><a href="profile.html"><i class="icon-icons230"></i>Profile</a></li>
-      <li><a href="login.html"><i class="icon-icons179"></i>Login / Register</a></li>
+            <li><a href="favorite_properties.php"><i class="icon-icons43"></i>Favorites</a></li>
+      <li><a href="submit_property.php"><i class="icon-icons215"></i>Submit Property</a></li>
+      <li><a href="my_properties.php"><i class="icon-icons215"></i>My Property</a></li>
+      <li><a href="profile.php"><i class="icon-icons230"></i>Profile</a></li>
+      <li><a href="login.php"><i class="icon-icons179"></i>Login / Register</a></li>
           </ul>
         </div>
       </div>
@@ -54,7 +54,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12">
-          <div class="logo"><a href="index3.html"><img alt="" src="images/logo.png"></a></div>
+          <div class="logo"><a href="index3.php"><img alt="" src="images/logo.png"></a></div>
         </div>
         <!--Info Box-->
         <div class="col-md-9 col-sm-12 right">
@@ -99,7 +99,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
             <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand sticky_logo" href="index3.html"><img src="images/logo-white.png" class="logo" alt=""></a>
+            <a class="navbar-brand sticky_logo" href="index3.php"><img src="images/logo-white.png" class="logo" alt=""></a>
           </div>
           <!-- End Header Navigation -->
           <div class="collapse navbar-collapse" id="navbar-menu">
@@ -107,16 +107,16 @@
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown">Home </a>
                 <ul class="dropdown-menu">
-                  <li><a href="index.html">Home Style 1</a></li>
-                  <li><a href="index2.html">Home Style 2</a></li>
-                  <li><a href="index3.html">Home Style 3</a></li>
-                  <li><a href="index4.html">Home Style 4</a></li>
-                  <li> <a href="index5.html">Home Style 5</a></li>
-                  <li> <a href="index6.html">Home Style 6</a></li>
-                  <li> <a href="index7.html">Home Style 7</a></li>
-                  <li> <a href="index8.html">Home Style 8</a></li>
-                  <li> <a href="index9.html">Home Style 9</a></li>
-                  <li> <a href="fullscreen.html">Home Fullscreen<span>new</span></a></li>
+                  <li><a href="index.php">Home Style 1</a></li>
+                  <li><a href="index2.php">Home Style 2</a></li>
+                  <li><a href="index3.php">Home Style 3</a></li>
+                  <li><a href="index4.php">Home Style 4</a></li>
+                  <li> <a href="index5.php">Home Style 5</a></li>
+                  <li> <a href="index6.php">Home Style 6</a></li>
+                  <li> <a href="index7.php">Home Style 7</a></li>
+                  <li> <a href="index8.php">Home Style 8</a></li>
+                  <li> <a href="index9.php">Home Style 9</a></li>
+                  <li> <a href="fullscreen.php">Home Fullscreen<span>new</span></a></li>
                 </ul>
               </li>
               <li class="dropdown megamenu-fw">
@@ -128,11 +128,11 @@
                         <h5 class="title">PROPERTIES LIST</h5>
                         <div class="content">
                           <ul class="menu-col">
-                            <li><a href="listing1.html">Properties List</a></li>
-                            <li><a href="index7.html">Single Property</a></li>
-                            <li><a href="listing2.html">Search by City</a></li>
-                            <li><a href="listing5.html">Search by Category</a></li>
-                            <li><a href="listing3.html">Search by Type</a></li>
+                            <li><a href="listing1.php">Properties List</a></li>
+                            <li><a href="index7.php">Single Property</a></li>
+                            <li><a href="listing2.php">Search by City</a></li>
+                            <li><a href="listing5.php">Search by Category</a></li>
+                            <li><a href="listing3.php">Search by Type</a></li>
                           </ul>
                         </div>
                       </div>
@@ -145,7 +145,7 @@
                                 <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail1.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail1.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                             <div class="item">
@@ -153,7 +153,7 @@
                                 <img src="images/nav-slider2.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail2.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail2.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                             <div class="item">
@@ -161,7 +161,7 @@
                                 <img src="images/nav-slider3.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail3.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail3.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                             <div class="item">
@@ -169,7 +169,7 @@
                                 <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail1.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail1.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                             <div class="item">
@@ -177,7 +177,7 @@
                                 <img src="images/nav-slider2.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail2.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail2.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                             <div class="item">
@@ -185,7 +185,7 @@
                                 <img src="images/nav-slider3.jpg" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">for rent</span>
                               </div>
-                              <h4><a href="property_detail3.html">Park Avenue Apartment</a></h4>
+                              <h4><a href="property_detail3.php">Park Avenue Apartment</a></h4>
                               <p>Towson London, MR 21501</p>
                             </div>
                           </div>
@@ -204,11 +204,11 @@
                         <h5 class="title">PROPERTY LISTINGS</h5>
                         <div class="content">
                           <ul class="menu-col">
-                            <li><a href="listing1.html">List Style 1</a></li>
-                            <li><a href="listing2.html">List Style 2</a></li>
-                            <li><a href="listing3.html">List Style 3</a></li>
-                            <li><a href="listing4.html">List Style 4</a></li>
-                            <li><a href="listing5.html">List Style 5</a></li>
+                            <li><a href="listing1.php">List Style 1</a></li>
+                            <li><a href="listing2.php">List Style 2</a></li>
+                            <li><a href="listing3.php">List Style 3</a></li>
+                            <li><a href="listing4.php">List Style 4</a></li>
+                            <li><a href="listing5.php">List Style 5</a></li>
                           </ul>
                         </div>
                       </div>
@@ -216,11 +216,11 @@
                         <h5 class="title">PROPERTY LISTINGS</h5>
                         <div class="content">
                           <ul class="menu-col">
-                            <li><a href="listing6.html">List Style 5</a></li>
-                            <li><a href="listing7.html">List Style 6</a></li>
-                            <li><a href="listing1.html">Search by City</a></li>
-                            <li><a href="listing2.html">Search by Category</a></li>
-                            <li><a href="listing3.html">Search by Type</a></li>
+                            <li><a href="listing6.php">List Style 5</a></li>
+                            <li><a href="listing7.php">List Style 6</a></li>
+                            <li><a href="listing1.php">Search by City</a></li>
+                            <li><a href="listing2.php">Search by Category</a></li>
+                            <li><a href="listing3.php">Search by Type</a></li>
                           </ul>
                         </div>
                       </div>
@@ -228,11 +228,11 @@
                         <h5 class="title">PROPERTY DETAIL</h5>
                         <div class="content">
                           <ul class="menu-col">
-                            <li><a href="property_detail1.html">Property Detail 1</a></li>
-                            <li><a href="property_detail2.html">Property Detail 2</a></li>
-                            <li><a href="property_detail3.html">Property Detail 3</a></li>
-                            <li><a href="index7.html">Single Property</a></li>
-                            <li><a href="listing4.html">Search by Type</a></li>
+                            <li><a href="property_detail1.php">Property Detail 1</a></li>
+                            <li><a href="property_detail2.php">Property Detail 2</a></li>
+                            <li><a href="property_detail3.php">Property Detail 3</a></li>
+                            <li><a href="index7.php">Single Property</a></li>
+                            <li><a href="listing4.php">Search by Type</a></li>
                           </ul>
                         </div>
                       </div>
@@ -240,11 +240,11 @@
                         <h5 class="title">OTHER PAGES</h5>
                         <div class="content">
                           <ul class="menu-col">
-                            <li><a href="favorite_properties.html">Favorite Properties</a></li>
-                            <li><a href="agent_profile.html">Agent Profile</a></li>
-                            <li><a href="404.html">404 Error</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="testimonial.html">Testimonials</a></li>
+                            <li><a href="favorite_properties.php">Favorite Properties</a></li>
+                            <li><a href="agent_profile.php">Agent Profile</a></li>
+                            <li><a href="404.php">404 Error</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
+                            <li><a href="testimonial.php">Testimonials</a></li>
                           </ul>
                         </div>
                       </div>
@@ -258,17 +258,17 @@
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown">News</a>
                     <ul class="dropdown-menu">
-                      <li><a href="news.html">news Style1</a></li>
-                      <li><a href="news2.html">news Style2</a></li>
-                      <li><a href="news3.html">news Style3</a></li>
+                      <li><a href="news.php">news Style1</a></li>
+                      <li><a href="news2.php">news Style2</a></li>
+                      <li><a href="news3.php">news Style3</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown">Property Agents</a>
                     <ul class="dropdown-menu">
-                      <li><a href="agent1.html">Agent Style1</a></li>
-                      <li><a href="agent2.html">Agent Style2</a></li>
-                      <li><a href="agent3.html">Agent Style3</a></li>
+                      <li><a href="agent1.php">Agent Style1</a></li>
+                      <li><a href="agent2.php">Agent Style2</a></li>
+                      <li><a href="agent3.php">Agent Style3</a></li>
                       <li><a href="agent4.htm4">Agent Style4</a></li>
                       <li><a href="agent5.htm5">Agent Style5</a></li>
                     </ul>
@@ -276,35 +276,35 @@
                   <li class="dropdown">
                     <a href="#." class="dropdown-toggle" data-toggle="dropdown">Agetn Profile Styles</a>
                     <ul class="dropdown-menu">
-                      <li><a href="agent_profile.html">Agent Profile 1</a></li>
-                      <li><a href="agent_profile2.html">Agent Profile 2</a></li>
+                      <li><a href="agent_profile.php">Agent Profile 1</a></li>
+                      <li><a href="agent_profile2.php">Agent Profile 2</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                   <a href="#." class="dropdown-toggle" data-toggle="dropdown">Testimonials</a>
                   <ul class="dropdown-menu">
-                      <li><a href="testimonial.html">Style 1</a></li>
-                      <li><a href="testimonial2.html">Style 2</a></li>
+                      <li><a href="testimonial.php">Style 1</a></li>
+                      <li><a href="testimonial2.php">Style 2</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                   <a href="#." class="dropdown-toggle" data-toggle="dropdown">FAQ's</a>
                   <ul class="dropdown-menu">
-                      <li><a href="faq.html">Style 1</a></li>
-                      <li><a href="faq2.html">Style 2</a></li>
+                      <li><a href="faq.php">Style 1</a></li>
+                      <li><a href="faq2.php">Style 2</a></li>
                     </ul>
                   </li>
-                  <li><a href="favorite_properties.html">Favorite Properties</a></li>
+                  <li><a href="favorite_properties.php">Favorite Properties</a></li>
                   <li class="dropdown">
                   <a href="#." class="dropdown-toggle" data-toggle="dropdown">404 Error</a>
                   <ul class="dropdown-menu">
-                      <li><a href="404.html">404 Error 1</a></li>
-                      <li><a href="404-2.html">404 Error 2</a></li>
+                      <li><a href="404.php">404 Error 1</a></li>
+                      <li><a href="404-2.php">404 Error 2</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="contact.php">Contact Us</a></li>
               <li><a href="https://themeforest.net/item/castle-real-estate-template/18593260?ref=BrighThemes">Buy Now</a></li>
             </ul>
           </div>

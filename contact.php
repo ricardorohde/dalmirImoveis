@@ -41,19 +41,19 @@
         </div>
         <div class="col-md-7 text-right">
 <!--           <ul class="breadcrumb_top text-right">
-             <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-      <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-      <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>
-      <li><a href="profile.html"><i class="icon-icons230"></i>Profile</a></li>
-      <li><a href="login.html"><i class="icon-icons179"></i>Login / Register</a></li>
+             <li><a href="favorite_properties.php"><i class="icon-icons43"></i>Favorites</a></li>
+      <li><a href="submit_property.php"><i class="icon-icons215"></i>Submit Property</a></li>
+      <li><a href="my_properties.php"><i class="icon-icons215"></i>My Property</a></li>
+      <li><a href="profile.php"><i class="icon-icons230"></i>Profile</a></li>
+      <li><a href="login.php"><i class="icon-icons179"></i>Login / Register</a></li>
           </ul> -->
 
       <ul class="breadcrumb_top text-right">
-  <!--       <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-        <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-        <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>-->
-        <li><a href="profile.html"><i class="icon-icons230"></i></a></li> 
-        <!-- <li><a href="login.html"><i class="icon-icons179"></i>Administrador</a></li> -->
+  <!--       <li><a href="favorite_properties.php"><i class="icon-icons43"></i>Favorites</a></li>
+        <li><a href="submit_property.php"><i class="icon-icons215"></i>Submit Property</a></li>
+        <li><a href="my_properties.php"><i class="icon-icons215"></i>My Property</a></li>-->
+        <li><a href="profile.php"><i class="icon-icons230"></i></a></li> 
+        <!-- <li><a href="login.php"><i class="icon-icons179"></i>Administrador</a></li> -->
         <!-- <li class="last-icon"><i class="icon-icons215"></i></li> -->
       </ul>          
         </div>
@@ -65,7 +65,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <div class="logo">
-          <a href="index.html"><img alt="" src="images/logo-white.png" class="img-responsive"></a>
+          <a href="index.php"><img alt="" src="images/logo-white.png" class="img-responsive"></a>
           </div>
         </div>
       <!--Info Box-->
@@ -110,7 +110,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand sticky_logo" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+            <a class="navbar-brand sticky_logo" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
         </div><!-- End Header Navigation -->
         <!-- Page Banner Start-->
         <div class="page-banner-contact page-banner padding-b-80 padding-t-80">
@@ -132,9 +132,9 @@
 
         <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Quem Somos</a></li>
-            <li><a href="contact.html">Fale Conosco</a></li>   
+            <li><a href="index.php">Home</a></li>
+            <li><a href="gallery.php">Quem Somos</a></li>
+            <li><a href="contact.php">Fale Conosco</a></li>   
             <li class="dropdown megamenu-fw">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vendas</a>
               <ul class="dropdown-menu megamenu-content" role="menu">
@@ -144,13 +144,13 @@
                       <h5 class="title">Tipos</h5>
                       <div class="content">
                         <ul class="menu-col" style="color:gray">
-                          <li><a href="listing1.html">Apartamentos</a></li>
-                          <li><a href="index.html">Casas</a></li>
-                          <li><a href="listing1.html">Chácaras</a></li>
-                          <li><a href="listing1.html">Galpões</a></li>
-                          <li><a href="listing1.html">Comercial</a></li>
-                          <li><a href="listing1.html">Sítios</a></li>
-                          <li><a href="listing1.html">Sobrados</a></li>
+                          <li><a href="listing1.php">Apartamentos</a></li>
+                          <li><a href="index.php">Casas</a></li>
+                          <li><a href="listing1.php">Chácaras</a></li>
+                          <li><a href="listing1.php">Galpões</a></li>
+                          <li><a href="listing1.php">Comercial</a></li>
+                          <li><a href="listing1.php">Sítios</a></li>
+                          <li><a href="listing1.php">Sobrados</a></li>
                         </ul>
                       </div>
                     </div>
@@ -163,7 +163,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -171,7 +171,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -179,7 +179,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -187,7 +187,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -195,7 +195,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -203,7 +203,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -211,7 +211,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -219,7 +219,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -227,7 +227,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                         </div>

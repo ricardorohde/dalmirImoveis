@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>Castle| Listing</title>
+<title>Dalmir Imóveis - Ótima Casa </title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/reality-icon.css">
 <link rel="stylesheet" type="text/css" href="css/bootsnav.css">
 <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
 <link rel="stylesheet" type="text/css" href="css/settings.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/range-Slider.min.css">
@@ -40,19 +41,19 @@
         </div>
         <div class="col-md-7 text-right">
 <!--           <ul class="breadcrumb_top text-right">
-             <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-      <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-      <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>
-      <li><a href="profile.html"><i class="icon-icons230"></i>Profile</a></li>
-      <li><a href="login.html"><i class="icon-icons179"></i>Login / Register</a></li>
+             <li><a href="favorite_properties.php"><i class="icon-icons43"></i>Favorites</a></li>
+      <li><a href="submit_property.php"><i class="icon-icons215"></i>Submit Property</a></li>
+      <li><a href="my_properties.php"><i class="icon-icons215"></i>My Property</a></li>
+      <li><a href="profile.php"><i class="icon-icons230"></i>Profile</a></li>
+      <li><a href="login.php"><i class="icon-icons179"></i>Login / Register</a></li>
           </ul> -->
 
       <ul class="breadcrumb_top text-right">
-  <!--       <li><a href="favorite_properties.html"><i class="icon-icons43"></i>Favorites</a></li>
-        <li><a href="submit_property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-        <li><a href="my_properties.html"><i class="icon-icons215"></i>My Property</a></li>-->
-        <li><a href="profile.html"><i class="icon-icons230"></i></a></li> 
-        <!-- <li><a href="login.html"><i class="icon-icons179"></i>Administrador</a></li> -->
+  <!--       <li><a href="favorite_properties.php"><i class="icon-icons43"></i>Favorites</a></li>
+        <li><a href="submit_property.php"><i class="icon-icons215"></i>Submit Property</a></li>
+        <li><a href="my_properties.php"><i class="icon-icons215"></i>My Property</a></li>-->
+        <li><a href="profile.php"><i class="icon-icons230"></i></a></li> 
+        <!-- <li><a href="login.php"><i class="icon-icons179"></i>Administrador</a></li> -->
         <!-- <li class="last-icon"><i class="icon-icons215"></i></li> -->
       </ul>          
         </div>
@@ -64,7 +65,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <div class="logo">
-          <a href="index.html"><img alt="" src="images/logo-white.png" class="img-responsive"></a>
+          <a href="index.php"><img alt="" src="images/logo-white.png" class="img-responsive"></a>
           </div>
         </div>
       <!--Info Box-->
@@ -109,10 +110,10 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand sticky_logo" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+            <a class="navbar-brand sticky_logo" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
         </div><!-- End Header Navigation -->
         <!-- Page Banner Start-->
-        <div class="page-banner-listiimovel page-banner padding-b-80 padding-t-80">
+        <div class="page-banner-contact page-banner padding-b-80 padding-t-80">
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center">
@@ -131,9 +132,9 @@
 
         <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Quem Somos</a></li>
-            <li><a href="contact.html">Fale Conosco</a></li>   
+            <li><a href="index.php">Home</a></li>
+            <li><a href="gallery.php">Quem Somos</a></li>
+            <li><a href="contact.php">Fale Conosco</a></li>   
             <li class="dropdown megamenu-fw">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vendas</a>
               <ul class="dropdown-menu megamenu-content" role="menu">
@@ -143,13 +144,13 @@
                       <h5 class="title">Tipos</h5>
                       <div class="content">
                         <ul class="menu-col" style="color:gray">
-                          <li><a href="listing1.html">Apartamentos</a></li>
-                          <li><a href="index.html">Casas</a></li>
-                          <li><a href="listing1.html">Chácaras</a></li>
-                          <li><a href="listing1.html">Galpões</a></li>
-                          <li><a href="listing1.html">Comercial</a></li>
-                          <li><a href="listing1.html">Sítios</a></li>
-                          <li><a href="listing1.html">Sobrados</a></li>
+                          <li><a href="listing1.php">Apartamentos</a></li>
+                          <li><a href="index.php">Casas</a></li>
+                          <li><a href="listing1.php">Chácaras</a></li>
+                          <li><a href="listing1.php">Galpões</a></li>
+                          <li><a href="listing1.php">Comercial</a></li>
+                          <li><a href="listing1.php">Sítios</a></li>
+                          <li><a href="listing1.php">Sobrados</a></li>
                         </ul>
                       </div>
                     </div>
@@ -162,7 +163,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -170,7 +171,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -178,7 +179,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -186,7 +187,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -194,7 +195,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -202,7 +203,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -210,7 +211,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -218,7 +219,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                           <div class="item">
@@ -226,7 +227,7 @@
                               <img src="images/nav-slider1.jpg" alt="Featured Property"> 
                               <span class="nav_tag yellow text-uppercase">À Venda</span>
                             </div>
-                            <h4><a class="title-imovel" href="property_detail1.html">Ótimo Apartamento!</a></h4>
+                            <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
                             <p>Código: 500</p>
                           </div>
                         </div>
@@ -245,300 +246,348 @@
 
 
 
-<!-- Listing Start -->
-<section id="listing1" class="listing1 padding_top">
+
+<!-- Property Detail Start -->
+<section id="property" class="padding_top padding_bottom_half">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="row">
-          <div class="col-md-9">
-            <h2 class="uppercase">Lista de Imóveis</h2>
-            <!-- <p class="heading_space">We have Properties in these Areas View a list of Featured Properties.</p> -->
+      <div class="col-md-8 listing1 property-details">
+        <h2 class="text-uppercase">Vende-se ótima casa!</h2>
+        <p class="bottom30">Código: 541</p>
+        <div id="property-d-1" class="owl-carousel">
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+          <div class="item"><img src="images/property-details/property-d-1-1.jpg" alt="image"/></div>
+        </div>
+        <div id="property-d-1-2" class="owl-carousel">
+          <div class="item" ><img src="images/property-details/property-d-s-1-1.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-2.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-3.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-4.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-5.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-1.jpg" alt="image"/></div>
+          <div class="item" ><img src="images/property-details/property-d-s-1-2.jpg" alt="image"/></div>
+        </div>
+        <div class="property_meta bg-black bottom40">
+          <span><i class="icon-select-an-objecto-tool"></i>139 m²</span>
+          <span><i class=" icon-microphone"></i>2 Quartos</span>
+          <span><i class="icon-safety-shower"></i>1 Banheiro</span>
+          <span><i class="icon-old-television"></i>Sala de TV</span>
+          <span><i class="icon-garage"></i>1 Garagem</span>
+        </div>
+        <h2 class="text-uppercase">Descrição</h2>       
+        <div class="text-it-p bottom40">
+          <p>Vende ótima casa 139 m², terreno com 15 x 24 = 360m². 4 quartos. 2 bwc social, cozinha, sala de tv, copa, lavação, 3 garagens, área de festa. Obs1: Toda de lage com opção para mais um piso. Obs2: Escriturada, Averbada..</p>
+        </div>
+        <h2 class="text-uppercase bottom20">Detalhes</h2>
+        <div class="row property-d-table bottom40">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td><b>Código</b></td>
+                  <td class="text-right">541</td>
+                </tr>
+                <tr>
+                  <td><b>Valor</b></td>
+                  <td class="text-right">R$ 370.000,00</td>
+                </tr>
+                <tr>
+                  <td><b>Área</b></td>
+                  <td class="text-right">139 m²</td>
+                </tr>
+<!-- 
+                <tr>
+                  <td><b>Disponibil</b></td>
+                  <td class="text-right">22-04-2017</td>
+                </tr> -->
+              </tbody>
+            </table>
           </div>
-          <div class="col-md-3">
-          <form class="callus">
-            <div class="single-query">
-              <div class="intro">
-                <select>
-                  <option class="active">Maior Preço</option>
-                  <option>Menor Preço</option>
-                  <option>Maior Área</option>
-                  <option>Menor Área</option>
-                  <!-- <option>5</option> -->
-                  <!-- <option>6</option> -->
-                </select>
-              </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td><b>Banheiros</b></td>
+                  <td class="text-right">1</td>
+                </tr>
+                <tr>
+                  <td><b>Quartos</b></td>
+                  <td class="text-right">1</td>
+                </tr>
+                <tr>
+                  <td><b>Suíte</b></td>
+                  <td class="text-right">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <h2 class="text-uppercase bottom20">Diferenciais</h2>
+        <div class="row bottom40">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="pro-list">
+              <li> Ar Condicionado</li>
+              <li> Home Theater</li>
+              <li> Piscina</li>
+              <li> Área de Serviço</li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="pro-list">
+              <li>Microondas</li>
+              <li>Chuveiro para Banhistas</li>
+              <li>Regrigerador</li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="pro-list">
+              <li> Bairro Tranquilo</li>
+              <li> TV a Cabo & WIFI</li>              
+            </ul>
+          </div>
+        </div>
+        <div class="row bottom40">
+
+          <div class="col-md-12 padding-b-20">
+          <h2 class="text-uppercase bottom20">Apresentação em vídeo</h2>
+            <div class="pro-video">
+              <figure class="wpf-demo-gallery">
+                <video class="video" controls="">
+                  <source src="video/video.mp4" type="video/mp4">
+                  <source src="video/video.ogg" type="video/ogg">
+                </video>
+              </figure>
             </div>
+          </div>
+        </div>        
+<!--         <h2 class="text-uppercase bottom20">Localização</h2>
+        <div class="row bottom40">
+          <div class="col-md-12 bottom20">
+            <div class="property-list-map">
+              <div id="property-listing-map" class="multiple-location-map" style="width:100%;height:430px;"></div>
+            </div>
+          </div>
+        </div> -->
+        <h2 class="text-uppercase bottom20">Entre em contato</h2>
+        <div class="col-sm-12 bottom40">
+            <form class="callus">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nome">
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Telefone">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="E-mail">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Mensagem"></textarea>
+                  </div>
+                </div>
+                <div class="col-sm-12 row">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input type="button" class="btn-blue uppercase border_radius" value="Enviar Agora">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="property_item">
-          <div class="image">
-            <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-            <div class="price clearfix"> 
-              <span class="tag pull-right">R$ 370.000,00</span>
+          
+          <div class="row">
+            <div class="col-sm-10">
+            <h2 class="text-uppercase top20">Imóveis similares</h2>
+            <!-- <p class="bottom30">We have Properties in these Areas View a list of Featured Properties.</p> -->
             </div>
-            <span class="tag_t">À Venda</span> 
-            <span class="tag_l">Código: 541</span>
-          </div>
-          <div class="proerty_content">
-            <div class="proerty_text">
-              <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-              <!-- <p>Código: 541</p> -->
-            </div>
-            <div class="property_meta transparent"> 
-              <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-              <span><i class="icon-bed"></i>4 Quartos</span> 
-              <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-            </div>
-            <div class="property_meta transparent bottom30">
-              <span><i class="icon-old-television"></i>Sala de TV</span>
-              <span><i class="icon-garage"></i>1 Garagem</span>
-              <span></span>
-            </div>
-            <div class="favroute clearfix">
-              <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-<!--               <ul class="pull-right">
-                <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-              </ul> -->
-            </div>
-            <div class="toggle_share collapse" id="seventy">
-              <ul>
-                <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+            <div class="col-sm-12"><div id="two-col-slider" class="owl-carousel">
+              <div class="item">
+                <div class="property_item">
+                    <div class="image">
+                      <a href="property_detail1.php"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
+                      <div class="price clearfix"> 
+                        <span class="tag pull-right">R$ 370.000,00</span>
+                      </div>
+                      <span class="tag_t">À Venda</span> 
+                      <span class="tag_l">Código: 541</span>
+                    </div>
+                    <div class="proerty_content">
+                      <div class="proerty_text">
+                        <h3 class="captlize"><a href="property_detail1.php">Vende-se ótima casa!</a></h3>
+                        <!-- <p>Código: 541</p> -->
+                      </div>
+                      <div class="property_meta transparent"> 
+                        <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
+                        <span><i class="icon-bed"></i>4 Quartos</span> 
+                        <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
+                      </div>
+                      <div class="property_meta transparent bottom30">
+                        <span><i class="icon-old-television"></i>Sala de TV</span>
+                        <span><i class="icon-garage"></i>1 Garagem</span>
+                        <span></span>
+                      </div>
+                      <div class="favroute clearfix">
+                        <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
+          <!--               <ul class="pull-right">
+                          <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
+                          <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                        </ul> -->
+                      </div>
+                      <div class="toggle_share collapse" id="seventy">
+                        <ul>
+                          <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                          <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                          <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="property_item">
+                    <div class="image">
+                      <a href="property_detail1.php"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
+                      <div class="price clearfix"> 
+                        <span class="tag pull-right">R$ 370.000,00</span>
+                      </div>
+                      <span class="tag_t">À Venda</span> 
+                      <span class="tag_l">Código: 541</span>
+                    </div>
+                    <div class="proerty_content">
+                      <div class="proerty_text">
+                        <h3 class="captlize"><a href="property_detail1.php">Vende-se ótima casa!</a></h3>
+                        <!-- <p>Código: 541</p> -->
+                      </div>
+                      <div class="property_meta transparent"> 
+                        <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
+                        <span><i class="icon-bed"></i>4 Quartos</span> 
+                        <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
+                      </div>
+                      <div class="property_meta transparent bottom30">
+                        <span><i class="icon-old-television"></i>Sala de TV</span>
+                        <span><i class="icon-garage"></i>1 Garagem</span>
+                        <span></span>
+                      </div>
+                      <div class="favroute clearfix">
+                        <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
+          <!--               <ul class="pull-right">
+                          <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
+                          <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                        </ul> -->
+                      </div>
+                      <div class="toggle_share collapse" id="seventy">
+                        <ul>
+                          <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                          <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                          <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="property_item">
+                    <div class="image">
+                      <a href="property_detail1.php"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
+                      <div class="price clearfix"> 
+                        <span class="tag pull-right">R$ 370.000,00</span>
+                      </div>
+                      <span class="tag_t">À Venda</span> 
+                      <span class="tag_l">Código: 541</span>
+                    </div>
+                    <div class="proerty_content">
+                      <div class="proerty_text">
+                        <h3 class="captlize"><a href="property_detail1.php">Vende-se ótima casa!</a></h3>
+                        <!-- <p>Código: 541</p> -->
+                      </div>
+                      <div class="property_meta transparent"> 
+                        <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
+                        <span><i class="icon-bed"></i>4 Quartos</span> 
+                        <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
+                      </div>
+                      <div class="property_meta transparent bottom30">
+                        <span><i class="icon-old-television"></i>Sala de TV</span>
+                        <span><i class="icon-garage"></i>1 Garagem</span>
+                        <span></span>
+                      </div>
+                      <div class="favroute clearfix">
+                        <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
+          <!--               <ul class="pull-right">
+                          <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
+                          <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                        </ul> -->
+                      </div>
+                      <div class="toggle_share collapse" id="seventy">
+                        <ul>
+                          <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                          <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                          <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="property_item">
+                    <div class="image">
+                      <a href="property_detail1.php"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
+                      <div class="price clearfix"> 
+                        <span class="tag pull-right">R$ 370.000,00</span>
+                      </div>
+                      <span class="tag_t">À Venda</span> 
+                      <span class="tag_l">Código: 541</span>
+                    </div>
+                    <div class="proerty_content">
+                      <div class="proerty_text">
+                        <h3 class="captlize"><a href="property_detail1.php">Vende-se ótima casa!</a></h3>
+                        <!-- <p>Código: 541</p> -->
+                      </div>
+                      <div class="property_meta transparent"> 
+                        <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
+                        <span><i class="icon-bed"></i>4 Quartos</span> 
+                        <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
+                      </div>
+                      <div class="property_meta transparent bottom30">
+                        <span><i class="icon-old-television"></i>Sala de TV</span>
+                        <span><i class="icon-garage"></i>1 Garagem</span>
+                        <span></span>
+                      </div>
+                      <div class="favroute clearfix">
+                        <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
+          <!--               <ul class="pull-right">
+                          <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
+                          <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
+                        </ul> -->
+                      </div>
+                      <div class="toggle_share collapse" id="seventy">
+                        <ul>
+                          <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
+                          <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
+                          <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div></div>
           </div>
           
-          <div class="col-sm-6">
-            <div class="property_item">
-          <div class="image">
-            <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-            <div class="price clearfix"> 
-              <span class="tag pull-right">R$ 370.000,00</span>
-            </div>
-            <span class="tag_t">À Venda</span> 
-            <span class="tag_l">Código: 541</span>
+          <div class="col-sm-12 text-center heading_space">
+            <ul class="pager">
+              <li><a href="#.">1</a></li>
+              <li class="active"><a href="#.">2</a></li>
+              <li><a href="#.">3</a></li>
+            </ul>
           </div>
-          <div class="proerty_content">
-            <div class="proerty_text">
-              <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-              <!-- <p>Código: 541</p> -->
-            </div>
-            <div class="property_meta transparent"> 
-              <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-              <span><i class="icon-bed"></i>4 Quartos</span> 
-              <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-            </div>
-            <div class="property_meta transparent bottom30">
-              <span><i class="icon-old-television"></i>Sala de TV</span>
-              <span><i class="icon-garage"></i>1 Garagem</span>
-              <span></span>
-            </div>
-            <div class="favroute clearfix">
-              <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-<!--               <ul class="pull-right">
-                <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-              </ul> -->
-            </div>
-            <div class="toggle_share collapse" id="seventy">
-              <ul>
-                <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="property_item">
-          <div class="image">
-            <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-            <div class="price clearfix"> 
-              <span class="tag pull-right">R$ 370.000,00</span>
-            </div>
-            <span class="tag_t">À Venda</span> 
-            <span class="tag_l">Código: 541</span>
-          </div>
-          <div class="proerty_content">
-            <div class="proerty_text">
-              <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-              <!-- <p>Código: 541</p> -->
-            </div>
-            <div class="property_meta transparent"> 
-              <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-              <span><i class="icon-bed"></i>4 Quartos</span> 
-              <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-            </div>
-            <div class="property_meta transparent bottom30">
-              <span><i class="icon-old-television"></i>Sala de TV</span>
-              <span><i class="icon-garage"></i>1 Garagem</span>
-              <span></span>
-            </div>
-            <div class="favroute clearfix">
-              <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-<!--               <ul class="pull-right">
-                <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-              </ul> -->
-            </div>
-            <div class="toggle_share collapse" id="seventy">
-              <ul>
-                <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="property_item">
-              <div class="image">
-                <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-                <div class="price clearfix"> 
-                  <span class="tag pull-right">R$ 370.000,00</span>
-                </div>
-                <span class="tag_t">À Venda</span> 
-                <span class="tag_l">Código: 541</span>
-              </div>
-              <div class="proerty_content">
-                <div class="proerty_text">
-                  <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-                  <!-- <p>Código: 541</p> -->
-                </div>
-                <div class="property_meta transparent"> 
-                  <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-                  <span><i class="icon-bed"></i>4 Quartos</span> 
-                  <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-                </div>
-                <div class="property_meta transparent bottom30">
-                  <span><i class="icon-old-television"></i>Sala de TV</span>
-                  <span><i class="icon-garage"></i>1 Garagem</span>
-                  <span></span>
-                </div>
-                <div class="favroute clearfix">
-                  <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-    <!--               <ul class="pull-right">
-                    <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                    <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-                  </ul> -->
-                </div>
-                <div class="toggle_share collapse" id="seventy">
-                  <ul>
-                    <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                    <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                    <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="property_item">
-          <div class="image">
-            <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-            <div class="price clearfix"> 
-              <span class="tag pull-right">R$ 370.000,00</span>
-            </div>
-            <span class="tag_t">À Venda</span> 
-            <span class="tag_l">Código: 541</span>
-          </div>
-          <div class="proerty_content">
-            <div class="proerty_text">
-              <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-              <!-- <p>Código: 541</p> -->
-            </div>
-            <div class="property_meta transparent"> 
-              <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-              <span><i class="icon-bed"></i>4 Quartos</span> 
-              <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-            </div>
-            <div class="property_meta transparent bottom30">
-              <span><i class="icon-old-television"></i>Sala de TV</span>
-              <span><i class="icon-garage"></i>1 Garagem</span>
-              <span></span>
-            </div>
-            <div class="favroute clearfix">
-              <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-<!--               <ul class="pull-right">
-                <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-              </ul> -->
-            </div>
-            <div class="toggle_share collapse" id="seventy">
-              <ul>
-                <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="property_item">
-          <div class="image">
-            <a href="property_detail1.html"><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a>
-            <div class="price clearfix"> 
-              <span class="tag pull-right">R$ 370.000,00</span>
-            </div>
-            <span class="tag_t">À Venda</span> 
-            <span class="tag_l">Código: 541</span>
-          </div>
-          <div class="proerty_content">
-            <div class="proerty_text">
-              <h3 class="captlize"><a href="property_detail1.html">Vende-se ótima casa!</a></h3>
-              <!-- <p>Código: 541</p> -->
-            </div>
-            <div class="property_meta transparent"> 
-              <span><i class="icon-select-an-objecto-tool"></i>139 m²</span> 
-              <span><i class="icon-bed"></i>4 Quartos</span> 
-              <span><i class="icon-safety-shower"></i>2 Banheiros</span>   
-            </div>
-            <div class="property_meta transparent bottom30">
-              <span><i class="icon-old-television"></i>Sala de TV</span>
-              <span><i class="icon-garage"></i>1 Garagem</span>
-              <span></span>
-            </div>
-            <div class="favroute clearfix">
-              <p><i class="icon-calendar2"></i>&nbsp;5 Dias atrás </p>
-<!--               <ul class="pull-right">
-                <li><a href="javascript:void(0)"><i class="icon-like"></i></a></li>
-                <li><a href="#seventy" class="share_expender" data-toggle="collapse"><i class="icon-share3"></i></a></li>
-              </ul> -->
-            </div>
-            <div class="toggle_share collapse" id="seventy">
-              <ul>
-                <li><a href="javascript:void(0)" class="facebook"><i class="icon-facebook-1"></i> Facebook</a></li>
-                <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i> Twitter</a></li>
-                <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i> Vimeo</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-          </div>
-        </div>
-        
-        <div class="padding_bottom text-center">
-          <ul class="pager">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div>
       </div>
       <aside class="col-md-4 col-xs-12">
         <div class="property-query-area clearfix">
@@ -767,7 +816,8 @@
     </div>
   </div>
 </section>
-<!-- Listing end -->
+<!-- Property Detail End -->
+
 
 
 <!--Footer-->
@@ -862,9 +912,7 @@
     </div>
   </div>
 </footer>
-
-<!--CopyRight-->
-
+</div>
 <script src="js/jquery-2.1.4.js"></script>
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/bootsnav.js"></script>
@@ -877,7 +925,6 @@
 <script src="js/jquery.cubeportfolio.min.js"></script>
 <script src="js/selectbox-0.2.min.js"></script>
 <script src="js/zelect.js"></script>
-<script src="js/jquery.fancybox.js"></script>
 <script src="js/jquery.themepunch.tools.min.js"></script>
 <script src="js/jquery.themepunch.revolution.min.js"></script>
 <script src="js/revolution.extension.layeranimation.min.js"></script>

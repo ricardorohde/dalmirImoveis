@@ -534,70 +534,80 @@ jQuery(function($) {
     gapHorizontal: 30,
     gapVertical: 30,
   });
+
   
-  //home Gallery
-  $('#photo-gallery').cubeportfolio({
-    filters: '#filters-gallery',
-    loadMore: '#loadMore-gallery',
-    loadMoreAction: "click",
-    layoutMode: 'grid',
-    mediaQueries: [{
-      width: 1500,
-      cols: 4
-    }, {
-      width: 1100,
-      cols: 3
-    }, {
-      width: 800,
-      cols: 3
-    }, {
-      width: 480,
-      cols: 2
-    }, {
-      width: 320,
-      cols: 1
-    }],
-    defaultFilter: '*',
-    animationType: 'rotateSides',
-    gapHorizontal: 30,
-    gapVertical: 30,
-    gridAdjustment: 'responsive',
-    caption: 'zoom',
-    displayType: 'sequentially',
-    displayTypeSpeed: 100,
-    lightboxDelegate: '.cbp-lightbox',
-    lightboxGallery: true,
-  });
+  if(window.location.pathname.toString().indexOf("index.php") > 0)
+  {
+    // console.log(window.location.pathname.toString().indexOf("index.php"));
+      
+      searchAjax('index', function(){
+          //home Gallery
+          $('#photo-gallery').cubeportfolio({
+            filters: '#filters-gallery',
+            loadMore: '#loadMore-gallery',
+            loadMoreAction: "click",
+            layoutMode: 'grid',
+            mediaQueries: [{
+              width: 1500,
+              cols: 4
+            }, {
+              width: 1100,
+              cols: 3
+            }, {
+              width: 800,
+              cols: 3
+            }, {
+              width: 480,
+              cols: 2
+            }, {
+              width: 320,
+              cols: 1
+            }],
+            defaultFilter: '*',
+            animationType: 'rotateSides',
+            gapHorizontal: 30,
+            gapVertical: 30,
+            gridAdjustment: 'responsive',
+            caption: 'zoom',
+            displayType: 'sequentially',
+            displayTypeSpeed: 100,
+            lightboxDelegate: '.cbp-lightbox',
+            lightboxGallery: true,
+          });
+          
+          //Filter Property
+          $('#property-gallery').cubeportfolio({
+            filters: '#filters-property',
+            layoutMode: 'grid',
+            mediaQueries: [{
+              width: 1500,
+              cols: 4
+            }, {
+              width: 1100,
+              cols: 3
+            }, {
+              width: 800,
+              cols: 3
+            }, {
+              width: 480,
+              cols: 2
+            }, {
+              width: 320,
+              cols: 1
+            }],
+            defaultFilter: '*',
+            animationType: 'fadeOut',
+            gapHorizontal: 30,
+            gapVertical: 30,
+            gridAdjustment: 'responsive',
+            caption: 'zoom',
+            displayType: 'sequentially',
+            displayTypeSpeed: 100,
+          });
+      });
+  }
   
-  //Filter Property
-  $('#property-gallery').cubeportfolio({
-    filters: '#filters-property',
-    layoutMode: 'grid',
-    mediaQueries: [{
-      width: 1500,
-      cols: 4
-    }, {
-      width: 1100,
-      cols: 3
-    }, {
-      width: 800,
-      cols: 3
-    }, {
-      width: 480,
-      cols: 2
-    }, {
-      width: 320,
-      cols: 1
-    }],
-    defaultFilter: '*',
-    animationType: 'fadeOut',
-    gapHorizontal: 30,
-    gapVertical: 30,
-    gridAdjustment: 'responsive',
-    caption: 'zoom',
-    displayType: 'sequentially',
-    displayTypeSpeed: 100,
-  });
+
   
   //Testinomial Page
   $('#testinomial-masonry').cubeportfolio({
