@@ -12,8 +12,10 @@
 		if($params['mode'] == 'index')
 				Imovel::listImoveisIndex($params);
 
-		if($params['mode'] == 'page')
+		if($params['mode'] == 'page'){
+				// var_dump($params);
 				Imovel::listImoveisPage($params);
+		}
 
 		if($params['mode'] == 'page_admin')
 				Imovel::listImoveisAdmin($params);

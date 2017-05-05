@@ -61,43 +61,46 @@ function getCharacterSearch()
 
 function getFiltroSession($mode)
 {
-	$.ajax({
-        url: 'data/search/returnFiltroSearch.php',
-        type: 'post',
-        success: function(data){  
+	console.log('getFiltroSession');
+	return new Promise(function(resolve, reject) {
+		$.ajax({
+	        url: 'data/search/returnFiltroSearch.php',
+	        type: 'post',
+	        success: function(data){  
+	        	console.log('getFiltroSession Success');
+	        	var parsed_data = JSON.parse(data);
+	        	if(parsed_data.status == 'success')
+	        	{
+					filtro.cod_bairro = parsed_data.object.cod_bairro;
+					filtro.key_word = parsed_data.object.key_word;
+					filtro.quarto_max = parsed_data.object.quarto_max;
+					filtro.quarto_min = parsed_data.object.quarto_min;
+					filtro.area_min = parsed_data.object.area_min;
+					filtro.area_max = parsed_data.object.area_max;
+					filtro.valor_min = parsed_data.object.valor_min;
+					filtro.valor_max = parsed_data.object.valor_max;
+					filtro.order_attr = parsed_data.object.order_attr;
+					filtro.order_list = parsed_data.object.order_list;
 
-        	var parsed_data = JSON.parse(data);
-        	if(parsed_data.status == 'success')
-        	{
-        		
-        		console.log(parsed_data);
-				filtro.cod_bairro = parsed_data.object.cod_bairro;
-				filtro.key_word = parsed_data.object.key_word;
-				filtro.quarto_max = parsed_data.object.quarto_max;
-				filtro.quarto_min = parsed_data.object.quarto_min;
-				filtro.area_min = parsed_data.object.area_min;
-				filtro.area_max = parsed_data.object.area_max;
-				filtro.valor_min = parsed_data.object.valor_min;
-				filtro.valor_max = parsed_data.object.valor_max;
-				filtro.order_attr = parsed_data.object.order_attr;
-				filtro.order_list = parsed_data.object.order_list;
+					if(parsed_data.object.diferencial){
+						filtro.diferencial = parsed_data.object.diferencial;
+					}
+					
+					filtro.mode = parsed_data.object.mode;
+					filtro.cod_imovel = parsed_data.object.cod_imovel;
+					filtro.num_page = parsed_data.object.num_page;
+					filtro.imoveis_count = parsed_data.object.imoveis_count;
+					filtro.pointer = parsed_data.object.pointer;
+					filtro.pagination = parsed_data.object.pagination;
+	        	}else{
+	        		indexCollector($mode);
+	        	}
+	        	resolve();
 
-				if(parsed_data.object.diferencial){
-					filtro.diferencial = parsed_data.object.diferencial;
-				}
-				
-				filtro.mode = parsed_data.object.mode;
-				filtro.cod_imovel = parsed_data.object.cod_imovel;
-				filtro.num_page = parsed_data.object.num_page;
-				filtro.imoveis_count = parsed_data.object.imoveis_count;
-				filtro.pointer = parsed_data.object.pointer;
-				filtro.pagination = parsed_data.object.pagination;
-        	}else{
-        		indexCollector($mode);
-        	}
-        	
-        }
-    });	
+	        },
+	        error: reject
+	    });	
+	});
 }
 
 function indexCollector($mode)
@@ -119,11 +122,15 @@ function indexCollector($mode)
 
 function indexCollectiorWithPagination($mode)
 {
-	 getFiltroSession($mode);
-	 filtro.imoveis_count = '9';
-	 filtro.num_page = '1';
-	 filtro.pointer = 'next';
-	 filtro.pagination = 'true';
+	console.log('indexCollectiorWithPagination');
+	return getFiltroSession($mode).then(function() {
+		console.log('indexCollectiorWithPagination Success');
+		filtro.imoveis_count = '9';
+		filtro.num_page = '1';
+		filtro.pointer = 'next';
+		filtro.pagination = 'true';
+		return Promise.resolve();
+	});
 }
 
 
@@ -162,12 +169,13 @@ function actionShowImoveisAdmin()
 
 function actionSearchIndex()
 {
+	console.log('actionSearchIndex', filtro);
     $.ajax({
         url: 'data/search/searchData.php',
         type: 'post',
         data: filtro,        
         success: function(data){
-        	console.log(data);
+        	console.log('actionSearchIndex Success', data);
         	var parsed_data = JSON.parse(data);
             $(location).attr('href', parsed_data.page);
 
@@ -207,7 +215,10 @@ function searchAjax($mode, $callBack = null)
 
 function searchByPage($page)
 {
-	 indexCollectiorWithPagination('page');
-	 filtro.num_page = $page;	 
-	 actionSearchIndex();
+	console.log('searchByPage');
+	indexCollectiorWithPagination('page').then(function() {
+		console.log('searchByPage Success');
+		filtro.num_page = $page;	 
+		actionSearchIndex();
+	});
 }
