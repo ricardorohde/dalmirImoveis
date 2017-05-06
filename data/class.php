@@ -446,6 +446,31 @@ class Imovel{
             return $array;
     }
 
+    public static function emptyFiltro()
+    {
+        $filtro =  array();
+        $filtro['cod_bairro'] = '-1';
+        $filtro['cod_tipo'] = '-1';
+        $filtro['key_word'] = '';
+        $filtro['quarto_max'] = '-1';
+        $filtro['quarto_min'] = '-1';
+        $filtro['area_min'] = '-1';
+        $filtro['area_max'] = '-1';
+        $filtro['valor_min'] = '-1';
+        $filtro['valor_max'] = '-1';
+        $filtro['order_attr'] = "";
+        $filtro['order_list'] = "asc";
+        $filtro['diferencial'] = array();
+        $filtro['mode'] = '';
+        $filtro['cod_imovel'] = '-1';
+        $filtro['num_page'] = '1';
+        $filtro['imoveis_count'] = '0';
+        $filtro['pointer'] = 'next';
+        $filtro['pagination ']= 'false';  
+
+        return  $filtro;      
+    }
+
 
     public static function getCaracterStatic($where = "")
     {
@@ -573,16 +598,21 @@ class Imovel{
         if($group)
             $select .= ' group by i.cod_imovel ';
 
+        if($filtro['order_attr'] != '')
+        {
+            $select .= ' order by '.$filtro['order_attr'].' '.$filtro['order_list'];
+        }
+
 
 
         if (isset($filtro['pagination']))
                 if($filtro['pagination'] == 'true')
                 {
                     
-                    if($filtro['mode'] != 'index'){
+                    // if($filtro['mode'] != 'index'){
                         Session::startSession();
                         $_SESSION['page_filtro'] = serialize($filtro);
-                    }
+                    // }
 
                     $inicial = (((int)$filtro['num_page'] - 1) * (int)$filtro['imoveis_count']) + ((int)$filtro['num_page'] -1);            
 
@@ -757,6 +787,42 @@ class Imovel{
         }   
         return $template;           
 
+    }
+
+    public static function buildImoveisMenu($filtro)
+    {        
+        $select = Imovel::buildSelect($filtro);
+        // echo $select;
+        $resource = MysqlCustom::querySql($select);        
+        $cod_imovel = 0;
+        $template = ''; 
+
+        while($row = MysqlCustom::fetch($resource))
+        {
+            if($filtro['cod_tipo'] == '1')
+            {
+                $t_d = 'À Venda';
+            }else{
+                $t_d = 'Locação';
+            }
+
+            $template .= '          <div class="item">
+                              <div class="image bottom15"> 
+                                <img src="'.$row['caminho_thumb'].'" alt="Featured Property"> 
+                                <span class="nav_tag yellow text-uppercase">'.$t_d.'</span>
+                              </div>
+                              <h4><a class="title-imovel" href="property_detail1.php">'.$row['titulo'].'</a></h4>
+                              <p>Código: '.$row['cod_imovel'].'</p>
+                            </div>'   ;
+        }
+
+        return $template;
+    }
+
+    public static function listImoveisMenu($filtro)
+    {
+        $template = Imovel::buildImoveisMenu($filtro);
+        echo $template;
     }
 
     public static function listImoveisIndex($filtro)

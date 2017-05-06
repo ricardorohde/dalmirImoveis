@@ -44,6 +44,13 @@ function emptyFiltro()
     filtro.pagination = 'false';
 }
 
+function setFirstSearch()
+{
+	filtro.pagination = 'true';
+	filtro.imoveis_count = '9';
+	filtro.num_page = '1';
+}
+
 function getCharacterSearch()
 {
 	diferencial_var = Array();
@@ -57,6 +64,35 @@ function getCharacterSearch()
 	});
 
 	return diferencial_var;	
+}
+
+function getOrderPrice()
+{
+	
+	if($("#order-price"))
+	{
+		switch($("#order-price").val())
+		{
+		    case '1':
+		    		filtro.order_attr = 'valor';
+		    		filtro.order_list = 'desc';
+		        break;
+		    case '2':
+		    		filtro.order_attr = 'valor';
+		    		filtro.order_list = 'asc';
+		        break;
+		    case '3':
+					filtro.order_attr = 'area';
+		    		filtro.order_list = 'desc';
+		        break;
+		    case '4':
+					filtro.order_attr = 'area';
+		    		filtro.order_list = 'asc';
+		        break;	        	        
+		    default:
+		        //
+		}
+	}
 }
 
 function getFiltroSession($mode)
@@ -118,6 +154,7 @@ function indexCollector($mode)
 	filtro.order_list = "";
 	filtro.diferencial = getCharacterSearch();
 	filtro.mode = $mode;
+	getOrderPrice();
 }
 
 function indexCollectiorWithPagination($mode)
@@ -136,10 +173,7 @@ function indexCollectiorWithPagination($mode)
 
 function actionShowIndex($callBack = null)
 {		
-	filtro.imoveis_count = '9';
-	filtro.num_page = '1';
-	filtro.pagination = 'true';
-
+    setFirstSearch();
     $.ajax({
         url: 'data/search/searchData.php',
         type: 'post',
@@ -169,13 +203,13 @@ function actionShowImoveisAdmin()
 
 function actionSearchIndex()
 {
-	console.log('actionSearchIndex', filtro);
+	console.log('actionSearchIndex', JSON.stringify(filtro));
     $.ajax({
         url: 'data/search/searchData.php',
         type: 'post',
         data: filtro,        
         success: function(data){
-        	console.log('actionSearchIndex Success', data);
+        	console.log('actionSearchIndex Success', JSON.stringify(data));
         	var parsed_data = JSON.parse(data);
             $(location).attr('href', parsed_data.page);
 
@@ -196,7 +230,8 @@ function searchAjax($mode, $callBack = null)
 	        break;
 	    case 'page':
 	    		// getFiltroSession();
-				indexCollector($mode)
+				indexCollector($mode);
+				setFirstSearch();
 				actionSearchIndex();
 	        break;
 	    case 'page_generic':
@@ -213,6 +248,7 @@ function searchAjax($mode, $callBack = null)
    
 }
 
+
 function searchByPage($page)
 {
 	console.log('searchByPage');
@@ -222,3 +258,4 @@ function searchByPage($page)
 		actionSearchIndex();
 	});
 }
+

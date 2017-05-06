@@ -245,11 +245,11 @@
           <form class="callus">
             <div class="single-query">
               <div class="intro">
-                <select>
-                  <option class="active">Maior Preço</option>
-                  <option>Menor Preço</option>
-                  <option>Maior Área</option>
-                  <option>Menor Área</option>
+                <select id="order-price">
+                  <option class="active" value="1">Maior Preço</option>
+                  <option value="2">Menor Preço</option>
+                  <option value="3">Maior Área</option>
+                  <option value="4">Menor Área</option>
                 </select>
               </div>
             </div>

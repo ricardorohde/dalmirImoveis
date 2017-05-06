@@ -3,7 +3,7 @@
 
 	$resource = null;
 	
-	// var_dump($_POST);
+	var_dump($_POST);
 	if(isset($_POST))
 	{
 
@@ -22,6 +22,10 @@
 
 		if($params['mode'] == 'update_imovel')
 				Imovel::getValuesImovel($params);
+
+		if($params['mode'] == 'imoveis_menu'){
+				Imovel::listImoveisMenu($params);			
+		}
 
 		
 

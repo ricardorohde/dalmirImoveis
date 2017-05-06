@@ -69,7 +69,7 @@
           data-basealign="slide" 
           data-startslide="0" 
           data-endslide="5" 
-          style="z-index: 5;"><a href="listing1.php" class="btn-white border_radius uppercase">Nossos Imóveis</a>
+          style="z-index: 5;"><a onclick="searchAjax('page')" class="btn-white border_radius uppercase">Nossos Imóveis</a>
         </div>
       </div>
     </ul>
@@ -127,80 +127,12 @@
                       <div class="col-menu col-md-9">
                         <h5 class="title bottom20">Destaques</h5>
                         <div class="row">
-                          <div id="nav_slider" class="owl-carousel">
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">À Venda</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                          </div>
+                          <div id="nav_slider" class="sale-imoveis owl-carousel">
+                              <?php
+                                $params = Imovel::emptyFiltro();
+                                $params['cod_transacao'] = '1';
+                                Imovel::listImoveisMenu($params);
+                              ?>
                         </div>
                       </div>
                     </div>
@@ -229,79 +161,12 @@
                       <div class="col-menu col-md-9">
                         <h5 class="title bottom20">Destaques</h5>
                         <div class="row">
-                          <div id="nav_slider" class="owl-carousel">
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
-                            <div class="item">
-                              <div class="image bottom15"> 
-                                <img src="images/nav-slider1.jpg" alt="Featured Property"> 
-                                <span class="nav_tag yellow text-uppercase">Para Locação</span>
-                              </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">Ótimo Apartamento!</a></h4>
-                              <p>Código: 500</p>
-                            </div>
+                          <div id="nav_slider" class="locacao-imoveis owl-carousel">
+                              <?php
+                                $params = Imovel::emptyFiltro();
+                                $params['cod_transacao'] = '2';
+                                Imovel::listImoveisMenu($params);
+                              ?>
                           </div>
                         </div>
                       </div>
@@ -473,7 +338,7 @@
     <div id="property-gallery" class="cbp listing1">
     </div>
     <div class="col-sm-12 text-center top20">
-       <a href="listing1.php" class="btn-dark border_radius uppercase margin40">Mais imóveis</a>
+       <a onclick="searchAjax('page')" class="btn-dark border_radius uppercase margin40">Mais imóveis</a>
     </div>
   </div>
 </section>
