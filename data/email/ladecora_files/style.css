@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,600");
+@font-face{font-family:'moskaugrotesk';src:url("../fonts/frontend/moskau/moskau_grotesk.woff2") format('woff2'),url("../fonts/frontend/moskau/moskau_grotesk.woff") format('woff');font-weight:normal;font-style:normal}@font-face{font-family:'moskaugrotesk_light';src:url("../fonts/frontend/moskau/moskau_grotesk_light.woff2") format('woff2'),url("../fonts/frontend/moskau/moskau_grotesk_light.woff") format('woff');font-weight:normal;font-style:normal}@font-face{font-family:'moskaugrotesk_medium';src:url("../fonts/frontend/moskau/moskau_grotesk_medium.woff2") format('woff2'),url("../fonts/frontend/moskau/moskau_grotesk_medium.woff") format('woff');font-weight:normal;font-style:normal}html,body{font-family:'Raleway',sans-serif;font-weight:100;color:#636b6f}.header-bg{height:170px;background-image:url("../images/header-bg.jpg")}.logo{width:255px;margin:0 auto;position:relative;top:-32px;display:block}.la-decora{margin-bottom:50px}.full-height{height:1031px}.flex-center{background:url("../images/bg.jpg") no-repeat center top #fff}.content{text-align:center}.title{font-size:40px}.m-b-md{margin-bottom:30px}.subscribe-form{width:495px;height:355px;display:block;margin:0 auto}.round-border{border-radius:85px}input[type="text"]{background-color:transparent;border:1px solid #f00;border-color:#b39c4c;color:#0a454d;display:block;font-family:moskaugrotesk_light;font-size:18px;height:29px;margin:12px auto;padding-left:15px;width:344px}input[type="text"]:last-of-type{margin:12px auto 0 0}button{background-color:#b39c4c;border:1px solid #b39c4c;color:#fff;display:block;font-family:moskaugrotesk_light;font-size:20px;height:32px;margin:10px auto 10px;position:relative;width:120px;transition:all .3s}button:hover{background-color:#a58d3a;border-color:#a58d3a;cursor:pointer}button.loading{background-color:#808080;border-color:#808080;cursor:default;width:30px}button.success{background-color:#326266;border-color:#326266;cursor:default;width:358px}#submit img{left:3px;opacity:0;position:absolute;top:4px;width:22px}.invalid{border-color:#c53434 !important}p{display:block;font-family:moskaugrotesk;font-size:21px;color:#0a454d}ul{font-size:10px;font-family:moskaugrotesk_light;}ul li{color:#0a454d;display:inline-block;font-size:20px;letter-spacing:-1px}ul li:first-child{margin-right:16px}ul li img{vertical-align:middle}small{font-size:16px}.box-alert{width:100%;height:45px;margin-bottom:10px;line-height:48px;border-radius:5px;text-indent:43px;font-size:15px;font-family:moskaugrotesk;text-align:left;}.box-alert b{font-weight:400;font-family:open_sanssemibold}.alert-error{background:#f9e4e1 url("../images/sistema/icons-alert-error.png") 8px center no-repeat;color:#ff8d7a}.alert-attention{background:#fff2cb url("../images/sistema/icons-alert-attention.png") 16px center no-repeat;color:#e6ac00}.alert-ok{background:#ddf2e9 url("../images/sistema/icons-alert-ok.png") 12px center no-repeat;color:#38ad76}
+
+@font-face{font-family:'moskaugrotesk_extraLight';
+		src:url("fonts/Moskau Grotesk Extra Light Italic.otf") format('woff2'), url("moskau_grotesk.woff") format('woff');
+		font-weight:normal;
+		font-style:normal
+	}
+
+@font-face{font-family:'moskaugrotesk_extraLight_2';
+		src:url("fonts/Moskau Grotesk Extra Light.otf") format('woff2'), url("moskau_grotesk.woff") format('woff');
+		font-weight:normal;
+		font-style:normal
+	}	
+
+.close-btn{
+	width: 8%;
+	position: absolute;
+    right: -15px;
+    cursor: pointer;
+    z-index: 999;
+    margin-top: -28px;
+}
+
+.modal-open{
+	padding:0;
+}
+
+.close-btn img{
+	width: 100%;
+}
+
+.row, .col-md-4, .col-md-8, .col-md-12,.col-md-5, .col-md-7, .container, .modal-body{
+	padding: 0;
+}
+
+#modalEbook{
+	width: 64%;
+	left: 18%;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-right: 50px;	
+	margin-top: 18px;
+	
+}
+
+.logo-modal{	
+	float:left;
+	width: 20%;
+	max-width: 100px;
+	margin-top: 60px;
+	margin-left: 20px;
+}
+
+#modalEbook img, #modalEbook .container{
+	width: 100%;
+}
+
+.campos-obrigatorios{
+	font-size: 10pt;
+	font-family: moskaugrotesk_extraLight_2;
+	font-weight: normal;
+}
+
+button {
+    background-color: #457880;
+    border: 1px solid #457880;
+    color: #fff;
+    display: block;
+    font-family: moskaugrotesk_light;
+    font-size: 20px;
+    height: 32px;
+    margin: 10px auto 10px;
+    position: relative;
+    width: 120px;
+    border-radius: 20px;
+    transition: all .3s;
+}
+
+.btn-enviar{
+	margin-top: 80px;
+	font-family: moskaugrotesk_extraLight;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: 2px solid #f00;
+    border-color: #acacac;
+    color: #0a454d;
+    display: block;
+    font-family: moskaugrotesk_extraLight;
+    font-size: 18px;
+    height: 39px;
+    margin: 0px auto;
+    padding-left: 15px;
+    width: 344px;
+    font-weight: bold;
+}
+
+input[type="text"]:last-of-type {
+    margin: 0px auto 0 0;
+}
+
+.label-input{
+	margin-top:10px;
+	margin-left: 30px;
+	font-size:14pt;
+	font-family: moskaugrotesk_extraLight;
+}
+
+.input-row{
+	margin-top:30px;
+}
+
+.title-modal, .sub-desc{
+	text-align: left; 
+	margin-top: 60px;
+	font-size: 23pt;
+	margin-left:80px;
+	margin-bottom: -10px;	
+	color: #457880;
+}
+
+.sub-desc{
+	font-size: 11pt;
+	margin-top: -40px;
+	color:red;
+	
+}
+.modal-dialog, .modal-content{
+	width: 100%;
+}
+
+.modal-header, .modal-footer{
+	display: none;
+}
+
+.wrapper{
+	background-image: url(layout.jpg);
+	background-size: 140% auto;
+	background-position: top center;
+	background-repeat: no-repeat; 
+	width: 100%;
+}
+
+.flex-center{
+	background: none;
+}
+
+.container-page{
+	position: absolute;
+	width: 30%;
+	top: 60%;
+	left: 35%;
+
+}
+/*# sourceMappingURL=map/style.css.map */
+
+@media screen and (max-width: 1260px) {
+	.margem-dir{
+		margin-top: 100px;
+	}	
+}
+
+@media screen and (max-width: 1260px) {
+	.btn-enviar{
+		margin-top: 50px;
+	}
+	#modalEbook{
+		width: 100%;
+		left: 0%;
+		padding: 0;
+		overflow-y: auto;
+		overflow-x: auto;
+	}	
+}
+
+@media screen and (max-width: 768px) {
+	#modalEbook{
+		width: 100%;
+		left: 0%;
+		padding: 0;
+		overflow-y: auto;
+		overflow-x: auto;
+	}
+
+	.container-page{
+		left: 0;
+		width: 100%;
+	}
+
+	.wrapper {
+	    background-image: url(layout.jpg);
+	    background-size: 340% auto;
+	    background-position: top center;
+	    background-repeat: no-repeat;
+	    width: 100%;
+	}	
+
+	.modal-dialog{
+		margin:0;
+	}
+
+	.label-input, .campos-obrigatorios{
+		margin-left: 100px;
+	}
+
+	.close-btn{
+		width:20%;
+		right: 0;
+		margin-top: 10px;
+	}
+
+	input[type="text"], input[type="text"]:last-of-type {
+		    width: 250px;
+		    margin-left: 100px;
+	}
+
+	.logo-modal {
+	    float: none;
+	    width: 20%;
+	    max-width: 100px;
+	    
+	    margin: 0 auto;
+	    margin-top: 10px;
+	}	
+
+
+}
+
+@media screen and (max-width: 1200px) {
+	.container-page{
+		top:50%;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	.container-page{
+		top:40%;
+	}
+}

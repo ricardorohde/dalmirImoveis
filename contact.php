@@ -69,10 +69,6 @@
                       </div>
                     <ul class="social_share bottom20">
                     <li><a href="https://www.facebook.com/dalmir.demarch?hc_ref=SEARCH&fref=nf" target="_blank"  class="facebook"><i class="icon-facebook-1"></i></a></li>
-            <!-- <li><a href="javascript:void(0)" class="twitter"><i class="icon-twitter-1"></i></a></li>
-            <li><a href="javascript:void(0)" class="google"><i class="icon-google4"></i></a></li>
-            <li><a href="javascript:void(0)" class="linkden"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="javascript:void(0)" class="vimo"><i class="icon-vimeo3"></i></a></li> -->
           </ul>
                 </div>
             
@@ -85,18 +81,18 @@
                       <form action="#" class="callus">
                         <div class="col-md-12">
                           <div class="single-query form-group">
-                            <input type="text" placeholder="Seu nome" class="keyword-input">
+                            <input type="text" placeholder="Seu nome" id="edtName" class="keyword-input">
                             </div>
                             <div class="single-query form-group">
-                            <input type="text" placeholder="Telefone" class="keyword-input">
+                            <input type="text" placeholder="Telefone" id="edtTelefone" class="keyword-input">
                           </div>
                           <div class="single-query form-group">
-                            <input type="text" placeholder="E-mail" class="keyword-input">
+                            <input type="text" placeholder="E-mail" id="edtEmail" class="keyword-input">
                           </div>
                           <div class="single-query form-group">
-                            <textarea placeholder="Mensagem" class="form-control"></textarea>
+                            <textarea placeholder="Mensagem" id="edtMensagem" class="form-control"></textarea>
                           </div>
-                          <input type="button" value="Enviar Agora" class="btn-blue">
+                          <input type="button" value="Enviar Agora" onclick="sendContact()" class="btn-blue">
                           </div>
                       </form>
                       
@@ -144,10 +140,9 @@
 <script src="js/contact.js"></script>
 
 <script src="js/google-map.js"></script> 
-
-
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/ajax/email/contato-imobiliaria.js"></script>
 
 
 
