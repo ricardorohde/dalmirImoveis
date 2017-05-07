@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ERROR);
 class Session {
 
 	public static function startSession(){
@@ -30,7 +30,7 @@ class System {
         $porcentaje = 0.3;
 
         // Tipo de contenido
-        header('Content-Type: image/png');
+        // header('Content-Type: image/png');
 
         // Obtener los nuevos tamaños
         list($ancho, $alto) = getimagesize($nombre_fichero);
@@ -125,10 +125,8 @@ class User {
         
         if (Session::startSession())
         {
-            // echo 'kwshjdslkasjdklas';
         	if(isset($_SESSION['objUser']))
         	{
-                // var_dump( unserialize( $_SESSION['objUser']));
         		$u = unserialize($_SESSION['objUser']);
 	        	$this->login = $u->login;
 	        	$this->senha = $u->senha;	
@@ -354,21 +352,28 @@ class Imovel{
 
     public function showCaracter($array_caracter = null)
     {
-        $arrayDif = $this->getCaracter();
-        if($array_caracter != null)
-        {
-            Session::startSession();
-            $_SESSION['dif_imoveis'] = $array_caracter;
-        }
+        $arrayDif = $this->getCaracter();       
+        $property = "";
 
         foreach ($arrayDif as $key => $value) {
-                    echo '  <div class="col-md-4 col-sm-4">
-                                <div class="search-form-group white">
-                                  <input value="'.$value['cod_diferencial'].'" type="checkbox"   name="check-box" />
-                                  <span>'.$value['descricao'].'</span>
-                                </div>
-                            </div>';  
-        
+
+            if($array_caracter != null)
+                foreach ($array_caracter as $key_array => $value_array) {
+                    // echo($value_array);                    
+                    if($value_array == $value['cod_diferencial'])
+                    {
+                        $property = ' checked="checked" '; 
+                        break;
+                    }else{
+                        $property = ' '; 
+                    }
+                }
+                echo '  <div class="col-md-4 col-sm-4">
+                            <div class="search-form-group white">
+                              <input value="'.$value['cod_diferencial'].'" type="checkbox" '.$property.'  name="check-box" />
+                              <span>'.$value['descricao'].'</span>
+                            </div>
+                        </div>';  
         }        
     } 
 
@@ -397,7 +402,6 @@ class Imovel{
         $filtro = Imovel::emptyFiltro();
         $filtro['cod_imovel'] = $code;
         $select = Imovel::buildSelect($filtro);
-        var_dump($select);
         $resource = MysqlCustom::querySql($select);
 
         $row = MysqlCustom::fetch($resource);
@@ -617,10 +621,8 @@ class Imovel{
                 if($filtro['pagination'] == 'true')
                 {
                     
-                    // if($filtro['mode'] != 'index'){
-                        Session::startSession();
-                        $_SESSION['page_filtro'] = serialize($filtro);
-                    // }
+                    Session::startSession();
+                    $_SESSION['page_filtro'] = serialize($filtro);
 
                     $inicial = (((int)$filtro['num_page'] - 1) * (int)$filtro['imoveis_count']) + ((int)$filtro['num_page'] -1);            
 
@@ -660,11 +662,17 @@ class Imovel{
 
             if($page_current == 1)
             {
-                $template =  '<li class="active"><a onclick="searchByPage(\'1\')">1</a></li>
-                              <li ><a onclick="searchByPage(\'2\')">2</a></li>
-                              <li><a onclick="searchByPage(\'3\')">3</a></li> ';
+                if($page_final >= $page_count)
+                {                    
+                    $template =  '<li class="active"><a onclick="searchByPage(\'1\')">1</a></li>';    
+                }else{
+                    $template =  '<li class="active"><a onclick="searchByPage(\'1\')">1</a></li>
+                                  <li ><a onclick="searchByPage(\'2\')">2</a></li>
+                                  <li><a onclick="searchByPage(\'3\')">3</a></li> ';     
+                }                    
             }else if($page_final >=  $page_count)
             {
+
                 $template =  '<li><a onclick="searchByPage('.($page_current - 2).')">'.($page_current - 2).'</a></li>
                               <li ><a onclick="searchByPage('.($page_current - 1).')">'.($page_current - 1).'</a></li>
                               <li class="active"><a onclick="searchByPage('.($page_current).')">'.$page_current.'</a></li> '; 
@@ -800,21 +808,20 @@ class Imovel{
     public static function buildImoveisMenu($filtro)
     {        
         $select = Imovel::buildSelect($filtro);
-        // echo $select;
         $resource = MysqlCustom::querySql($select);        
         $cod_imovel = 0;
         $template = ''; 
 
         while($row = MysqlCustom::fetch($resource))
         {
-            if($filtro['cod_tipo'] == '1')
+            if($filtro['cod_transacao'] == '1')
             {
                 $t_d = 'À Venda';
             }else{
                 $t_d = 'Locação';
             }
 
-            $template .= '          <div class="item">
+            $template .= '  <div class="item">
                               <div class="image bottom15"> 
                                 <img src="data/imovel/'.$row['caminho_thumb'].'" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">'.$t_d.'</span>
@@ -892,8 +899,8 @@ class Imovel{
 
     public static function listImoveisIndex($filtro)
     {
-            $template = Imovel::buildTemplate($filtro);
-            echo $template;
+        $template = Imovel::buildTemplate($filtro);
+        echo $template;
     }    
 
     public static function listImoveisPage($filtro)
@@ -903,9 +910,7 @@ class Imovel{
         $template = str_replace("cbp-item latest sale", "col-sm-6", $template);
         $_SESSION['page_imoveis'] = $template;
         $result['page'] = 'listing1.php';
-        // var_dump(json_encode($result));
         echo(json_encode($result));
-        // 
     }
 
 

@@ -286,3 +286,19 @@ function putValuesImovel($object)
     $("#imovel-garagem").val($object.garagem);
     $("#area-imovel").val($object.area);    
 }
+
+
+
+
+$(window).load(function(){
+  
+  $('.check-box').each(function() {
+        if($(this).find(':checkbox').is(":checked")){
+            $(this).addClass('checkedBox');                
+        }else{
+            $(this).removeClass('checkedBox');                
+        }
+    
+  });
+  
+});

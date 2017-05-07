@@ -62,8 +62,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand sticky_logo" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
-        </div><!-- End Header Navigation -->
-        <!-- Page Banner Start-->
+        </div>        
         <div class="page-banner-contact page-banner padding-b-80 padding-t-80">
           <div class="container">
             <div class="row">
@@ -76,7 +75,6 @@
           </div>
         </div>
         <!-- Page Banner End -->
-
         <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">
             <li><a href="index.php">Home</a></li>
@@ -87,20 +85,6 @@
               <ul class="dropdown-menu megamenu-content" role="menu">
                 <li>
                   <div class="row">
-                    <div class="col-menu col-md-3">
-                      <h5 class="title">Tipos</h5>
-                      <div class="content">
-                        <ul class="menu-col" style="color:gray">
-                          <li><a href="listing1.php">Apartamentos</a></li>
-                          <li><a href="index.php">Casas</a></li>
-                          <li><a href="listing1.php">Chácaras</a></li>
-                          <li><a href="listing1.php">Galpões</a></li>
-                          <li><a href="listing1.php">Comercial</a></li>
-                          <li><a href="listing1.php">Sítios</a></li>
-                          <li><a href="listing1.php">Sobrados</a></li>
-                        </ul>
-                      </div>
-                    </div>
                     <div class="col-menu col-md-9">
                       <h5 class="title bottom20">Destaques</h5>
                       <div class="row">
@@ -122,20 +106,6 @@
               <ul class="dropdown-menu megamenu-content" role="menu">
                 <li>
                   <div class="row">
-                    <div class="col-menu col-md-3">
-                      <h5 class="title">Tipos</h5>
-                      <div class="content">
-                        <ul class="menu-col" style="color:gray">
-                          <li><a href="listing1.php">Apartamentos</a></li>
-                          <li><a href="index.php">Casas</a></li>
-                          <li><a href="listing1.php">Chácaras</a></li>
-                          <li><a href="listing1.php">Galpões</a></li>
-                          <li><a href="listing1.php">Comercial</a></li>
-                          <li><a href="listing1.php">Sítios</a></li>
-                          <li><a href="listing1.php">Sobrados</a></li>
-                        </ul>
-                      </div>
-                    </div>
                     <div class="col-menu col-md-9">
                       <h5 class="title bottom20">Destaques</h5>
                       <div class="row">

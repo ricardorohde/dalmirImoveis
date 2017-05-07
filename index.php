@@ -110,20 +110,6 @@
                 <ul class="dropdown-menu megamenu-content" role="menu">
                   <li>
                     <div class="row">
-<!--                       <div class="col-menu col-md-3">
-                        <h5 class="title">Tipos</h5>
-                        <div class="content">
-                          <ul class="menu-col" style="color:gray">
-                            <li><a href="listing1.php">Apartamentos</a></li>
-                            <li><a href="index7.php">Casas</a></li>
-                            <li><a href="listing2.php">Chácaras</a></li>
-                            <li><a href="listing5.php">Galpões</a></li>
-                            <li><a href="listing3.php">Comercial</a></li>
-                            <li><a href="listing3.php">Sítios</a></li>
-                            <li><a href="listing3.php">Sobrados</a></li>
-                          </ul>
-                        </div>
-                      </div> -->
                       <div class="col-menu col-md-9">
                         <h5 class="title bottom20">Destaques</h5>
                         <div class="row">
@@ -144,20 +130,6 @@
                 <ul class="dropdown-menu megamenu-content" role="menu">
                   <li>
                     <div class="row">
-              <!--         <div class="col-menu col-md-3">
-                        <h5 class="title">Tipos</h5>
-                        <div class="content">
-                          <ul class="menu-col" style="color:gray">
-                            <li><a href="listing1.php">Apartamentos</a></li>
-                            <li><a href="index7.php">Casas</a></li>
-                            <li><a href="listing2.php">Chácaras</a></li>
-                            <li><a href="listing5.php">Galpões</a></li>
-                            <li><a href="listing3.php">Comercial</a></li>
-                            <li><a href="listing3.php">Sítios</a></li>
-                            <li><a href="listing3.php">Sobrados</a></li>
-                          </ul>
-                        </div>
-                      </div> -->
                       <div class="col-menu col-md-9">
                         <h5 class="title bottom20">Destaques</h5>
                         <div class="row">
