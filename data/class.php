@@ -349,55 +349,26 @@ class Imovel{
               }
 
               $ind_p++;
-
         }        
     }   
 
     public function showCaracter($array_caracter = null)
     {
         $arrayDif = $this->getCaracter();
-        // var_dump($array_caracter);
+        if($array_caracter != null)
+        {
+            Session::startSession();
+            $_SESSION['dif_imoveis'] = $array_caracter;
+        }
+
         foreach ($arrayDif as $key => $value) {
-            $printou = false;
-            if($array_caracter != null)
-            {
-
-                foreach ($array_caracter as $key_cod => $value_cod) {
-                   echo $value_cod." == ".$value['cod_diferencial'];
-                    if($value_cod == $value['cod_diferencial']){
-
-                        echo '  <div class="col-md-4 col-sm-4">
-                                <div class="search-form-group white">
-                                  <input value="'.$value['cod_diferencial'].'" type="checkbox" checked="checked" name="check-box" />
-                                  <span>'.$value['descricao'].'</span>
-                                </div>
-                            </div>';  
-                            $printou = true;  
-                            break;
-                    }
-                }
-
-                if(!$printou)
-                {
                     echo '  <div class="col-md-4 col-sm-4">
                                 <div class="search-form-group white">
-                                  <input value="'.$value['cod_diferencial'].'" type="checkbox" name="check-box" />
+                                  <input value="'.$value['cod_diferencial'].'" type="checkbox"   name="check-box" />
                                   <span>'.$value['descricao'].'</span>
                                 </div>
                             </div>';  
-                    $printou = true;
-                }
-                    
-            }else{
-                    echo '  <div class="col-md-4 col-sm-4">
-                                <div class="search-form-group white">
-                                  <input value="'.$value['cod_diferencial'].'" type="checkbox" name="check-box" />
-                                  <span>'.$value['descricao'].'</span>
-                                </div>
-                            </div>';  
-                    $printou = true;              
-            }
-
+        
         }        
     } 
 
@@ -421,31 +392,65 @@ class Imovel{
         }         
     } 
 
-
-    //STATIC FUNCTIONS IMOVEL
-    public static function returnFiltroEmpty()
+    public function buildImovelSingle($code)
     {
-            $array = array();
-            $array["key_word"] = "";
-            $array["cod_bairro"]="-1";
-            $array["cod_tipo"]="-1";
-            $array["cod_transacao"]="-1";
-            $array["quarto_max"]="-1";
-            $array["quarto_min"]="-1";
-            $array["area_min"]="-1";
-            $array["area_max"]="-1";
-            $array["valor_min"]="-1";
-            $array["valor_max"]="-1";
-            $array["order_attr"]="";
-            $array["order_list"]="asc";
-            $array["mode"]="update_imovel";
-            $array["imoveis_count"]="0";
-            $array["cod_imovel"]="-1";
-            $array["num_page"]="1";
+        $filtro = Imovel::emptyFiltro();
+        $filtro['cod_imovel'] = $code;
+        $select = Imovel::buildSelect($filtro);
+        var_dump($select);
+        $resource = MysqlCustom::querySql($select);
 
-            return $array;
+        $row = MysqlCustom::fetch($resource);
+
+        return $row;
     }
 
+    public function buildCharactersImovel($code)
+    {
+        $select = " select di.descricao as descricao  from imoveis iq
+                    left join rel_imovel_dif rif on rif.cod_imovel = iq.cod_imovel
+                    left join diferencial_imovel di on di.cod_diferencial = rif.cod_dif
+                    where iq.cod_imovel = ".$code;
+
+
+
+        $resource = MysqlCustom::querySql($select);
+        $character = array();
+        $i = 0;
+        while($row = MysqlCustom::fetch($resource))
+        {
+            $character[$i]['descricao'] = $row['descricao'];
+            $i++;
+        }
+
+        return $character; 
+
+    }
+
+    public function getPicturesSingleImovel($code)
+    {
+
+        $select = ' select *  from imagens iq
+                    left join imoveis im on im.cod_imovel = iq.cod_imovel
+                    where iq.cod_imovel = '.$code;
+
+        $resource = MysqlCustom::querySql($select);
+        $return = array();
+        $i = 0;
+
+        while($row = MysqlCustom::fetch($resource))
+        {
+            $return[$i]['caminho_img'] = $row['caminho_img'];
+            $return[$i]['caminho_thumb'] = $row['caminho_thumb'];
+            $i++;
+        }
+
+        
+        
+        return $return;
+    }
+
+    //STATIC FUNCTIONS IMOVEL
     public static function emptyFiltro()
     {
         $filtro =  array();
@@ -456,6 +461,7 @@ class Imovel{
         $filtro['quarto_min'] = '-1';
         $filtro['area_min'] = '-1';
         $filtro['area_max'] = '-1';
+        $filtro['cod_transacao'] = '-1';
         $filtro['valor_min'] = '-1';
         $filtro['valor_max'] = '-1';
         $filtro['order_attr'] = "";
@@ -508,15 +514,17 @@ class Imovel{
     public static function buildSelect($filtro, $group = true)
     {
 
-        $select =  " select i.cod_imovel as cod_imovel, i.suite as suite, i.endereco as endereco, i. quartos as quartos, i.garagem as garagem, rid.cod_dif as cod_dif, ";
+        $select =  " select i.cod_imovel as cod_imovel, i.suite as suite, i.endereco as endereco, i. quartos as quartos, i.garagem as garagem, ";
         $select .= " i.area as area, i.cod_bairro as cod_bairro, i.cod_transacao as cod_transacao, i.cod_tipo as cod_tipo, ";
-        $select .= " i.valor as valor, i.titulo as titulo, i.descricao as descricao, i.banheiro as banheiro, p.caminho_thumb as caminho_thumb, ";
-        $select .= " p.caminho_img as caminho_img ";
+        $select .= " i.valor as valor, b.descricao as bairro, i.titulo as titulo, i.descricao as descricao, i.banheiro as banheiro, p.caminho_thumb as caminho_thumb, ";
+        $select .= " p.caminho_img as caminho_img, rid.cod_dif as cod_dif, i.video as video ";
         $select .= " from imoveis i ";
         $select .= " left join imagens p ";
         $select .= " on p.cod_imovel = i.cod_imovel ";
-        $select .= " left join rel_imovel_dif rid ";
+        $select .= " left join rel_imovel_dif rid  ";
         $select .= " on rid.cod_imovel = i.cod_imovel "; 
+        $select .= " left join bairros b on b.cod_bairro = i.cod_bairro ";
+        
 
         $select .= ' where (i.oculto <> 1) and (i.deletado <> 1) ';
 
@@ -542,7 +550,7 @@ class Imovel{
 
         if($filtro['cod_transacao'] != "-1")
         {
-            $select .= " and (i.cod_transacao <= '".$filtro['cod_transacao']."') ";
+            $select .= " and (i.cod_transacao = '".$filtro['cod_transacao']."') ";
         }
 
         if($filtro['key_word'] != "")
@@ -808,7 +816,7 @@ class Imovel{
 
             $template .= '          <div class="item">
                               <div class="image bottom15"> 
-                                <img src="'.$row['caminho_thumb'].'" alt="Featured Property"> 
+                                <img src="data/imovel/'.$row['caminho_thumb'].'" alt="Featured Property"> 
                                 <span class="nav_tag yellow text-uppercase">'.$t_d.'</span>
                               </div>
                               <h4><a class="title-imovel" href="property_detail1.php">'.$row['titulo'].'</a></h4>
@@ -817,6 +825,63 @@ class Imovel{
         }
 
         return $template;
+    }
+
+    public static function buildTemplateRecentsImoveis()
+    {        
+
+        $select =  " select i.cod_imovel as cod_imovel, i.suite as suite, i.endereco as endereco, ";
+        $select .= " i.area as area, i.cod_bairro as cod_bairro, i.cod_transacao as cod_transacao , i.cod_tipo as cod_tipo, ";
+        $select .= " i.valor as valor, i.data_insert as data_insert, i.titulo as titulo, i.descricao as descricao, p.caminho_thumb as caminho_thumb ";
+        $select .= " from imoveis i ";
+        $select .= " left join imagens p ";
+        $select .= " on p.cod_imovel = i.cod_imovel ";
+        $select .= " left join rel_imovel_dif rid ";
+        $select .= " on rid.cod_imovel = i.cod_imovel ";   
+        $select .= " group by cod_imovel ";
+        $select .= " order by  data_insert desc ";
+        $select .= " limit 0, 3 ";
+
+        $resource = MysqlCustom::querySql($select);
+        $template = '';
+        while($row = MysqlCustom::fetch($resource))
+        {
+            $template .= '       
+                            <div class="row bottom20">
+                              <div class="col-md-4 col-sm-4 col-xs-6 p-image">
+                               
+                                <img src="data/imovel/'.$row['caminho_thumb'].'" alt="image">
+
+                              </div>
+                              <div class="col-md-8 col-sm-8 col-xs-6">
+                                <div class="feature-p-text">
+                                  <h4><a href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['titulo'].' </a></h4>
+                                  <p class="bottom15"><a href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['endereco'].' </a></p>
+                                  <a href="property_detail1.php?c='.$row['cod_imovel'].'">R$'.$row['valor'].'</a>
+                                </div>
+                              </div>
+                            </div> ';
+        }
+
+        return $template;    
+
+    }
+
+    public static function listMoreImoveis($bairro)
+    {        
+
+            $filtro = Imovel::emptyFiltro();
+            $filtro['cod_bairro'] = $bairro;
+            $template = Imovel::buildTemplate($filtro);
+            $template = str_replace("cbp-item latest sale", "item", $template);
+            echo $template;  
+
+    }    
+
+    public static function listImoveisRecents()
+    {
+        $template = Imovel::buildTemplateRecentsImoveis();
+        echo $template;
     }
 
     public static function listImoveisMenu($filtro)
@@ -837,7 +902,6 @@ class Imovel{
         $template = Imovel::buildTemplate($filtro);        
         $template = str_replace("cbp-item latest sale", "col-sm-6", $template);
         $_SESSION['page_imoveis'] = $template;
-
         $result['page'] = 'listing1.php';
         // var_dump(json_encode($result));
         echo(json_encode($result));
@@ -895,5 +959,6 @@ class Imovel{
         
 
 }
+
 
 

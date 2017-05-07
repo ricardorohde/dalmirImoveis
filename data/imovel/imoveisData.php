@@ -31,6 +31,7 @@ $result['status'] = 'success';
 			$comando .= " garagem = ".$imovelData['imovel_garagem']." , ";
 			$comando .= " endereco = '".addslashes($imovelData['endereco_imovel'])."', " ;
 			$comando .= " descricao = '".addslashes($imovelData['descricao'])."', " ;
+			$comando .= " video = '".addslashes($imovelData['video_imovel'])."', " ;
 			$comando .= " deletado = 0, " ;
 			$comando .= " cod_tipo = ".$imovelData['cod_tipo'].", " ;
 			$comando .= " cod_bairro = ".$imovelData['cod_bairro'].", " ;
@@ -66,7 +67,7 @@ $result['status'] = 'success';
 					$path_origin = 'upload/'.$value;
 					$path_thumb = System::resizeImage($path_origin, $value);
 
-					$comando = "insert into imagens set ";
+					$comando = " insert into imagens set ";
 					$comando .= " cod_imovel = ".$cod_imovel.", ";
 					$comando .= " caminho_img = '".$path_origin."', ";
 					$comando .= " caminho_thumb = '".$path_thumb."' ";

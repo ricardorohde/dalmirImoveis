@@ -17,7 +17,7 @@
       $_SESSION['status'] = 'update';
       $_SESSION['cod_imovel'] = $_GET['c'];
       $cod_imovel = $_GET['c'];
-      $array_filtro = Imovel::returnFiltroEmpty();
+      $array_filtro = Imovel::emptyFiltro();
       $array_filtro['cod_imovel'] = $cod_imovel;
 
       $array_imovel = Imovel::collectData($array_filtro);

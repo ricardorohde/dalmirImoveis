@@ -10,6 +10,7 @@ $filesize = $_FILES['file']['size'];
 $location = "upload/".$filename;
 
 $return_arr = array();
+// var_dump($_FILES);
 
 /* Upload file */
 if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){

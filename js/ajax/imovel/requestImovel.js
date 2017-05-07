@@ -253,7 +253,7 @@ function actionImovel()
 {
 	if(statusImovel)
 	{
-		location.reload();
+		$(location).attr("href","submit_property.php");
 	}else{
 		$("#modalResponse").modal("hide");
 	}
@@ -285,17 +285,4 @@ function putValuesImovel($object)
     $(".Editor-editor").html($object.descricao);
     $("#imovel-garagem").val($object.garagem);
     $("#area-imovel").val($object.area);    
-
-    // $("#imovel-caracter input").each(function(){
-    //     for(var i = 0; i < $object.cod_dif.length; i++)
-    //     {
-    //         console.log($(this).val());
-    //         if($(this).val() == $object.cod_dif[i])
-    //         {
-    //             $(this).attr("checked", "checked");
-    //         }
-    //     }
-
-        
-    // });
 }
