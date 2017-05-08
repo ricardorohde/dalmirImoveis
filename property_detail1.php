@@ -35,15 +35,47 @@
 <link rel="stylesheet" type="text/css" href="css/search.css">
 <link rel="icon" href="images/icon.png">
 </head>
+<style type="text/css">
+body.modal-open #wrap{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}
+
+.close {
+    font-size: 50px;
+    display:block;
+}  
+</style>
 <body>
-<!--Loader-->
+
+
+<div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt"><i class="fa fa-envelope-o" aria-hidden="true"></i></h1>
+        <h2>Enviado com sucesso!</h2>
+        <h4>Retornaremos o mais breve possível, Obrigado!</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="loader">
   <div class="span">
     <div class="location_indicator"></div>
   </div>
 </div>
- <!--Loader--> 
- <!--Header-->
+
 <?php
   include('includes/header_include.php');
 ?>
@@ -53,8 +85,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 listing1 property-details">
-        <h2 class="text-uppercase"><?php echo $buildedImovel['titulo'] ?></h2>
-        <p class="bottom30">Código: <?php echo $buildedImovel['cod_imovel'] ?></p>
+        <h2 class="text-uppercase" id="p_titulo_imovel"><?php echo $buildedImovel['titulo'] ?></h2>
+        <p class="bottom30">Código: <span id="p_cod_imovel"><?php echo $buildedImovel['cod_imovel'] ?></span></p>
         <div id="property-d-1" class="owl-carousel">
  
         <?php
@@ -195,24 +227,24 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nome">
+                    <input type="text" id="edtName" class="form-control" placeholder="Nome">
                   </div>
                   <div class="form-group">
-                    <input type="tel" class="form-control" placeholder="Telefone">
+                    <input type="tel" id="edtTelefone" class="form-control" placeholder="Telefone">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="E-mail">
+                    <input type="email" id="edtEmail" class="form-control" placeholder="E-mail">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <textarea class="form-control" placeholder="Mensagem"></textarea>
+                    <textarea class="form-control" id="edtMensagem" placeholder="Mensagem"></textarea>
                   </div>
                 </div>
                 <div class="col-sm-12 row">
                   <div class="row">
                     <div class="col-sm-3">
-                      <input type="button" class="btn-blue uppercase border_radius" value="Enviar Agora">
+                      <input type="button" onclick="sendVisit()" class="btn-blue uppercase border_radius" value="Enviar Agora">
                     </div>
                   </div>
                 </div>
@@ -273,6 +305,7 @@
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
 <script src="js/ajax/search/search.js"></script>
+<script src="js/ajax/email/contato-imobiliaria.js"></script>
 </body>
 </html>
 

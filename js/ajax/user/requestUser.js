@@ -38,3 +38,48 @@ function requestLogout()
 	    
 	});	
 }
+
+function updateUser()
+{
+
+	$object = {};
+	if( $("#newConfirmPass").val() != '' && $("#newPass").val() != '' )
+	{
+		$object['new_pass'] = $("#newPass").val();
+		$object['new_confirm_pass'] = $("#newConfirmPass").val();	
+
+		if( $("#newConfirmPass").val() != $("#newPass").val() )	
+		{
+			$("#content-profile-modal").html('<i class="fa fa-user-times" aria-hidden="true"></i>');
+			$("#content-description-modal").html('Senhas não são iguais');
+			$("#modalProfile").modal();
+			return false;		
+		}
+
+	}
+
+	if( $("#edtNameAdmin").val() != '' )
+	{	
+		$object['nome_admin'] = $("#edtNameAdmin").val();
+	}
+
+	if( $("#edtLogin").val() != '' )
+	{	
+		$object['login_admin'] = $("#edtLogin").val();
+	}		
+
+	$("#content-profile-modal").html('<i class="fa fa-user" aria-hidden="true"></i>');
+	$("#content-description-modal").html('Usuário cadastrado com sucesso!');
+	
+	$.ajax({
+	    type: 'POST',
+	    url: 'data/user/userUpdate.php',
+	    data: $object,
+	    success: function(data) 
+	    { 
+	    	console.log(data);
+	    	$("#modalProfile").modal();	
+	   	}
+	    
+	});	
+}

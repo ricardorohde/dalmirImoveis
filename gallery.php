@@ -69,7 +69,7 @@
                         <span><i class="icon-icons230"></i> by Martin Moore</span>
                         <span><i class="icon-icons228"></i> August 22, 2017</span>
                      </div> -->
-                     <p class="p-font-15">Há mais de 20 anos no comércio imobiliário, agora com sede na Av. Prefeito José Juvenal Mafra, 6783, Balneário de Gravatá em Navegantes/SC. Atendendo ao público em geral com clareza, honestidade e a certeza de realizar um bom negócio com transparência e confiança.</p>
+                     <p class="p-font-15">Há mais de 20 anos no comércio imobiliário, agora com sede na Av. Prefeito José Juvenal Mafra, 6783, Gravatá em Navegantes/SC. Atendendo ao público em geral com clareza, honestidade e a certeza de realizar um bom negócio com transparência e confiança.</p>
                     
                       <ul>
                           <li>Nossa Meta:

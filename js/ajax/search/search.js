@@ -259,3 +259,11 @@ function searchByPage($page)
 	});
 }
 
+
+$(window).load(function(){
+	// $("#order-price").change(function(){
+	// 	searchAjax('page');	
+	// });
+
+	
+});

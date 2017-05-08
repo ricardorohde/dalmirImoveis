@@ -100,8 +100,15 @@ $(function() {
     });
 });
 
+
 // Sending AJAX request and upload file
 function uploadData(formdata){
+
+    // $("#modalImages").modal('show');
+    $('#modalImages').modal({
+        backdrop: 'static',
+        keyboard: false
+    });
 
     $.ajax({
         url: 'data/imovel/upload.php',
@@ -111,6 +118,7 @@ function uploadData(formdata){
         processData: false,
         // dataType: 'json',
         success: function(response){
+            $("#modalImages").modal('hide');
         	console.log(response);
             addThumbnail(response);
         }
@@ -131,9 +139,16 @@ function addThumbnail(data){
     var src = parsed_data.src;
 
     // Creating an thumbnail
+    
     $("#uploadfile").append('<div id="thumbnail_'+num+'" class="thumbnail"></div>');
+    $("#thumbnail_"+num).append('<button type="button" id="remove_'+num+'" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>');
     $("#thumbnail_"+num).append('<img src="'+src+'" width="100%" height="78%">');
     $("#thumbnail_"+num).append('<span class="size">'+size+'<span>');
+
+    $("#remove_"+num).click(function(event){
+        $("#thumbnail_"+num).remove();
+        event.stopPropagation();
+    });
 
 }
 

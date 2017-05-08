@@ -23,10 +23,39 @@
 <link rel="stylesheet" type="text/css" href="css/search.css">
 <link rel="icon" href="images/icon.png">
 </head>
+<style type="text/css">
+body.modal-open #wrap{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}
+
+.close {
+    font-size: 50px;
+    display:block;
+}  
+</style>
 <body>
 
+<div class="modal fade" id="modalEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt"><i class="fa fa-envelope-o" aria-hidden="true"></i></h1>
+        <h2>Enviado com sucesso!</h2>
+        <h4>Retornaremos o mais breve possível, Obrigado!</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!--Loader-->
 <div class="loader">
   <div class="span">
     <div class="location_indicator"></div>
@@ -34,8 +63,7 @@
 </div>
  <!--Loader--> 
  
- 
-
+<div id="wrap" class="text-center">
 <?php
   include('includes/header_include.php');
 ?>
@@ -44,7 +72,7 @@
 <!--Contact-->
 <section id="contact-us">
   <div class="contact">
-    <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.31261806768!2d-48.64230548495632!3d-26.861807083149486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ce78225d2ff3%3A0x3868484a8c8ff7f!2sAv.+Pref.+Jos%C3%A9+Juvenal+Mafra+-+Gravat%C3%A1%2C+Navegantes+-+SC%2C+88372-506!5e0!3m2!1ses!2sbr!4v1492194952868" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d889.9958488921965!2d-48.63412821191024!3d-26.840477098942245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ce0ec0b8ca35%3A0x3f0fc1ae11bd55f7!2sAv.+Pref.+Jos%C3%A9+Juvenal+Mafra%2C+6380+-+Gravat%C3%A1%2C+Navegantes+-+SC%2C+88375-000!5e0!3m2!1spt-BR!2sbr!4v1494209460100" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
     <div class="container">
       <div class="row">
         
@@ -54,7 +82,9 @@
            <div class="col-md-4 hidden-xs">
            </div> 
            
-           <div class="col-md-4 col-sm-4 col-xs-12  contact-text">
+
+
+           <div class="col-md-4 col-sm-4 col-xs-12  contact-text" style="margin-left: -150px">
 
             	<div class="agent-p-contact">
                 	<div class="our-agent-box bottom30">
@@ -68,9 +98,9 @@
                          <p><i class="icon-icons74"></i> Av. Pref. José Juvenal Mafra, 6783. CEP-88372-506. Gravatá - Navegantes / SC</p>
                       </div>
                     <ul class="social_share bottom20">
-                    <li><a href="https://www.facebook.com/dalmir.demarch?hc_ref=SEARCH&fref=nf" target="_blank"  class="facebook"><i class="icon-facebook-1"></i></a></li>
-          </ul>
-                </div>
+                      <li><a href="https://www.facebook.com/dalmir.demarch?hc_ref=SEARCH&fref=nf" target="_blank"  class="facebook"><i class="icon-facebook-1"></i></a></li>
+                    </ul>
+              </div>
             
             	<div class="agent-p-form">
                 	<div class="our-agent-box bottom30">
@@ -106,7 +136,7 @@
     </div>
   </div>
 </section>
-<!-- Contact End -->
+</div>
 <?php
   include('includes/footer_include.php');
 ?>

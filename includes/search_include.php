@@ -89,6 +89,19 @@
                 </div>
               </div>
             </div>
+            <div class="col-sm-12 bottom10" style="margin-top: 10px">
+              <div class="single-query-slider">
+              <label><strong>Ordenar por:</strong></label>
+                <div class="intro">
+                  <select id="order-price">
+                    <option class="active" value="1">Maior Preço</option>
+                    <option value="2">Menor Preço</option>
+                    <option value="3">Maior Área</option>
+                    <option value="4">Menor Área</option>
+                  </select>
+                </div>
+              </div>            
+            </div>
             <div class="col-sm-12 form-group">
               <button type="button" class="btn-blue border_radius" onclick="searchAjax('page')">Pesquisar</button>
             </div>

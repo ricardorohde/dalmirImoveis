@@ -7,6 +7,10 @@
     header("Location: login.php");
   }
 
+  $select = "select * from usuario ";
+  $resource = MysqlCustom::querySql($select);
+  $usuario = MysqlCustom::fetch($resource);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +35,20 @@
 </head>
 <body>
 
+<div class="modal fade" id="modalProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt" id="content-profile-modal"><i class="fa fa-picture-o" aria-hidden="true"></i></h1>
+        <h2 id="content-description-modal">Carregando imagem...</h2>
+        <!-- <h4>Retornaremos o mais breve possível, Obrigado!</h4> -->
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--Loader-->
 <div class="loader">
@@ -86,17 +104,17 @@
               </div>
               <div class="col-sm-8">
                 <div class="single-query form-group">
-                  <input type="text" placeholder="Informe seu nome" class="keyword-input">
+                  <input type="text"  value="<?php  echo $usuario['name']?>" id="edtNameAdmin" placeholder="Informe seu nome" class="keyword-input">
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="single-query">
-                  <label>E-mail:</label>
+                  <label>Login:</label>
                 </div>
               </div>
               <div class="col-sm-8">
                 <div class="single-query form-group">
-                  <input type="text" placeholder="Informe seu e-mail" class="keyword-input">
+                  <input type="text" id="edtLogin" value="<?php  echo $usuario['login']?>" placeholder="Informe seu login" class="keyword-input">
                 </div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 profile-form margin40">
@@ -105,22 +123,12 @@
                   <form class="callus">
                     <div class="col-sm-4">
                       <div class="single-query">
-                        <label>Senha atual:</label>
-                      </div>
-                    </div>
-                    <div class="col-sm-8">
-                      <div class="single-query form-group">
-                        <input type="password" class="keyword-input">
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="single-query">
                         <label>Nova Senha:</label>
                       </div>
                     </div>
                     <div class="col-sm-8">
                       <div class="single-query form-group">
-                        <input type="password" class="keyword-input">
+                        <input type="password" id="newPass" class="keyword-input">
                       </div>
                     </div>
                     <div class="col-sm-4">
@@ -130,14 +138,14 @@
                     </div>
                     <div class="col-sm-8">
                       <div class="single-query form-group">
-                        <input type="password" class="keyword-input">
+                        <input type="password" id="newConfirmPass" class="keyword-input">
                       </div>
                     </div>
                   </form>
                 </div>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-              <a class="btn-blue border_radius" href="#.">Salvar Alterações</a>
+              <a class="btn-blue border_radius" href="#." onclick="updateUser()">Salvar Alterações</a>
             </div>
             </form>
           </div>
@@ -179,6 +187,7 @@
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/ajax/user/requestUser.js"></script>
 
 </body>
 </html>

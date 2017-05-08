@@ -14,11 +14,28 @@ function sendContact()
         url: 'data/email/contato-imobiliaria.php',
         type: 'post',
         data: $object,
-        // contentType: false,
-        // processData: false,
-        // dataType: 'json',
         success: function(response){
-        	console.log(response);
+        	$("#modalEmail").modal();
+        }
+    });
+}
+
+function sendVisit()
+{
+	$object = {};
+	$object['nome_visitante'] = $("#edtName").val();
+	$object['telefone_visitante'] = $("#edtTelefone").val();
+	$object['email_visitante'] = $("#edtEmail").val();
+	$object['mensagem_visitante'] = $("#edtMensagem").val();
+	$object['codigo_imovel'] = $("#p_cod_imovel").html();
+	$object['titulo_imovel'] = $("#p_titulo_imovel").html();
+
+	$.ajax({
+        url: 'data/email/contato-imovel.php',
+        type: 'post',
+        data: $object,
+        success: function(response){
+        	$("#modalEmail").modal();
         }
     });
 }

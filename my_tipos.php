@@ -7,6 +7,8 @@
     header("Location: login.php");
   }
 
+  $imovel = new Imovel();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +16,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>Castle | My Properties</title>
+<title>Dalmir Imóveis - Dados Auxiliares</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/reality-icon.css">
@@ -30,26 +32,20 @@
 <link rel="icon" href="images/icon.png">
 </head>
 
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt" id="content-profile-modal"><i class="fa fa-info-circle" aria-hidden="true"></i></h1>
+        <h2 id="content-description-modal">Cadastrado com sucesso!</h2>
+        <!-- <h4>Retornaremos o mais breve possível, Obrigado!</h4> -->
+        <hr>
       </div>
     </div>
-
   </div>
 </div>
-
 
 <body>
 
@@ -106,99 +102,51 @@
   <div class="container list-t-border col-md-10 col-md-offset-1">
 
     <div class="row bg-hover">
-      <div class="my-pro-list">
-        <div class="col-md-10 col-sm-10 col-xs-10">
-            <form class="callus clearfix border_radius submit_property">
-              <div class="row">
-                
-                    <div class="container-2">
-                      <div class="row">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                          <div class="search-form-group white bottom10">
-                            <input type="radio" name="item-imovel">
-                            <span>Tipo do imóvel</span>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                          <div class="search-form-group white bottom10">
-                            <input type="radio" name="item-imovel">
-                            <span>Cidade do Imóvel</span>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                          <div class="search-form-group white bottom10">
-                            <input type="radio" name="item-imovel">
-                            <span>Bairro do Imóvel</span>
-                          </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                          <div class="search-form-group white bottom10">
-                            <input type="radio" name="item-imovel">
-                            <span>Características do Imóvel</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
+      <form class="callus clearfix border_radius submit_property">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="single-query bottom20">
+              <label>Dado Auxiliar </label>
+              <div class="intro">
+                <select id="attr-view">
+                  <option class="active" value="1">Cidade</option>
+                  <option value="2">Bairro</option>
+                  <option value="3">Diferenciais</option>                  
+                </select>
               </div>
-            </form>
+            </div>  
+          </div>
         </div>
-      </div>
-    </div>  
+      </form>
+    </div> 
+    <hr>
     <div class="row bg-hover-gray">
       <form class="callus clearfix border_radius submit_property">
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
                 <div class="single-query form-group bottom20">
-                  <label align="center" style="width: 100%;">Bairro / Tipo / Cidade / Caracteristicas de imóvel</label>
-                  <input type="text" class="keyword-input" placeholder="Cadastre um tipo de imóvel">
+                  <label align="center" style="width: 100%;">Valor:</label>
+                  <input id="valueToInsert" type="text" class="keyword-input" placeholder="">
                   
                 </div>
-            <div class="single-query bottom20">
-              <label>Cidade </label>
-              <div class="intro">
-                <select >
-                  <option class="active">Navegantes</option>
-                  <option>Piçarras</option>
-                  <option>Penha </option>
-                  
-                  <!-- <option>For Rent</option> -->
-                </select>
-              </div>
-            </div>  
-            <button type="submit" class="btn-blue border_radius margin40">Cadastrar</button>              
+                <div class="single-query bottom20 cidade-choose" style="display: none">
+                  <label>Cidade </label>
+                  <div class="intro">
+                    <select id="cidade-bairro">
+                      <?php
+                        $imovel->showCidades();
+                      ?>
+                    </select>
+                  </div>
+                </div>  
+            <button type="button" onclick="crudValue()" class="btn-blue border_radius margin40">Cadastrar</button>              
           </div>
         </div>
       </form>
     </div>  
     <div class="row bg-hover">
-      <div class="my-pro-list">
-        <div class="col-md-8 col-sm-10 col-xs-10">
-            <form class="callus clearfix border_radius submit_property">
-              <div class="row">
-                <div class="col-md-12">
-                    <div class="single-query bottom20">
-                      <!-- <label>Tipo </label> -->
-                      <div class="intro">
-                        <select id="tabela-teste">
-                          <option class="active">Apartamento</option>
-                          <option>Casa</option>
-                          <option>Chácara </option>
-                          <option>Sala Comercial</option>
-                          <!-- <option>For Rent</option> -->
-                        </select>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </form>
-        </div>
-        <div class="col-md-4 col-sm-2 col-xs-12">
-          <div class="select-pro-list">
-            <a href="#" data-toggle="modal" data-target="#myModal"><i class="icon-pen2"></i></a>
-            <a href="#" data-toggle="modal" data-target="#myModal"><i class="icon-cross"></i></a>
-          </div>
-        </div>
+      <div id="content-return-data" class="my-pro-list">
+
       </div>
     </div>
     
@@ -210,13 +158,6 @@
 
   <div class="container">
     <div class="row padding_top">
-      <div class="col-md-12">
-        <ul class="pager">
-          <li><a href="#">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -248,6 +189,7 @@
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/ajax/auxiliar/requestAuxiliar.js"></script>
 
 
 </body>

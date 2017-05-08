@@ -38,25 +38,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-sm-12 col-xs-12">
-        <div class="row">
-          <div class="col-md-9">
-            <h2 class="uppercase">Lista de Imóveis</h2>
-          </div>
-          <div class="col-md-3">
-          <form class="callus">
-            <div class="single-query">
-              <div class="intro">
-                <select id="order-price">
-                  <option class="active" value="1">Maior Preço</option>
-                  <option value="2">Menor Preço</option>
-                  <option value="3">Maior Área</option>
-                  <option value="4">Menor Área</option>
-                </select>
-              </div>
-            </div>
-            </form>
-          </div>
-        </div>
         <div class="row">          
           <?php
                 Imovel::listImoveisPageCurrent();

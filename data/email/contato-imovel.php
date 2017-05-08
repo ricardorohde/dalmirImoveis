@@ -20,13 +20,18 @@
 			$mail->AddAddress('contato@dalmirimoveis.imb.br', 'Interesse em Imóvel');
 			$mail->AddCC('alberto.pimentel.94@gmail.com');
 			$mail->IsHTML(true); // Define que o e-mail será enviado como HTML	 
-			$mail->Subject  = "Contato - Imobiliária "; // Assunto da mensagem
+			$mail->Subject  = "Contato - Imovel "; // Assunto da mensagem
 			$email = file_get_contents('email_template.html');			 
-			$email = str_replace("#ASSUNTO", "Contato com Imobiliária", $email);
+			$email = str_replace("#ASSUNTO", "Contato pelo imovel '".$params['titulo_imovel']."'", $email);
 			$email = str_replace("#NOME", $params['nome_visitante'], $email);
 			$email = str_replace("#TELEFONE", $params['telefone_visitante'], $email);
 			$email = str_replace("#EMAIL", $params['email_visitante'], $email);
-			$email = str_replace("#TEXTO", $params['mensagem_visitante'], $email);
+			
+			$texto = "Código do Imóvel: ".$params['codigo_imovel']."<br>";
+			$texto .= "Mensagem: <br>";
+			$texto .= $params['mensagem_visitante'];
+
+			$email = str_replace("#TEXTO", $texto, $email);
 			$mail->Body = $email;
 			$result = array();
 
