@@ -299,13 +299,50 @@ function putValuesImovel($object)
     $("#suite-imovel").val($object.suite);
     $(".Editor-editor").html($object.descricao);
     $("#imovel-garagem").val($object.garagem);
-    $("#area-imovel").val($object.area);    
+    $("#area-imovel").val($object.area);  
+
+    $("#valor-imovel").priceFormat({
+        prefix: 'R$ ',
+        centsSeparator: ',',
+        thousandsSeparator: '.'
+    });
+}
+
+function addCommas(str){
+    var parts = (str + "").split("."),
+        main = parts[0],
+        len = main.length,
+        output = "",
+        first = main.charAt(0),
+        i;
+    
+    if (first === '-') {
+        main = main.slice(1);
+        len = main.length;    
+    } else {
+          first = "";
+    }
+    i = len - 1;
+    while(i >= 0) {
+        output = main.charAt(i) + output;
+        if ((len - i) % 3 === 0 && i > 0) {
+            output = "," + output;
+        }
+        --i;
+    }
+    // put sign back
+    output = first + output;
+    // put decimal part back
+    if (parts.length > 1) {
+        output += "." + parts[1];
+    }
+    return output;
 }
 
 
 
-
 $(window).load(function(){
+    console.log(addCommas('65456465.90'));
   
   $('.check-box').each(function() {
         if($(this).find(':checkbox').is(":checked")){
@@ -315,5 +352,11 @@ $(window).load(function(){
         }
     
   });
+
+  $("#valor-imovel").priceFormat({
+        prefix: 'R$ ',
+        centsSeparator: ',',
+        thousandsSeparator: '.'
+    });
   
 });

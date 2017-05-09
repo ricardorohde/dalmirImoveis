@@ -136,14 +136,11 @@ class User {
     }
 
     // $this->logado = $this->logar($l, $p);
-
     public function logar($l, $p)
     {
         $comando = "select * from usuario where UPPER(login) = UPPER('".$l."') and UPPER(password) = UPPER('".$p."') "; 
-        // echo $comando;   
         $result = MysqlCustom::querySql($comando);
 
-        
         if(mysqli_num_rows($result) > 0)
         {            
             $this->login = $l;
@@ -157,8 +154,6 @@ class User {
             }
             $this->logado = false;
         }
-
-
     }
 
     public static function logout()
@@ -519,7 +514,7 @@ class Imovel{
     {
 
         $select =  " select i.cod_imovel as cod_imovel, i.suite as suite, i.endereco as endereco, i. quartos as quartos, i.garagem as garagem, ";
-        $select .= " i.area as area, i.cod_bairro as cod_bairro, i.cod_transacao as cod_transacao, i.cod_tipo as cod_tipo, ";
+        $select .= " i.area as area, i.oculto as oculto, i.cod_bairro as cod_bairro, i.cod_transacao as cod_transacao, i.cod_tipo as cod_tipo, ";
         $select .= " i.valor as valor, b.descricao as bairro, i.titulo as titulo, i.descricao as descricao, i.banheiro as banheiro, p.caminho_thumb as caminho_thumb, ";
         $select .= " p.caminho_img as caminho_img, rid.cod_dif as cod_dif, i.video as video ";
         $select .= " from imoveis i ";
@@ -528,9 +523,10 @@ class Imovel{
         $select .= " left join rel_imovel_dif rid  ";
         $select .= " on rid.cod_imovel = i.cod_imovel "; 
         $select .= " left join bairros b on b.cod_bairro = i.cod_bairro ";
+        $select .= ' where (1 = 1) '; 
         
-
-        $select .= ' where (i.oculto <> 1) and (i.deletado <> 1) ';
+        if($filtro['mode'] != 'page_admin')
+            $select .= ' and (i.oculto <> 1) and (i.deletado <> 1) ';
 
         if(($filtro['area_max'] != "-1") && ($filtro['area_max'] != ""))
         {
@@ -621,8 +617,11 @@ class Imovel{
                 if($filtro['pagination'] == 'true')
                 {
                     
-                    Session::startSession();
-                    $_SESSION['page_filtro'] = serialize($filtro);
+                    if($filtro['mode'] != 'page_admin'){
+                            Session::startSession();
+                            $_SESSION['page_filtro'] = serialize($filtro);                        
+                    }
+                    
 
                     $inicial = (((int)$filtro['num_page'] - 1) * (int)$filtro['imoveis_count']) + ((int)$filtro['num_page'] -1);            
 
@@ -763,6 +762,8 @@ class Imovel{
 
         while($row = MysqlCustom::fetch($resource))
         { 
+            // var_dump($row);
+            // break;
             $template .='   <div class="row bg-hover">
                               <div class="my-pro-list">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
@@ -785,6 +786,12 @@ class Imovel{
                                             break;
                                     }
 
+
+                            $attr = ' onclick="callModalDelete('.$row['cod_imovel'].')" ';
+                            if($row['oculto'] != 0)
+                                $attr = 'style="background:red" onclick="callModalShow('.$row['cod_imovel'].')" ';
+
+
                               $template.=    '  <div class="button-my-pro-list">
                                       <a href="">R$ '.$row['valor'].'</a>
                                     </div>
@@ -793,7 +800,7 @@ class Imovel{
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                   <div class="select-pro-list">
                                     <a href="submit_property.php?c='.$row['cod_imovel'].'"><i class="icon-pen2"></i> <input type="hidden" value="'.$row['cod_imovel'].'"></a>
-                                    <a href="#"><i class="icon-cross"></i><input type="hidden" value="'.$row['cod_imovel'].'"></a>
+                                    <a href="#" '.$attr.' ><i class="fa fa-eye-slash" aria-hidden="true"></i><input type="hidden" value="'.$row['cod_imovel'].'"></a>
                                   </div>
                                 </div>
                               </div>

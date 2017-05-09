@@ -82,7 +82,7 @@
       <div class="col-md-12">
         <ul class="f-p-links margin_bottom">
           <li><a href="profile.php" class="active"><i class="icon-icons230"></i>Meus Dados</a></li>
-          <li><a href="my_tipos.php"><i class="icon-icons215"></i> Tipos de Imóveis</a></li>
+          <li><a href="my_tipos.php"><i class="icon-icons215"></i> Dados Auxiliares</a></li>
           <li><a href="my_properties.php"><i class="icon-icons215"></i> Meus Imóveis</a></li>
           <li><a href="submit_property.php"><i class="icon-icons215"></i> Adicionar Imóvel</a></li>
           <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>

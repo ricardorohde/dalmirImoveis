@@ -62,7 +62,6 @@
         <br><br>
         <h1 style="font-size: 170pt"><i class="fa fa-picture-o" aria-hidden="true"></i></h1>
         <h2>Carregando imagem...</h2>
-        <!-- <h4>Retornaremos o mais breve possível, Obrigado!</h4> -->
         <hr>
       </div>
     </div>
@@ -99,13 +98,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <ul class="f-p-links margin_bottom">
-          <li><a href="profile.php" ><i class="icon-icons230"></i>Meus Dados</a></li>
-          <li><a href="my_tipos.php"><i class="icon-icons215"></i> Dados de Imóveis</a></li>
-          <li><a href="my_properties.php" ><i class="icon-icons215"></i> Meus Imóveis</a></li>
-          <li><a href="submit_property.php" class="active"><i class="icon-icons215" ></i> Adicionar Imóvel</a></li>
-          <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>
-        </ul>
+        <?php
+            include('includes/menu_admin.html');
+        ?>
       </div>
     </div>
     <div class="row">
@@ -356,6 +351,8 @@ function myMap() {
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/prototype.priceformat.min.js"></script>
+<script src="js/jquery.priceformat.min.js"></script>
 <script src="js/ajax/user/requestUser.js"></script>
 <script src="js/ajax/imovel/requestImovel.js"></script>
 <script type="text/javascript">

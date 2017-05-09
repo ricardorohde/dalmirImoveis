@@ -18,10 +18,10 @@
 	if($params['action'] == 'update')
 	{
 		$update = "update ".$params['tabela']." set ";
-		$update .= " ".$params['atributo']." = '".$params['value']."', ";
+		$update .= " ".$params['atributo']." = '".$params['value']."' ";
 
 		if($params['tabela'] == 'bairros')
-			$update .= " cod_cidade = '".$params['cod_cidade']."' ";
+			$update .= ", cod_cidade = '".$params['cod_cidade']."' ";
 
 		$update .= " where ".$params['pk']." = ".$params['codigo'];
 		echo $update;

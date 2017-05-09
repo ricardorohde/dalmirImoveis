@@ -18,7 +18,7 @@
 			$mail->FromName = "Contato ".$params['nome_visitante']; // Seu nome
 			$mail->CharSet = 'utf-8';			
 			$mail->AddAddress('contato@dalmirimoveis.imb.br', 'Interesse em Imóvel');
-			$mail->AddCC('alberto.pimentel.94@gmail.com');
+			$mail->AddCC('dalmirimoveis@hotmail.com');
 			$mail->IsHTML(true); // Define que o e-mail será enviado como HTML	 
 			$mail->Subject  = "Contato - Imobiliária "; // Assunto da mensagem
 			$email = file_get_contents('email_template.html');			 

@@ -23,8 +23,45 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" href="images/icon.png">
 </head>
+<style type="text/css">
+body.modal-open #wrap{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}
+
+.close {
+    font-size: 50px;
+    display:block;
+}  
+</style>
 <body>
 
+<div class="modal fade" id="modalTypes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt" id="content-profile-modal"><i class="fa fa-info-circle" aria-hidden="true"></i></h1>
+        <h2 id="content-description-modal">Deseja ocultar este imóvel?</h2>
+        <div class="container-buttons-modal col-md-12">
+          <button type="button" onclick="manipulateImovel()" class="btn btn-primary">Sim</button>
+          <button type="button" onclick="$('#modalTypes').modal('hide')" class="btn btn-secondary">Não</button>
+          <input type="hidden" name="codigo_imovel_modal">
+          <input type="hidden" name="action_imovel_modal">
+          <p id="msgCallback"></p>
+        </div>
+        <!-- <h4>Retornaremos o mais breve possível, Obrigado!</h4> -->
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--Loader-->
 <div class="loader">
@@ -60,7 +97,7 @@
       <div class="col-md-12">
         <ul class="f-p-links margin_bottom">
           <li><a href="profile.php" ><i class="icon-icons230"></i>Meus Dados</a></li>
-          <li><a href="my_tipos.php" ><i class="icon-icons215"></i> Dados de Imóveis</a></li>
+          <li><a href="my_tipos.php" ><i class="icon-icons215"></i> Dados Auxiliares</a></li>
           <li><a href="my_properties.php" class="active"><i class="icon-icons215"></i> Meus Imóveis</a></li>
           <li><a href="submit_property.php"><i class="icon-icons215"></i> Adicionar Imóvel</a></li>
           <li><a href="login.php?log=out"><i class="icon-lock-open3"></i>Sair</a></li>
@@ -74,17 +111,6 @@
     </div>
   </div>
   <div class="list-admin container  list-t-border">
-  </div>
-  <div class="container">
-    <div class="row padding_top">
-      <div class="col-md-12">
-        <ul class="pager">
-          <li><a href="#">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 <!-- My - Property end -->
@@ -118,6 +144,7 @@
 <script src="js/custom.js"></script>
 <script src="js/ajax/search/search.js"></script>
 <script src="js/ajax/search/searchAdmin.js"></script>
+<script src="js/ajax/imovel/requestTypes.js"></script>
 <script src="js/functions.js"></script>
 
 

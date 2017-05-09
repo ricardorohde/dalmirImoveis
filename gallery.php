@@ -27,15 +27,13 @@
 <body>
 
 
-<!--Loader-->
+<!--Lader-->
 <div class="loader">
   <div class="span">
     <div class="location_indicator"></div>
   </div>
 </div>
  <!--Loader--> 
-
-
 <?php
   include('includes/header_include.php');
 ?>

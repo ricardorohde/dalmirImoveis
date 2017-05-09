@@ -24,10 +24,22 @@ $result['status'] = 'success';
 			}
 
 			$comando .= " titulo = '".addslashes($imovelData['titulo_imovel'])."', "  ;
-			$comando .= " valor = ".$imovelData['valor_imovel'].", "  ;
+
+			$var_aux = (string)$imovelData['valor_imovel'];
+			$valor = str_replace(',','',substr($var_aux, 3, strlen((string)$imovelData['valor_imovel'])));
+			$valor = str_replace('.','',$valor);				
+			$antes = substr($valor, 0, strlen($valor) - 2);
+			$depois = substr($valor, strlen($valor) - 2, strlen($valor));
+			$valor = $antes . "." . $depois;
+
+
+			$comando .= " valor = ".$valor.", "  ;
 			$comando .= " suite = ".$imovelData['suite_imovel'].", "  ;
 			$comando .= " quartos = ".$imovelData['quartos_imovel'].","  ;
-			$comando .= " oculto =  0,";
+			
+			if($imovelData['status'] == 'insert')
+				$comando .= " oculto =  0,";	
+			
 			$comando .= " garagem = ".$imovelData['imovel_garagem']." , ";
 			$comando .= " endereco = '".addslashes($imovelData['endereco_imovel'])."', " ;
 			$comando .= " descricao = '".addslashes($imovelData['descricao'])."', " ;
@@ -65,12 +77,12 @@ $result['status'] = 'success';
 				foreach ($imovelData['images'] as $key => $value) {
 						
 					$path_origin = 'upload/'.$value;
-					$path_thumb = System::resizeImage($path_origin, $value);
+					// $path_thumb = System::resizeImage($path_origin, $value);
 
 					$comando = " insert into imagens set ";
 					$comando .= " cod_imovel = ".$cod_imovel.", ";
 					$comando .= " caminho_img = '".$path_origin."', ";
-					$comando .= " caminho_thumb = '".$path_thumb."' ";
+					$comando .= " caminho_thumb = '".$path_origin."' ";
 				
 					MysqlCustom::execQuery($comando);
 				}
