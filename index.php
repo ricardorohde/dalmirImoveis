@@ -27,6 +27,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" href="images/icon.png">
 </head>
+
 <body>
 
 
@@ -362,20 +363,20 @@
       <div class="col-sm-6 margin40">
         <div class="agent_wrap">
           <div class="image">
-            <img src="images/agent-one.jpg" alt="Agents">
+            <img src="images/agent-one.png" alt="Agents">
             <div class="img-info">
               <h3>Diego Dalmir Demarch</h3>
               <span>&nbsp;</span>
-              <p class="top20 bottom30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer.</p>
+              <p class="top20 bottom30">Gerente Comercial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <table class="agent_contact table">
                 <tbody>
                   <tr class="bottom10">
                     <td><strong>Telefone:</strong></td>
-                    <td class="text-right">(47) 99909-3456</td>
+                    <td class="text-right">(47) 99670-7240</td>
                   </tr>
                   <tr>
                     <td><strong>E-mail:</strong></td>
-                    <td class="text-right"><a href="#">diego@dalmirimoveis.com</a></td>
+                    <td class="text-right"><a href="#">demarch22@gmail.com</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -388,16 +389,17 @@
       <div class="col-sm-6 margin40">
         <div class="agent_wrap">
           <div class="image">
-            <img src="images/agent-five.jpg" alt="Agents">
+            <img src="images/agent-five.png" alt="Agents">
             <div class="img-info">
               <h3>Dalmir João Demarch</h3>
               <span>CRECI 6730</span>
-              <p class="top20 bottom30">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh tempor cum soluta nobis consectetuer.</p>
+              <p class="top20 bottom30">Diretor Administrativo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <table class="agent_contact table">
                 <tbody>
                   <tr class="bottom10">
                     <td><strong>Telefone:</strong></td>
-                    <td class="text-right">(47) 98475-5765</td>
+                    <td class="text-right">(47) 3319-2272</td>
+                    <td class="text-right">(47) 99909-3456</td>
                   </tr>
                   <tr>
                     <td><strong>E-mail:</strong></td>
@@ -415,14 +417,14 @@
     </div>
   </div>
 </div>
-  <div class="container bg_white padding">
+  <!-- <div class="container bg_white padding">
     <div class="row">
       <div class="col-xs-12 text-center">
         <h2 class="uppercase">Compradores satisfeitos</h2>
         <p class="heading_space">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec viverra erat Aenean elit tellus.</p>
       </div>
     </div>
-    <div class="row">
+     <div class="row">
       <div class="col-md-12">
          <div id="testinomial-slider" class="owl-carousel display navigate">
           <div class="item">
@@ -454,8 +456,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> -
+  </div> -->
 </section>
 <!--Testinomials ends-->
 
@@ -521,7 +523,17 @@
 <script src="js/custom.js"></script>
 <script src="js/ajax/search/search.js"></script>
 <script src="js/functions.js"></script>
+<script >
+  $(document).ready(function(){
+    console.log(window.location.pathname.toString().indexOf("index.php"));
+     if(window.location.pathname.toString().indexOf("index.php") < 1)
+    {
+        $(location).attr("href", "http://dalmirimoveis.imb.br/index.php");
+    } 
+  });
 
+
+</script>
 </body>
 </html>
 
