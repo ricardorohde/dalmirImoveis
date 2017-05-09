@@ -6,10 +6,10 @@
 	if($params['action'] == 'insert')
 	{
 		$insert = "insert into ".$params['tabela']." set ";
-		$insert .= " ".$params['atributo']." = '".$params['value']."', ";
+		$insert .= " ".$params['atributo']." = '".$params['value']."' ";
 
 		if($params['tabela'] == 'bairros')
-			$insert .= " cod_cidade = '".$params['cod_cidade']."' ";
+			$insert .= ", cod_cidade = '".$params['cod_cidade']."' ";
 
 		MysqlCustom::execQuery($insert);
 
