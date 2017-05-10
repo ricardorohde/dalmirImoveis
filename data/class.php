@@ -299,7 +299,7 @@ class Imovel{
                     if($cod_tipo == $value['cod_tipo']){
                         echo '<option value="'.$value['cod_tipo'].'" selected="selected">'.$value['nome_tipo'].'</option>';     
                     }else{
-                        echo '<option value="'.$value['cod_tipo'].'" >'.$value['nome_tipo'].'</option>';     
+                        echo '<option value="'.$value['cod_tipo'].'" >'.$value['nome_tipo'].        '</option>';     
                     }
               }
               $ind_p++;

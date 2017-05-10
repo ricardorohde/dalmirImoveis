@@ -52,6 +52,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="icon" href="images/icon.png">
 </head>
+
 <body>
 
 <div class="modal fade" id="modalImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -359,6 +360,7 @@ function myMap() {
    $("#txtEditor").Editor();
    $('[data-toggle="tooltip"]').tooltip(); 
 </script>
+
 </body>
 </html>
 

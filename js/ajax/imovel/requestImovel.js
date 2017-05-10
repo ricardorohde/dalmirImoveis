@@ -357,6 +357,6 @@ $(window).load(function(){
         prefix: 'R$ ',
         centsSeparator: ',',
         thousandsSeparator: '.'
-    });
+  });
   
 });

@@ -148,8 +148,8 @@ function indexCollector($mode)
 	filtro.quarto_min = $("#quartosMin").val();
 	filtro.area_min = $("#areaMin").val();
 	filtro.area_max = $("#areaMax").val();
-	filtro.valor_min = $(".leftLabel").html();
-	filtro.valor_max = $(".rightLabel").html();
+	filtro.valor_min = $(".leftLabel").html().replace(',','').replace(',','');
+	filtro.valor_max = $(".rightLabel").html().replace(',','').replace(',','');
 	filtro.order_attr = "";
 	filtro.order_list = "";
 	filtro.diferencial = getCharacterSearch();

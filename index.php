@@ -248,9 +248,15 @@
         <div class="single-query-slider">
           <div class="clearfix top20">
             <label class="pull-left">Preço:</label>
-            <div class="price text-right">
-              <span>R$</span>
-              <div class="leftLabel"></div>
+            <div class="price text-right" style="
+                  width: 80%;
+              " >
+                            <span style="
+                  float: left; margin-left: 5px;
+              ">R$</span>
+                            <div style="
+                  float: left; margin-left: 5px;
+              " class="leftLabel"></div>
               <span>até R$</span>
               <div class="rightLabel"></div>
             </div>
@@ -262,9 +268,12 @@
           </div>
         </div>
       </div>
+      <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-4 text-right form-group top30">
         <button type="button" class="border_radius btn-yellow text-uppercase" onclick="searchAjax('page')">Buscar</button>
+      </div>  
       </div>
+      
     </div>
     <div class="row">
       <div class="col-sm-12">
@@ -500,6 +509,8 @@
 
 
 <script src="js/jquery-2.1.4.js"></script> 
+<!-- <script src="js/prototype.priceformat.min.js"></script> -->
+<!-- <script src="js/jquery.priceformat.min.js"></script> -->
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/jquery.appear.js"></script>
 <script src="js/jquery-countTo.js"></script>
@@ -520,10 +531,10 @@
 <script src="js/revolution.extension.parallax.min.js"></script>
 <script src="js/revolution.extension.slideanims.min.js"></script>
 <script src="js/revolution.extension.video.min.js"></script>
+
 <script src="js/custom.js"></script>
 <script src="js/ajax/search/search.js"></script>
-<script src="js/prototype.priceformat.min.js"></script>
-<script src="js/jquery.priceformat.min.js"></script>
+<script src="js/ajax/search/loadPrice.js"></script>
 <script src="js/functions.js"></script>
 <script >
   $(document).ready(function(){
@@ -533,11 +544,7 @@
         $(location).attr("href", "http://dalmirimoveis.imb.br/index.php");
     } 
       
-    $(".valor-template-imovel").priceFormat({
-            prefix: 'R$ ',
-            centsSeparator: ',',
-            thousandsSeparator: '.'
-    });          
+         
   });
 
 
