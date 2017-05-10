@@ -60,9 +60,11 @@
 	          <div class="select-pro-list">
 	            <a href="#" data-toggle="modal" onclick="updateValue('.$row[$params['pk']].', \'#inputTable_'.$i.'\')"><span style="display: none" class="codigo">'.$row[$params['pk']].'</span><i class="icon-pen2"></i></a>
 	            
-	            <a href="#" data-toggle="modal" data-target="#myModal"><span style="display: none" class="codigo">'.$row[$params['pk']].'</span><i class="icon-cross"></i></a>
+
 	          </div>
-	        </div>';			
+	        </div>';	
+
+	        //	            <a href="#" data-toggle="modal" data-target="#myModal"><span style="display: none" class="codigo">'.$row[$params['pk']].'</span><i class="icon-cross"></i></a>		
 		}
 
 		echo $echo;
