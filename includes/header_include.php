@@ -16,13 +16,13 @@
   <div class="header-upper dark">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-12">
+        <div class="col-md-2 col-sm-12">
           <div class="logo">
           <a href="index.php"><img alt="" src="images/logo-white.png" class="img-responsive"></a>
           </div>
         </div>
       <!--Info Box-->
-        <div class="col-md-9 col-sm-12 right">
+        <div class="col-md-10 col-sm-12 right">
           <div class="info-box first">
             <div class="icons"><i class="icon-telephone114"></i></div>
             <ul>
@@ -63,6 +63,7 @@
             </button>
             <a class="navbar-brand sticky_logo" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
         </div>        
+<!--
         <div class="page-banner-contact page-banner padding-b-80 padding-t-80">
           <div class="container">
             <div class="row">
@@ -74,6 +75,7 @@
             </div>
           </div>
         </div>
+-->
         <!-- Page Banner End -->
         <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav" data-in="fadeIn" data-out="fadeOut">

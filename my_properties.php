@@ -143,6 +143,8 @@ body.modal-open #wrap{
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/ajax/search/search.js"></script>
+<script src="js/prototype.priceformat.min.js"></script>
+<script src="js/jquery.priceformat.min.js"></script>    
 <script src="js/ajax/search/searchAdmin.js"></script>
 <script src="js/ajax/imovel/requestTypes.js"></script>
 <script src="js/functions.js"></script>

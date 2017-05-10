@@ -1,25 +1,23 @@
 
+RewriteOptions inherit
+
 Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^dalmirimoveis.imb.br/index.php[nc]
 RewriteRule ^(.*)$ http://www.dalmirimoveis.imb.br/index.php/$1 [r=301,nc]
 
-
 <FilesMatch "\.(jpg|css|js|png|html|php)$">
 Header set Cache-Control "max-age=0"
 </FilesMatch>
 
-
 ErrorDocument 400 /404.php
-
 
 ErrorDocument 401 /404.php
 
-
 ErrorDocument 403 /404.php
-
 
 ErrorDocument 404 /404.php
 
 ErrorDocument 500 /404.php
  
+

@@ -46,4 +46,14 @@ function manipulateImovel()
 	});	
 }
 
+$(window).load(function(){
+
+    $(".valor-my-types").priceFormat({
+        prefix: 'R$ ',
+        centsSeparator: ',',
+        thousandsSeparator: '.'
+    });
+
+
+});
 

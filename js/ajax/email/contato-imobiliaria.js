@@ -39,3 +39,11 @@ function sendVisit()
         }
     });
 }
+
+$(window).load(function(){
+    $(".valor-imovel-price").priceFormat({
+        prefix: 'R$ ',
+        centsSeparator: ',',
+        thousandsSeparator: '.'
+    });
+});

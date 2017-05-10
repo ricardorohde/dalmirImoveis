@@ -522,6 +522,8 @@
 <script src="js/revolution.extension.video.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/ajax/search/search.js"></script>
+<script src="js/prototype.priceformat.min.js"></script>
+<script src="js/jquery.priceformat.min.js"></script>
 <script src="js/functions.js"></script>
 <script >
   $(document).ready(function(){
@@ -530,6 +532,12 @@
     {
         $(location).attr("href", "http://dalmirimoveis.imb.br/index.php");
     } 
+      
+    $(".valor-template-imovel").priceFormat({
+            prefix: 'R$ ',
+            centsSeparator: ',',
+            thousandsSeparator: '.'
+    });          
   });
 
 

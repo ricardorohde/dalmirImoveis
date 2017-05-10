@@ -530,12 +530,12 @@ class Imovel{
 
         if(($filtro['area_max'] != "-1") && ($filtro['area_max'] != ""))
         {
-            $select .= " and (i.area <= '".$filtro['area_max']."') ";
+            $select .= " and (i.area <= ".$filtro['area_max'].") ";
         }
 
         if(($filtro['area_min'] != "-1") && ($filtro['area_min'] != ""))
         {
-            $select .= " and (i.area >= '".$filtro['area_min']."') ";
+            $select .= " and (i.area >= ".$filtro['area_min'].") ";
         }
 
         if($filtro['cod_bairro'] != "-1")
@@ -560,12 +560,12 @@ class Imovel{
 
         if($filtro['quarto_max'] != "-1")
         {
-            $select .= " and (i.quartos <= '".$filtro['quarto_max']."') ";
+            $select .= " and (i.quartos <= ".$filtro['quarto_max'].") ";
         }
 
         if($filtro['quarto_min'] != "-1")
         {
-            $select .= " and (i.quartos >= '".$filtro['quarto_min']."') ";
+            $select .= " and (i.quartos >= ".$filtro['quarto_min'].") ";
         }
 
         if($filtro['valor_max'] != "-1")
@@ -637,7 +637,7 @@ class Imovel{
                     $_SESSION['page_count'] = Imovel::getCountImoveis();
                 }
 
-        // echo $select;
+//         echo $select;
 
         return $select;
     }
@@ -701,7 +701,7 @@ class Imovel{
                                       <div class="image">
                                         <a href="property_detail1.php?c='.$cod_imovel.'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="latest property" class="img-responsive"></a>
                                         <div class="price clearfix"> 
-                                          <span class="tag pull-right">'.$row['valor'].'</span>
+                                          <span class="tag pull-right valor-template-imovel">'.$row['valor'].'</span>
                                         </div>';
 
                                     if($row['cod_transacao'] == '1'){
@@ -793,7 +793,7 @@ class Imovel{
 
 
                               $template.=    '  <div class="button-my-pro-list">
-                                      <a href="">R$ '.$row['valor'].'</a>
+                                      <a href="" class="valor-my-types"> '.$row['valor'].'</a>
                                     </div>
                                   </div>
                                 </div>

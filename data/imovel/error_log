@@ -1,0 +1,57 @@
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  getimagesize(upload/undefined): failed to open stream: No such file or directory in /home/dalmi603/public_html/data/class.php on line 36
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/dalmi603/public_html/data/class.php on line 41
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 70
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:05:55 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  getimagesize(upload/undefined): failed to open stream: No such file or directory in /home/dalmi603/public_html/data/class.php on line 36
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/dalmi603/public_html/data/class.php on line 41
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 70
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/dalmi603/public_html/data/class.php:66) in /home/dalmi603/public_html/data/class.php on line 33
+[07-May-2017 10:06:01 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  getimagesize(upload/undefined): failed to open stream: No such file or directory in /home/dalmi603/public_html/data/class.php on line 36
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/dalmi603/public_html/data/class.php on line 41
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/dalmi603/public_html/data/class.php on line 70
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66
+[07-May-2017 10:09:14 America/Chicago] PHP Warning:  imagecopyresized() expects parameter 2 to be resource, null given in /home/dalmi603/public_html/data/class.php on line 66

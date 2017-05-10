@@ -128,7 +128,7 @@ body.modal-open #wrap{
                 </tr>
                 <tr>
                   <td><b>Valor</b></td>
-                  <td class="text-right">R$ <?php echo $buildedImovel['valor'] ?></td>
+                  <td class="text-right valor-imovel-price"><?php echo $buildedImovel['valor'] ?></td>
                 </tr>
                 <tr>
                   <td><b>Área</b></td>
@@ -303,6 +303,8 @@ body.modal-open #wrap{
 <script src="js/google-map.js"></script> 
 <script src="js/jquery.fancybox.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/prototype.priceformat.min.js"></script>
+<script src="js/jquery.priceformat.min.js"></script>
 <script src="js/functions.js"></script>
 <script src="js/ajax/search/search.js"></script>
 <script src="js/ajax/email/contato-imobiliaria.js"></script>
