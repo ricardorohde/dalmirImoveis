@@ -303,8 +303,7 @@ body.modal-open #wrap{
 <script src="js/google-map.js"></script> 
 <script src="js/jquery.fancybox.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/prototype.priceformat.min.js"></script>
-<script src="js/jquery.priceformat.min.js"></script>
+<script src="js/ajax/search/loadPrice.js"></script>
 <script src="js/functions.js"></script>
 <script src="js/ajax/search/search.js"></script>
 <script src="js/ajax/email/contato-imobiliaria.js"></script>

@@ -684,6 +684,11 @@ class Imovel{
             return $template; 
     }
 
+    public static function number_format_drop_zero_decimals($n, $n_decimals)
+    {
+        return ((floor($n) == round($n, $n_decimals)) ? number_format($n) : number_format($n, $n_decimals));
+    }
+
     public static function buildTemplate($filtro)
     {
         $select = Imovel::buildSelect($filtro);
@@ -701,7 +706,7 @@ class Imovel{
                                       <div class="image">
                                         <a href="property_detail1.php?c='.$cod_imovel.'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="latest property" class="img-responsive"></a>
                                         <div class="price clearfix"> 
-                                          <span class="tag pull-right valor-template-imovel">'.$row['valor'].'</span>
+                                          <span class="tag pull-right valor-template-imovel">R$: '.Imovel::number_format_drop_zero_decimals((float)$row['valor'], 2).'</span>
                                         </div>';
 
                                     if($row['cod_transacao'] == '1'){
