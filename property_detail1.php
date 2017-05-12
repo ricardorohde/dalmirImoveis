@@ -92,7 +92,7 @@ body.modal-open #wrap{
         <?php
             foreach ($imagens as $key => $value) {
         ?>
-          <div class="item"><img src="data/imovel/<?php echo $value['caminho_img'] ?>" alt="image"/></div>
+          <div class="item"><img style="width: auto; max-height: 320px; margin: 0 auto"  src="data/imovel/<?php echo $value['caminho_img'] ?>" alt="image"/></div>
         <?php
             }
         ?>
@@ -101,7 +101,7 @@ body.modal-open #wrap{
         <?php
             foreach ($imagens as $key => $value) {
         ?>
-          <div class="item"><img src="data/imovel/<?php echo $value['caminho_thumb'] ?>" alt="image"/></div>
+          <div class="item" style="background-color: white"><img style="width: auto; max-height: 120px" src="data/imovel/<?php echo $value['caminho_thumb'] ?>" alt="image"/></div>
         <?php
             }
         ?>
@@ -128,7 +128,7 @@ body.modal-open #wrap{
                 </tr>
                 <tr>
                   <td><b>Valor</b></td>
-                  <td class="text-right valor-imovel-price"><?php echo $buildedImovel['valor'] ?></td>
+                  <td class="text-right valor-imovel-price"><?php echo 'R$: '.Imovel::number_format_drop_zero_decimals((float)$buildedImovel['valor'], 2) ?></td>
                 </tr>
                 <tr>
                   <td><b>Área</b></td>

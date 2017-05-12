@@ -16,6 +16,16 @@ function callModalShow($code)
     $("#modalTypes").modal();	
 }
 
+function callModalRealDelete($code)
+{
+
+	$(".container-buttons-modal").find('button').show();
+	$("#content-description-modal").html('Deseja excluir PERMANENTEMENTE este imóvel?');
+	$("input[name=codigo_imovel_modal]").val($code);
+    $("input[name=action_imovel_modal]").val('delete');
+    $("#modalTypes").modal();	
+}
+
 
 function manipulateImovel()
 {
@@ -26,9 +36,12 @@ function manipulateImovel()
 	if($action == 'hide'){
 		$path = 'data/imovel/imovelHidden.php';
 		$msg = 'Imóvel ocultado com sucesso!';
-	}else{
+	}else if($action == 'show'){
 		$path = 'data/imovel/imovelShow.php';
 		$msg = 'Imóvel desocultado com sucesso!'
+	}else if($action == 'delete'){
+		$path = 'data/imovel/imovelDelete.php';
+		$msg = 'Imóvel Excluído com sucesso!';
 	}
 
 	$.ajax({

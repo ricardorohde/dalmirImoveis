@@ -503,9 +503,32 @@ class Imovel{
     {
         $arrayDif = Imovel::getCaracterStatic($where);
         $return = "";
+        $i = 0;
+        $f = false;
+
         foreach ($arrayDif as $key => $value) {
-            $return .= '  <span>'.$value['descricao'].'</span>';
-        }        
+            
+            if($i % 3 == 0){
+                $return .= ' <div class="row" style="
+                                                margin-left: 10px;
+                                                margin-right: 0px;
+                                            "> ';
+                $f = false;
+            }
+
+            $return .= '  <span style="float: left">'.$value['descricao'].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+            
+            
+            if(($i + 1) % 3 == 0){
+                $return .= ' </div> ';
+                $f = true;            
+            }
+            $i++;
+        }    
+
+        if(!$f)    
+                $return .= ' </div> ';
+
 
         return $return;
     }   
@@ -617,10 +640,10 @@ class Imovel{
                 if($filtro['pagination'] == 'true')
                 {
                     
-                    if($filtro['mode'] != 'page_admin'){
+                    // if($filtro['mode'] != 'page_admin'){
                             Session::startSession();
                             $_SESSION['page_filtro'] = serialize($filtro);                        
-                    }
+                    // }
                     
 
                     $inicial = (((int)$filtro['num_page'] - 1) * (int)$filtro['imoveis_count']) + ((int)$filtro['num_page'] -1);            
@@ -635,7 +658,12 @@ class Imovel{
                     $_SESSION['page_inicial'] = $inicial;
                     $_SESSION['page_final'] = $final;
                     $_SESSION['page_count'] = Imovel::getCountImoveis();
+
+                    // var_dump($_SESSION['page_count']);
+                    // var_dump($_SESSION['page_inicial']);
+                    // var_dump($_SESSION['page_final']);
                 }
+                // var_dump($select);
 
 //         echo $select;
 
@@ -653,32 +681,42 @@ class Imovel{
     public static function buildPagination()
     {
 
+            Session::startSession();
             $page_inicial = (int)$_SESSION['page_inicial'];
             $page_final = (int)$_SESSION['page_final'];
             $page_count = (int)$_SESSION['page_count'];
             $page_current = ($page_inicial / 10) + 1;
-            $template = '';
 
+            $page_filtro = unserialize($_SESSION['page_filtro']);
+            $param_ad = '';
+            if($page_filtro['mode'] == 'page_admin')
+            {
+                $param_ad = ',\'page_admin\'';
+            }
+
+
+            $template = '';
+            // echo 'pg = '.$_SESSION['page_count'];
             if($page_current == 1)
             {
                 if($page_final >= $page_count)
                 {                    
-                    $template =  '<li class="active"><a onclick="searchByPage(\'1\')">1</a></li>';    
+                    $template =  '<li class="active"><a onclick="searchByPage(\'1\''.$param_ad.')">1</a></li>';    
                 }else{
-                    $template =  '<li class="active"><a onclick="searchByPage(\'1\')">1</a></li>
-                                  <li ><a onclick="searchByPage(\'2\')">2</a></li>
-                                  <li><a onclick="searchByPage(\'3\')">3</a></li> ';     
+                    $template =  '<li class="active"><a onclick="searchByPage(\'1\''.$param_ad.')">1</a></li>
+                                  <li ><a onclick="searchByPage(\'2\''.$param_ad.')">2</a></li>
+                                  <li><a onclick="searchByPage(\'3\''.$param_ad.')">3</a></li> ';     
                 }                    
             }else if($page_final >=  $page_count)
             {
 
-                $template =  '<li><a onclick="searchByPage('.($page_current - 2).')">'.($page_current - 2).'</a></li>
-                              <li ><a onclick="searchByPage('.($page_current - 1).')">'.($page_current - 1).'</a></li>
-                              <li class="active"><a onclick="searchByPage('.($page_current).')">'.$page_current.'</a></li> '; 
+                $template =  '<li><a onclick="searchByPage('.($page_current - 2).''.$param_ad.')">'.($page_current - 2).'</a></li>
+                              <li ><a onclick="searchByPage('.($page_current - 1).''.$param_ad.')">'.($page_current - 1).'</a></li>
+                              <li class="active"><a onclick="searchByPage('.($page_current).''.$param_ad.')">'.$page_current.'</a></li> '; 
             }else{
-                $template =  '<li><a onclick="searchByPage('.($page_current - 1).')">'.($page_current - 1).'</a></li>
-                              <li class="active"><a onclick="searchByPage('.($page_current).')">'.($page_current).'</a></li>
-                              <li ><a onclick="searchByPage('.($page_current + 1).')">'.($page_current + 1).'</a></li> '; 
+                $template =  '<li><a onclick="searchByPage('.($page_current - 1).''.$param_ad.')">'.($page_current - 1).'</a></li>
+                              <li class="active"><a onclick="searchByPage('.($page_current).''.$param_ad.')">'.($page_current).'</a></li>
+                              <li ><a onclick="searchByPage('.($page_current + 1).''.$param_ad.')">'.($page_current + 1).'</a></li> '; 
             }
 
             return $template; 
@@ -798,13 +836,15 @@ class Imovel{
 
 
                               $template.=    '  <div class="button-my-pro-list">
-                                      <a href="" class="valor-my-types"> '.$row['valor'].'</a>
+                                      <a href="" class="valor-my-types"> '.Imovel::number_format_drop_zero_decimals((float)$row['valor'], 2).'</a>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                   <div class="select-pro-list">
                                     <a href="submit_property.php?c='.$row['cod_imovel'].'"><i class="icon-pen2"></i> <input type="hidden" value="'.$row['cod_imovel'].'"></a>
+                                    <a href="#" onclick="callModalRealDelete('.$row['cod_imovel'].')"  ><i class="fa fa-minus-circle" aria-hidden="true"></i><input type="hidden" value="'.$row['cod_imovel'].'"></a>
+
                                     <a href="#" '.$attr.' ><i class="fa fa-eye-slash" aria-hidden="true"></i><input type="hidden" value="'.$row['cod_imovel'].'"></a>
                                   </div>
                                 </div>
@@ -835,11 +875,11 @@ class Imovel{
 
             $template .= '  <div class="item">
                               <div class="image bottom15"> 
-                                <img src="data/imovel/'.$row['caminho_thumb'].'" alt="Featured Property"> 
+                                <a href="property_detail1.php?c='.$row['cod_imovel'].'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="Featured Property"> </img>
                                 <span class="nav_tag yellow text-uppercase">'.$t_d.'</span>
                               </div>
-                              <h4><a class="title-imovel" href="property_detail1.php">'.$row['titulo'].'</a></h4>
-                              <p>Código: '.$row['cod_imovel'].'</p>
+                              <h4 style="color:black"><a style="color:black" class="title-imovel" href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['titulo'].'</a><p>Código: '.$row['cod_imovel'].'</p></h4>
+                              
                             </div>'   ;
         }
 
@@ -876,7 +916,7 @@ class Imovel{
                                 <div class="feature-p-text">
                                   <h4><a href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['titulo'].' </a></h4>
                                   <p class="bottom15"><a href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['endereco'].' </a></p>
-                                  <a href="property_detail1.php?c='.$row['cod_imovel'].'">R$'.$row['valor'].'</a>
+                                  <a href="property_detail1.php?c='.$row['cod_imovel'].'">R$'.Imovel::number_format_drop_zero_decimals((float)$row['valor'], 2).'</a>
                                 </div>
                               </div>
                             </div> ';
@@ -925,11 +965,20 @@ class Imovel{
         echo(json_encode($result));
     }
 
+    public static function listImoveisPageCurrentAdmin()
+    {   
+        Session::startSession();
+        echo $_SESSION['page_imoveis_admin'];
+    }    
+
 
     public static function  listImoveisAdmin($filtro)
     {
+            Session::startSession(); 
             $template = Imovel::buildTemplateAdmin($filtro);
-            echo $template;      
+            $_SESSION['page_imoveis_admin'] = $template;
+            $result['page'] = 'my_properties.php?c=KiOlKaS';
+            echo(json_encode($result));     
     }
 
 
@@ -964,6 +1013,7 @@ class Imovel{
     public static function listaPagesIndex()
     {
         $template = Imovel::buildPagination();
+        Session::startSession();
         echo $template;
     }
 

@@ -129,7 +129,13 @@ function getFiltroSession($mode)
 					filtro.pointer = parsed_data.object.pointer;
 					filtro.pagination = parsed_data.object.pagination;
 	        	}else{
-	        		indexCollector($mode);
+	        		if($mode = 'page_admin'){
+	        			emptyFiltro();
+	        			filtro.mode = 'page_admin';
+	        		}else{
+	        			indexCollector($mode);	
+	        		}
+	        		
 	        	}
 	        	resolve();
 
@@ -186,8 +192,19 @@ function actionShowIndex($callBack = null)
     });	
 }
 
-function actionShowImoveisAdmin()
+function getParameterByNameS(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function actionShowImoveisAdmin($c = null)
 {	
+	console.log(JSON.stringify(filtro));
 	filtro.mode = 'page_admin';
     $.ajax({
         url: 'data/search/searchData.php',
@@ -195,8 +212,13 @@ function actionShowImoveisAdmin()
         data: filtro,        
         success: function(data){
             // console.log(data);  	
-            $(".list-admin").html(data);
-            // if ($callBack != null) { $callBack(); }
+        	var parsed_data = JSON.parse(data);
+        	if( !getParameterByNameS('c') ) 
+            	$(location).attr('href', parsed_data.page);
+            // if( getParameterByNameS('p') ) 
+            if($c != null)
+            		$c();
+            
         }
     });
 }
@@ -238,7 +260,7 @@ function searchAjax($mode, $callBack = null)
 				indexCollector();
 	        break;
 	    case 'page_admin':
-				emptyFiltro();
+				setFirstSearch();				
 				actionShowImoveisAdmin();
 	        break;	        	        
 	    default:
@@ -249,13 +271,27 @@ function searchAjax($mode, $callBack = null)
 }
 
 
-function searchByPage($page)
+function searchByPage($page, $mode = 'page', $load = true)
 {
 	console.log('searchByPage');
-	indexCollectiorWithPagination('page').then(function() {
+	indexCollectiorWithPagination($mode).then(function() {
 		console.log('searchByPage Success');
-		filtro.num_page = $page;	 
-		actionSearchIndex();
+		filtro.num_page = $page;
+		console.log('mode ' + $mode);
+		// $mode ='page_admin';
+		if($mode == 'page_admin'){	
+		// if(true){
+			if($load){
+				actionShowImoveisAdmin(function(){
+					location.reload();
+				});
+			}else{
+				actionShowImoveisAdmin();
+			}
+			
+		}else {
+			actionSearchIndex();
+		}
 	});
 }
 

@@ -111,7 +111,22 @@ body.modal-open #wrap{
     </div>
   </div>
   <div class="list-admin container  list-t-border">
+          <?php
+                Imovel::listImoveisPageCurrentAdmin();
+          ?>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="padding_bottom text-center">
+          <ul class="pager" style="margin-top: 10px">
+              <?php
+              Imovel::listaPagesIndex();
+        
+              ?>
+          </ul>
+      </div> 
+    </div> 
+  </div>  
 </section>
 <!-- My - Property end -->
 <?php
