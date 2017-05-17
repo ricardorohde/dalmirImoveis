@@ -103,8 +103,10 @@ function getFiltroSession($mode)
 	        url: 'data/search/returnFiltroSearch.php',
 	        type: 'post',
 	        success: function(data){  
+	        	console.log(data);
 	        	console.log('getFiltroSession Success');
 	        	var parsed_data = JSON.parse(data);
+
 	        	if(parsed_data.status == 'success')
 	        	{
 					filtro.cod_bairro = parsed_data.object.cod_bairro;
