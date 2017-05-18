@@ -907,11 +907,15 @@ class Imovel{
         {
             $template .= '       
                             <div class="row bottom20">
+                            <a href="property_detail1.php?c='.$row['cod_imovel'].'">
                               <div class="col-md-4 col-sm-4 col-xs-6 p-image">
                                
                                 <img src="data/imovel/'.$row['caminho_thumb'].'" alt="image">
+                                
 
                               </div>
+                            </a>
+
                               <div class="col-md-8 col-sm-8 col-xs-6">
                                 <div class="feature-p-text">
                                   <h4><a href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['titulo'].' </a></h4>
