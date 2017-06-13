@@ -724,7 +724,12 @@ class Imovel{
 
     public static function number_format_drop_zero_decimals($n, $n_decimals)
     {
-        return ((floor($n) == round($n, $n_decimals)) ? number_format($n) : number_format($n, $n_decimals));
+        // setlocale(LC_MONETARY, 'en_US');
+        // $valor = money_format('%i', $n) . "\n"; 
+        // var_dump($valor);
+        // return $valor;
+        // return ((floor($n) == round($n, $n_decimals)) ? number_format($n) : number_format($n, $n_decimals));
+        return number_format($n, 2, ",", ".");
     }
 
     public static function buildTemplate($filtro)
