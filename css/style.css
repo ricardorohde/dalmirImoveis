@@ -1566,6 +1566,7 @@ button{
 }
 .image, .image img, .property_item .property_head, .proerty_content{
 	position:relative;
+  /*height:330px;*/
 }
 .image img, .property_item .price{ width:100%;}
 .image a, .toggle_share ul li, .toggle_share ul li a{display:block;}
@@ -4384,4 +4385,8 @@ ul.social_share {
   font-size: 24px;
   line-height: 1.33;
   border-radius: 35px;
+}
+
+.property_item img{
+  height:330px;
 }

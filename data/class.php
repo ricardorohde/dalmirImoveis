@@ -748,9 +748,15 @@ class Imovel{
                                     <div class="property_item">
                                       <div class="image">
                                         <a href="property_detail1.php?c='.$cod_imovel.'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="latest property" class="img-responsive"></a>
-                                        <div class="price clearfix"> 
-                                          <span class="tag pull-right valor-template-imovel">R$: '.Imovel::number_format_drop_zero_decimals((float)$row['valor'], 2).'</span>
-                                        </div>';
+                                        <div class="price clearfix">'; 
+                                        if((float)$row['valor'] > 0){
+                                            // $template.=     '<span class="tag pull-right valor-template-imovel">À Consultar</span>';
+                                            $template.=     '<span class="tag pull-right valor-template-imovel">R$: '.Imovel::number_format_drop_zero_decimals((float)$row['valor'], 2).'</span>';
+                                        }else{
+                                            $template.=     '<span class="tag pull-right valor-template-imovel">À Consultar</span>';
+                                        }
+                             
+                $template .= '</div>';
 
                                     if($row['cod_transacao'] == '1'){
                                         $template .= '<span class="tag_t">À Venda</span> ';
