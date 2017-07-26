@@ -31,6 +31,11 @@
 <body>
 
 
+<div style="width:100%; height:100%; background:rgba(31,26,23, 0.9); z-index:999999; position:fixed">
+  <img style="margin-left:40%; margin-top:50px; width:20%; display:block" src="images/manutencao.png" alt="">
+  <p align="center" style="font-size:15pt">Estamos em Manutenção</p>
+  <p align="center" style="font-size:15pt">Desculpe o transtorno, em breve estaremos de volta!</p>
+</div>
 <!--Loader-->
 <div class="loader">
   <div class="span">
@@ -76,6 +81,7 @@
     </ul>
   </div>
 </div>
+
 
 <div id="mainMenuBarAnchor"></div>
 <header class="white_header">
