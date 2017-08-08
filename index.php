@@ -31,11 +31,11 @@
 <body>
 
 
-<div style="width:100%; height:100%; background:rgba(31,26,23, 0.9); z-index:999999; position:fixed">
+<!-- <div style="width:100%; height:100%; background:rgba(31,26,23, 0.9); z-index:999999; position:fixed">
   <img style="margin-left:40%; margin-top:50px; width:20%; display:block" src="images/manutencao.png" alt="">
   <p align="center" style="font-size:15pt">Estamos em Manutenção</p>
   <p align="center" style="font-size:15pt">Desculpe o transtorno, em breve estaremos de volta!</p>
-</div>
+</div> -->
 <!--Loader-->
 <div class="loader">
   <div class="span">
@@ -179,7 +179,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="single-query bottom15">
-          <input id="keyImovel" type="text" class="keyword-input" placeholder="Palavras-Chave">
+          <input id="keyImovel" type="text" class="keyword-input" placeholder="Códido do Imóvel ou Palavras-Chave">
         </div>
       </div>
 
@@ -267,7 +267,7 @@
               <div class="rightLabel"></div>
             </div>
           </div>
-          <div data-range_min="0" data-range_max="2000000" data-cur_min="0" data-cur_max="2000000" class="nstSlider">
+          <div data-range_min="0" data-range_max="4000000" data-cur_min="0" data-cur_max="4000000" class="nstSlider">
             <div class="bar"></div>
             <div class="leftGrip"></div>
             <div class="rightGrip"></div>

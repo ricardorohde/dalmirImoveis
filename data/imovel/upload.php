@@ -44,15 +44,14 @@ $location = "upload/origin/".$filename;
 $return_arr = array();
 // var_dump($_FILES);
 
-/* Upload file */
+// var_dump($_FILES);
 if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-              		
+                  		
      if(is_image($location))
          $d = compress($location, "upload/".$filename, 25);    
 
 
-    $src = "default.png";
-
+    $src = 'data/imovel/'.$location;
     // checking file is image or not
     if(is_array(getimagesize($location))){
         $src = 'data/imovel/'.$location;

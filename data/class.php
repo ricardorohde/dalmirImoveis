@@ -546,7 +546,7 @@ class Imovel{
         $select .= " left join rel_imovel_dif rid  ";
         $select .= " on rid.cod_imovel = i.cod_imovel "; 
         $select .= " left join bairros b on b.cod_bairro = i.cod_bairro ";
-        $select .= ' where (1 = 1) '; 
+        $select .= ' where (1 = 1) and (p.main = 1)'; 
         
         if($filtro['mode'] != 'page_admin')
             $select .= ' and (i.oculto <> 1) and (i.deletado <> 1) ';
@@ -819,13 +819,13 @@ class Imovel{
             // var_dump($row);
             // break;
             $template .='   <div class="row bg-hover">
-                              <div class="my-pro-list">
+                              <div class="my-pro-list">                              
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                   <img src="data/imovel/'.$row['caminho_thumb'].'" alt="image"/>
                                 </div>
                                 <div class="col-md-8 col-sm-8 col-xs-12">
                                   <div class="feature-p-text">
-                                    <h4>'.$row['titulo'].'</h4>';
+                                    <h4><label>'.$row['cod_imovel'].'</label> - '.$row['titulo'].'</h4>';
 
 
                                     switch ($row['cod_transacao']) {

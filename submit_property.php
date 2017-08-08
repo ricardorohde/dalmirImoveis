@@ -180,6 +180,21 @@
       </div>
       </div>
       </form>
+        <div class="row">
+            <label for="">Imagem Principal</label>
+            <input type="file" name="main-image" id="main-image">
+        </div>
+      <?php          
+        if($_SESSION['cod_imovel'] != '0'){
+
+            $sql = "select * from imagens where cod_imovel = '".$_SESSION['cod_imovel']."' ";
+            $sql .= " and main = 1 ";
+            $r = MysqlCustom::querySql($sql);
+            $f = MysqlCustom::fetch( $r );
+            echo '<img style="width:100px; margin-top:10px;" src="data/imovel/'.$f['caminho_img'].'" > ';
+        }
+      ?>
+
       <div class="row">
       <div class="col-sm-12">
         <h3 class="margin40 bottom15">Imagens do imóvel <i class="fa fa-info-circle help" data-toggle="tooltip" title="Adicione imagens do imóvel!"></i></h3>

@@ -8,8 +8,7 @@ $result['status'] = 'success';
 
 		if(isset($_POST)){
 			
-			$imovelData = $_POST;
-			// var_dump($_SESSION);
+			$imovelData = $_POST;			
 			if(isset($_SESSION['status'])){
 				$imovelData['status'] = $_SESSION['status'];
 				$imovelData['cod_imovel'] = $_SESSION['cod_imovel'];
@@ -86,6 +85,15 @@ $result['status'] = 'success';
 				
 					MysqlCustom::execQuery($comando);
 				}
+			}
+
+			if(isset( $imovelData['hash64'] ))
+			{
+				$comando = " insert into imagens set ";
+				$comando .= " cod_imovel = ".$cod_imovel.", ";
+				$comando .= " caminho_img = '".$imovelData['hash64']."', ";
+				$comando .= " caminho_thumb = '-' ";
+				MysqlCustom::execQuery($comando);
 			}
 
 			if(isset($imovelData['diferenciais']) && ($cod_imovel > 0))

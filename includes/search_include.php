@@ -5,7 +5,7 @@
           </div>
           <form class="callus">
             <div class="single-query form-group col-sm-12">
-              <input type="text" id="keyImovel" class="keyword-input" placeholder="Palavras-Chave">
+              <input type="text" id="keyImovel" class="keyword-input" placeholder="Códido do Imóvel ou Palavras-Chave">
             </div>
             <div class="single-query form-group col-sm-12">
               <div class="intro">
@@ -82,7 +82,7 @@
                   <span>até R$</span>
                   <div class="rightLabel"></div>
                 </div>
-                <div data-range_min="0" data-range_max="2000000" data-cur_min="0" data-cur_max="2000000" class="nstSlider">
+                <div data-range_min="0" data-range_max="4000000" data-cur_min="0" data-cur_max="4000000" class="nstSlider">
                   <div class="bar"></div>
                   <div class="leftGrip"></div>
                   <div class="rightGrip"></div>
