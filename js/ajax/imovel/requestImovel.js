@@ -1,17 +1,3 @@
-
-function getBase64(file) {
-    return new Promise(function(resolve, reject) {
-        var reader = new FileReader();
-        reader.onload = function () {
-            resolve(reader.result);
-        };
-        reader.onerror = function (error) {
-            reject(error);
-        };
-        reader.readAsDataURL(file);
-    });
-}
-
 var statusImovel;
 var filtro = {
     key_word : "",
@@ -33,10 +19,37 @@ var filtro = {
     num_page: '1',
     pointer:'next',
     pagination: 'false',
-    hash64:''
+    MainImagehash64:''
+}
+
+
+function readFile() {
+  $('#modalImages').modal({
+        backdrop: 'static',
+        keyboard: false
+  });  
+
+  if (this.files && this.files[0]) {
+    
+    var FR= new FileReader();
+    
+    FR.addEventListener("load", function(e) {
+        console.log(e.target.result);
+        $("#modalImages").modal('hide');
+        document.getElementById("main-image-tag").src = e.target.result;
+        $("#main-image-tag").show();
+        filtro.MainImagehash64 = e.target.result;
+      // document.getElementById("b64").innerHTML = e.target.result;
+    }); 
+    
+    FR.readAsDataURL( this.files[0] );
+  }
+  
 }
 
 $(function() {
+
+    document.getElementById("main-image").addEventListener("change", readFile);
 
     if((getParameterByName('c', $(location).attr('href')) != '') && (getParameterByName('c', $(location).attr('href')) != null))
     {
@@ -208,24 +221,20 @@ function getBase64Files(object)
 
 function getInputs(object)
 {
-    var file = document.querySelector('#main-image').files[0];
-    return getBase64(file).success(function(hash64) {
-    	object['titulo_imovel'] = $("#titulo-imovel").val();
-    	object['endereco_imovel'] = $("#endereco-imovel").val();
-    	object['valor_imovel'] = $("#valor-imovel").val();
-    	object['cod_tipo'] = $("#tipo-imovel").val();
-    	object['cod_bairro'] = $("#select-bairros").val();
-    	object['transacao_imovel'] = $("#transacao-imovel").val();
-    	object['quartos_imovel'] = $("#quartos-imovel").val();
-    	object['banheiros_imovel'] = $("#banheiros-imovel").val();
-    	object['suite_imovel'] = $("#suite-imovel").val();
-    	object['descricao'] = $("#txtEditor").Editor("getText");
-    	object['video_imovel'] = $("#video-imovel").val();
-    	object['imovel_garagem'] = $("#imovel-garagem").val();
-    	object['area_imovel'] = $("#area-imovel").val();
-        object['hash64'] = hash64; // prints the base64 string
-        return object;
-    });    
+	object['titulo_imovel'] = $("#titulo-imovel").val();
+	object['endereco_imovel'] = $("#endereco-imovel").val();
+	object['valor_imovel'] = $("#valor-imovel").val();
+	object['cod_tipo'] = $("#tipo-imovel").val();
+	object['cod_bairro'] = $("#select-bairros").val();
+	object['transacao_imovel'] = $("#transacao-imovel").val();
+	object['quartos_imovel'] = $("#quartos-imovel").val();
+	object['banheiros_imovel'] = $("#banheiros-imovel").val();
+	object['suite_imovel'] = $("#suite-imovel").val();
+	object['descricao'] = $("#txtEditor").Editor("getText");
+	object['video_imovel'] = $("#video-imovel").val();
+	object['imovel_garagem'] = $("#imovel-garagem").val();
+	object['area_imovel'] = $("#area-imovel").val();
+    object['main_image'] = filtro.MainImagehash64;
 }
 
 function getCaracter(object)
@@ -237,6 +246,7 @@ function getCaracter(object)
 		if($(this).is(":checked"))
 		{	
 			params.push($(this).val());
+
 		}
 	});
 
@@ -250,40 +260,35 @@ function cadastraImovel()
 		cod_imovel:'0'
 	};
 
-	getInputs(paramsImovel).success(function(inputs) {
-        console.log(inputs);
-        /*
-    	getBase64Files(inputs);
-    	getCaracter(inputs);
+	getInputs(paramsImovel);
+	getBase64Files(paramsImovel);
+	getCaracter(paramsImovel);
 
-        console.log('paramsImovel =>', JSON.stringify( inputs ));
-    	$.ajax({
-    	    type: 'POST',
-    	    url: 'data/imovel/imoveisData.php',
-    	    // dataType: 'json',
-    	    data: inputs,
-    	    success: function(data) 
-    	    { 
-                    console.log(data);
-    	    		var parsed_data = JSON.parse(data);
-    	    		$("#modalResponse .modal-body").html('');	    		
+	$.ajax({
+	    type: 'POST',
+	    url: 'data/imovel/imoveisData.php',
+	    // dataType: 'json',
+	    data: paramsImovel,
+	    success: function(data) 
+	    { 
+                console.log('data => ', data);
+	    		var parsed_data = JSON.parse(data);
+	    		$("#modalResponse .modal-body").html('');	    		
 
-    	    		statusImovel = parsed_data["status"] == "success";
-    	    		if(parsed_data["status"] == "success")
-    	    		{
-    	    			$("#modalResponse .modal-body").html('<p><div class="alert alert-success"><strong>Cadastro de Imóvel!</strong> Imóvel cadastrado com sucesso.</div></p>');
-    	    		}
+	    		statusImovel = parsed_data["status"] == "success";
+	    		if(parsed_data["status"] == "success")
+	    		{
+	    			$("#modalResponse .modal-body").html('<p><div class="alert alert-success"><strong>Cadastro de Imóvel!</strong> Imóvel cadastrado com sucesso.</div></p>');
+	    		}
 
-    	    		if(parsed_data["status"] == "error")
-    	    		{
-    	    			$("#modalResponse .modal-body").html('<p><div class="alert alert-danger"><strong>Cadastro de Imóvel!</strong> Erro no cadastro do Imóvel.</div></p>');
-    	    		}
-    	    		$("#modalResponse").modal();
-    	   	}
-    	    
-    	});
-        */
-    });
+	    		if(parsed_data["status"] == "error")
+	    		{
+	    			$("#modalResponse .modal-body").html('<p><div class="alert alert-danger"><strong>Cadastro de Imóvel!</strong> Erro no cadastro do Imóvel.</div></p>');
+	    		}
+	    		$("#modalResponse").modal();
+	   	}
+	    
+	});
 
 
 }

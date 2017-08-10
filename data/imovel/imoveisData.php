@@ -5,6 +5,7 @@ Session::startSession();
 
 $result = array();
 $result['status'] = 'success';
+$result['data'] = $_POST;
 
 		if(isset($_POST)){
 			
@@ -64,12 +65,32 @@ $result['status'] = 'success';
 			{
 				$result['status'] = 'error';				
 			}
+			
+			$main = 1;
+			if(isset( $imovelData['main_image'] ))
+			{
+				if($imovelData['main_image'] != '')
+				{
 
+					if($imovelData['status'] == 'update'){
+						$comando = " delete from imagens where (cod_imovel = ".$cod_imovel.") and (main = 1)";
+						MysqlCustom::execQuery($comando);
+					}	
+
+					$comando = " insert into imagens set ";
+					$comando .= " cod_imovel = ".$cod_imovel.", ";
+					$comando .= " caminho_img = '".$imovelData['main_image']."', ";
+					$comando .= " caminho_thumb = '".$imovelData['main_image']."', ";
+					$comando .= " main = 1 ";
+					MysqlCustom::execQuery($comando);
+					$main = 0;
+				}				
+			}
 
 			if(isset($imovelData['images']) && ($cod_imovel > 0))
 			{
 				if($imovelData['status'] == 'update'){
-					$comando = " delete from imagens where cod_imovel = ".$cod_imovel;
+					$comando = " delete from imagens where (cod_imovel = ".$cod_imovel.") and (main = 0)";
 					MysqlCustom::execQuery($comando);
 				}
 
@@ -81,20 +102,13 @@ $result['status'] = 'success';
 					$comando = " insert into imagens set ";
 					$comando .= " cod_imovel = ".$cod_imovel.", ";
 					$comando .= " caminho_img = '".$path_origin."', ";
-					$comando .= " caminho_thumb = '".$path_origin."' ";
+					$comando .= " caminho_thumb = '".$path_origin."', ";
+					$comando .= " main = ".$main." ";
 				
 					MysqlCustom::execQuery($comando);
 				}
 			}
-
-			if(isset( $imovelData['hash64'] ))
-			{
-				$comando = " insert into imagens set ";
-				$comando .= " cod_imovel = ".$cod_imovel.", ";
-				$comando .= " caminho_img = '".$imovelData['hash64']."', ";
-				$comando .= " caminho_thumb = '-' ";
-				MysqlCustom::execQuery($comando);
-			}
+			
 
 			if(isset($imovelData['diferenciais']) && ($cod_imovel > 0))
 			{

@@ -743,11 +743,17 @@ class Imovel{
         {    
             if($row['cod_imovel'] != $cod_imovel){
                 $cod_imovel = $row['cod_imovel'];
+
+                $path_img = 'data/imovel/'.$row['caminho_thumb'];
+                if(strpos( $row['caminho_thumb'], 'data:image' ) !== false )
+                {
+                    $path_img = $row['caminho_thumb'];
+                }                
                
                 $template .= '      <div class="cbp-item latest sale">
                                     <div class="property_item">
                                       <div class="image">
-                                        <a href="property_detail1.php?c='.$cod_imovel.'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="latest property" class="img-responsive"></a>
+                                        <a href="property_detail1.php?c='.$cod_imovel.'"><img src="'.$path_img.'" alt="latest property" class="img-responsive"></a>
                                         <div class="price clearfix">'; 
                                         if((float)$row['valor'] > 0){
                                             // $template.=     '<span class="tag pull-right valor-template-imovel">À Consultar</span>';
@@ -818,10 +824,17 @@ class Imovel{
         { 
             // var_dump($row);
             // break;
+            $path_img = 'data/imovel/'.$row['caminho_thumb'];
+            if(strpos( $row['caminho_thumb'], 'data:image' ) !== false )
+            {
+                $path_img = $row['caminho_thumb'];
+            }
+
+
             $template .='   <div class="row bg-hover">
                               <div class="my-pro-list">                              
                                 <div class="col-md-2 col-sm-2 col-xs-12">
-                                  <img src="data/imovel/'.$row['caminho_thumb'].'" alt="image"/>
+                                  <img src="'.$path_img.'" alt="image"/>
                                 </div>
                                 <div class="col-md-8 col-sm-8 col-xs-12">
                                   <div class="feature-p-text">
@@ -874,9 +887,15 @@ class Imovel{
         $resource = MysqlCustom::querySql($select);        
         $cod_imovel = 0;
         $template = ''; 
-
+        $i = 0;
         while($row = MysqlCustom::fetch($resource))
         {
+            if($i == 3)
+            {
+                break;
+            }
+            $i++;
+
             if($filtro['cod_transacao'] == '1')
             {
                 $t_d = 'À Venda';
@@ -884,9 +903,15 @@ class Imovel{
                 $t_d = 'Locação';
             }
 
+            $path_img = 'data/imovel/'.$row['caminho_thumb'];
+            if(strpos( $row['caminho_thumb'], 'data:image' ) !== false )
+            {
+                $path_img = $row['caminho_thumb'];
+            }             
+
             $template .= '  <div class="item">
                               <div class="image bottom15"> 
-                                <a href="property_detail1.php?c='.$row['cod_imovel'].'"><img src="data/imovel/'.$row['caminho_thumb'].'" alt="Featured Property"> </img>
+                                <a href="property_detail1.php?c='.$row['cod_imovel'].'"><img src="'.$path_img.'" alt="Featured Property"> </img>
                                 <span class="nav_tag yellow text-uppercase">'.$t_d.'</span>
                               </div>
                               <h4 style="color:black"><a style="color:black" class="title-imovel" href="property_detail1.php?c='.$row['cod_imovel'].'">'.$row['titulo'].'</a><p>Código: '.$row['cod_imovel'].'</p></h4>
@@ -916,12 +941,18 @@ class Imovel{
         $template = '';
         while($row = MysqlCustom::fetch($resource))
         {
+
+            $path_img = 'data/imovel/'.$row['caminho_thumb'];
+            if(strpos( $row['caminho_thumb'], 'data:image' ) !== false )
+            {
+                $path_img = $row['caminho_thumb'];
+            }             
             $template .= '       
                             <div class="row bottom20">
                             <a href="property_detail1.php?c='.$row['cod_imovel'].'">
                               <div class="col-md-4 col-sm-4 col-xs-6 p-image">
                                
-                                <img src="data/imovel/'.$row['caminho_thumb'].'" alt="image">
+                                <img src="'.$path_img.'" alt="image">
                                 
 
                               </div>

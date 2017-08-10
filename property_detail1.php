@@ -90,9 +90,16 @@ body.modal-open #wrap{
         <div id="property-d-1" class="owl-carousel">
  
         <?php
+            $path_img = '';
             foreach ($imagens as $key => $value) {
+
+                $path_img = 'data/imovel/'.$value['caminho_thumb'];
+                if(strpos( $value['caminho_thumb'], 'data:image' ) !== false )
+                {
+                    $path_img = $value['caminho_thumb'];
+                }                
         ?>
-          <div class="item"><img style="width: auto; max-height: 320px; margin: 0 auto"  src="data/imovel/<?php echo $value['caminho_img'] ?>" alt="image"/></div>
+          <div class="item"><img style="width: auto; max-height: 320px; margin: 0 auto"  src="<?php echo $path_img ?>" alt="image"/></div>
         <?php
             }
         ?>
@@ -100,8 +107,14 @@ body.modal-open #wrap{
         <div id="property-d-1-2" class="owl-carousel">
         <?php
             foreach ($imagens as $key => $value) {
+
+                $path_img = 'data/imovel/'.$value['caminho_thumb'];
+                if(strpos( $value['caminho_thumb'], 'data:image' ) !== false )
+                {
+                    $path_img = $value['caminho_thumb'];
+                }               
         ?>
-          <div class="item" style="background-color: white"><img style="width: auto; max-height: 120px" src="data/imovel/<?php echo $value['caminho_thumb'] ?>" alt="image"/></div>
+          <div class="item" style="background-color: white"><img style="width: auto; max-height: 120px" src="<?php echo $path_img ?>" alt="image"/></div>
         <?php
             }
         ?>

@@ -191,7 +191,9 @@
             $sql .= " and main = 1 ";
             $r = MysqlCustom::querySql($sql);
             $f = MysqlCustom::fetch( $r );
-            echo '<img style="width:100px; margin-top:10px;" src="data/imovel/'.$f['caminho_img'].'" > ';
+            echo '<img id="main-image-tag" style="width:100px; margin-top:10px;" src="data/imovel/'.$f['caminho_img'].'" > ';
+        }else{
+            echo '<img id="main-image-tag" style="display:none; width:100px; margin-top:10px;" src="" > ';
         }
       ?>
 
