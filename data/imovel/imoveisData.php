@@ -5,7 +5,7 @@ Session::startSession();
 
 $result = array();
 $result['status'] = 'success';
-$result['data'] = $_POST;
+// $result['data'] = $_POST;
 
 		if(isset($_POST)){
 			

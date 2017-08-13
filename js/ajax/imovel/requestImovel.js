@@ -255,6 +255,11 @@ function getCaracter(object)
 
 function cadastraImovel()
 {
+
+    $('#modalCrud').modal({
+        backdrop: 'static',
+        keyboard: false
+    }); 
 	var paramsImovel = {
 		status:'insert',
 		cod_imovel:'0'
@@ -271,7 +276,8 @@ function cadastraImovel()
 	    data: paramsImovel,
 	    success: function(data) 
 	    { 
-                console.log('data => ', data);
+                // console.log('data => ', data);
+                $("#modalCrud").modal('hide');                
 	    		var parsed_data = JSON.parse(data);
 	    		$("#modalResponse .modal-body").html('');	    		
 

@@ -69,6 +69,20 @@
   </div>
 </div>
 
+<div class="modal fade" id="modalCrud" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+        <br><br>
+        <h1 style="font-size: 170pt"><i class="fa fa-home" aria-hidden="true"></i></h1>
+        <h2>Carregando imóvel...</h2>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--Loader-->
 <div class="loader">
   <div class="span">
